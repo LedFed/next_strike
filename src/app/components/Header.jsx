@@ -9,6 +9,8 @@ const Header = ({ productList, basket, product }) => {
     const [isChecked, setIsChecked] = useState(false);
     const [isSearching, setIsSearching] = useState(false);
 
+    const [cart, setCart] = useState([]);
+    const [products, setProducts] = useState([]);
     // console.log(basket.length);
 
     function handleInputChange() {
@@ -18,12 +20,12 @@ const Header = ({ productList, basket, product }) => {
     useEffect(() => {
         if (isSearching) {
             // Фильтрация товаров на основе введенного слова
-            const results = productList.filter(product =>
+            const results = products.filter(product =>
                 product.name.toLowerCase().includes(searchTerm.toLowerCase())
             );
             setFilteredProducts(results);
         }
-    }, [searchTerm, productList]);
+    }, [searchTerm, products]);
 
     const handleFocus = () => {
         setIsSearching(true); // Устанавливаем состояние поиска в true
@@ -78,7 +80,7 @@ const Header = ({ productList, basket, product }) => {
 
                         <a className="number" href="tel: +7953553053">+ 7 9(535)-530-53</a>
                         <Link href="/basket" className="basket">
-                            <span className="basket_count">{basket.length}</span>
+                            <span className="basket_count">{cart.length}</span>
                         </Link>
                     </div>
 
