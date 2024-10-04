@@ -1,0 +1,154 @@
+/*basket_block*/
+.basket_block {
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+
+
+    // flex-direction: column;
+    // min-height: 50vh;
+    column-gap: 70px;
+}
+
+.basket_items {
+    display: flex;
+    flex-basis: 80%;
+}
+
+.basket_item {
+    display: flex;
+    // flex-basis: 275px;
+
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.05);
+    background: #fff;
+    border-radius: 10px;
+    height: 275px;
+    column-gap: 20px;
+    flex: 1;
+}
+
+.basket_picture {
+    padding: 10px;
+    object-fit: cover;
+}
+
+.basket_item_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    // padding: 10px;
+    padding-right: 10px;
+}
+
+.basket_block_column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+}
+
+.basket_block_title {
+    @include Bold(20px);
+}
+
+.basket_articul {
+    @include Lite(12px);
+}
+
+.basket_functional {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+}
+
+.decrement,
+.increment {
+    border: 1px solid var(--Title, #3d3d3d);
+    border-radius: 7px;
+    height: 28px;
+    opacity: .4;
+    width: 28px;
+}
+
+.count {}
+
+.increment {}
+
+.bakset_item_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.price {
+    @include Lite(16px);
+}
+
+.deleted {
+    width: 30px;
+    height: 30px;
+}
+
+.basket_info_block {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+
+    .btn {
+        align-self: center;
+        margin-top: 20px;
+        margin: 0 auto;
+    }
+}
+
+.basket_info_title {
+    @include Bold(18px);
+    color: #3d3d3d;
+}
+
+.basket_info_text {
+    @include Lite(14px);
+    color: #00000059;
+    margin-top: 30px;
+    margin-bottom: 18px;
+}
+
+.basket_info_total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.result {
+    @include Bold(18px);
+    color: #3d3d3d;
+}
+
+.all_price {
+    @include Bold(18px);
+    color: #3d3d3d;
+}
+
+.btn {}
+
+.basket_info_polity {
+    @include Lite(14px);
+    padding-bottom: 14px;
+    margin-top: 30px;
+    position: relative;
+    margin-left: 32px;
+
+    &::before {
+        content: url(../../public/icons/left_arrow.svg);
+        display: block;
+        position: absolute;
+        left: -32px;
+        top: -6px;
+        transform: rotate(90deg);
+    }
+}

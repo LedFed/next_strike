@@ -1,0 +1,160 @@
+/* CURRENT_CARD */
+
+.current_card {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    margin: 120px 0;
+    column-gap: 20px;
+}
+
+.current_card_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    row-gap: 20px;
+}
+
+.main_img {
+    width: 525px;
+    height: 598px;
+    object-fit: cover;
+}
+
+.current_carusel {
+    display: grid;
+
+    align-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    // flex-direction: column;
+    column-gap: 20px;
+    height: 157px;
+    overflow: hidden;
+    margin: 0 48px;
+}
+
+.current_img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.current_card_right {
+    display: flex;
+    flex-direction: column;
+
+    .btn {
+        margin: 0;
+        margin-top: 40px;
+    }
+}
+
+.current_block_column {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.current_title {
+    @include Bold(20px);
+}
+
+.current_articul {
+    @include Regular(11px);
+}
+
+.sale {
+    @include Lite(8px);
+    background: #FFE37E;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    width: fit-content;
+    padding: 2px 6px;
+    white-space: nowrap;
+}
+
+.current_price {
+    @include Regular(20px);
+    margin-bottom: 10px;
+}
+
+.current_clue {
+
+    @include Lite(11px);
+    width: 50%;
+
+    margin-left: 32px;
+    position: relative;
+
+    &::before {
+        content: '';
+        background-image: url(../../public/icons/clock-ic\ 1.svg);
+        // background-position: center center;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: -32px;
+        background-size: cover;
+    }
+}
+
+.current_chapter {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    justify-content: space-between;
+    margin-bottom: 34px;
+}
+
+.current_text {
+    @include Bold(16px);
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+
+    &.active {
+        border-bottom: 2px solid #000;
+    }
+}
+
+.current_descript {
+    @include Lite(16px);
+    margin-bottom: 70px;
+}
+
+.current_contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current_info {
+    margin: 0 80px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.current_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    width: 240px;
+    flex: 1 1 0;
+}
+
+.current_link {
+    @include Bold(16px);
+    text-decoration: none;
+    border: 1px solid #000;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+
+    padding: 10px;
+}
+
+/*current_card */
