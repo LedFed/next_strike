@@ -1,17 +1,15 @@
 "use client";
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+import { useCart } from '../context/CartProvider';
 
 const Header = ({ productList, basket, product }) => {
     // const [products, setProducts] = useState([]);
+    const { toggleCartItem, cart, loadCartFromLocalStorage, products } = useCart();
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [isChecked, setIsChecked] = useState(false);
     const [isSearching, setIsSearching] = useState(false);
-
-    const [cart, setCart] = useState([]);
-    const [products, setProducts] = useState([]);
-    // console.log(basket.length);
 
     function handleInputChange() {
         setIsChecked(!isChecked);
@@ -25,7 +23,7 @@ const Header = ({ productList, basket, product }) => {
             );
             setFilteredProducts(results);
         }
-    }, [searchTerm, products]);
+    }, [searchTerm]);
 
     const handleFocus = () => {
         setIsSearching(true); // Устанавливаем состояние поиска в true
@@ -37,9 +35,8 @@ const Header = ({ productList, basket, product }) => {
         }, 200);
     };
 
-    // console.log(product);
     return (
-        // <div>fds</div>
+
         <header>
 
             <div className="container">
@@ -109,7 +106,15 @@ const Header = ({ productList, basket, product }) => {
                                 <span className="search_price">{item.salePrices[0].value}</span>
                             </div>
 
-                            <img src="/icons/free-icon-remove-from-cart-4379564 1.svg" alt="" className="search_addBasket" />
+                            <img src="/icons/free-icon-remove-from-cart-4379564 1.svg"
+                                alt=""
+                                className="search_addBasket"
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    e.stopPropagation()
+                                    toggleCartItem(item)
+                                }
+                                } />
                         </div>
                     </Link>
                 ))}

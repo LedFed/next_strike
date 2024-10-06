@@ -11,13 +11,16 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [totalQuant, settotalQuant] = useState(0);
     const [totalSum, settotalSum] = useState(0);
+    const [products, setProducts] = useState(0);
 
     async function getProducts() { //Возвращает продукт
         try {
             const response = await fetch('http://localhost:3000/api/products');// замените на ваш путь
             const data = await response.json();
             console.log(data);
-            return data.rows;
+            setProducts(data.rows)
+            // return data.rows;
+            console.log(products);
         } catch (error) {
             console.log(error);
         }
@@ -42,12 +45,14 @@ export const CartProvider = ({ children }) => {
         // Форматируем с пробелами
         return number.toLocaleString('ru-RU');
     };
+
     useEffect(() => {
         loadCartFromLocalStorage();
+        getProducts();
     }, []);
 
     const saveCartToLocalStorage = (updatedCart) => {
-        // Allsum(updatedCart);
+        Allsum(updatedCart);
         localStorage.setItem('cart', JSON.stringify(updatedCart));
     };
 
@@ -64,8 +69,6 @@ export const CartProvider = ({ children }) => {
         setCart(updatedCart);
         saveCartToLocalStorage(updatedCart);
     };
-
-
 
     const Allsum = (updatedCart) => {
         let totalQuantity = 0;
@@ -107,7 +110,7 @@ export const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ cart, toggleCartItem, loadCartFromLocalStorage, getProducts, totalQuant, totalSum, formatNumber, increment, decrement}}>
+        <CartContext.Provider value={{ cart, toggleCartItem, loadCartFromLocalStorage, totalQuant, totalSum, formatNumber, increment, decrement, products}}>
             {children}
         </CartContext.Provider>
     );

@@ -7,9 +7,9 @@ export default function Main() {
  
   return (
     <>
-      {/* <Header  productList={products} basket={cart} /> */}
+    
       <>Привет мир</>
-      {/* <Footer /> */}
+ 
     </>
   )
 }

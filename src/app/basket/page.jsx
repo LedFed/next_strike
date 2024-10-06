@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { useCart } from '../context/CartProvider';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function page() {
   const { cart, toggleCartItem, loadCartFromLocalStorage, getProducts, totalQuant, totalSum, formatNumber, increment, decrement } = useCart();
@@ -8,11 +9,16 @@ export default function page() {
   // useEffect(() => {
   //   loadCartFromLocalStorage();
   // }, []);
+  const breadcrumbsItems = [
+    { title: 'Home', link: '/' },
+    { title: 'Корзина', link: `/basket` }
+  ];
 
   console.log(cart);
   return (
     <>
       <div className="container">
+        <Breadcrumbs items={breadcrumbsItems}/>
         <div className="basket_block">
           <div className="basket_items">
             {cart.length > 0 ? (
@@ -60,9 +66,6 @@ export default function page() {
 
         </div>
       </div>
-      {/* {cart.map(item => (
-        <div key={item.id}>jk</div>
-      ))} */}
     </>
   )
 }

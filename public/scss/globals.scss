@@ -202,6 +202,8 @@ header {
     flex-direction: column;
     column-gap: 6px;
     overflow-y: scroll;
+    background: #fff;
+    z-index: 1;
 
     &.active {
         display: flex;
@@ -318,6 +320,24 @@ span {
     z-index: 1;
 }
 
+.breadcrumb {
+    display: flex;
+    column-gap: 10px;
+    list-style-type: none;
+    margin: 40px 0;
+}
+
+.breadcrumb_text {
+    /* text-decoration: underline; */
+    color: #5e5e5e;
+}
+
+.breadcrumb_text a {
+    text-decoration: unset;
+    color: #5e5e5e;
+}
+
+
 .category_items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -415,6 +435,7 @@ span {
     cursor: pointer;
     width: 70px;
     height: 100%;
+
     input {
         display: none;
     }
@@ -662,6 +683,7 @@ footer {
 }
 
 .back input:checked+svg {
+
     .line--1,
     .line--3 {
         --length: 8.602325267;
@@ -676,11 +698,12 @@ footer {
     padding: 16px 28px 20px;
 }
 
-.catalog_checkboxses{
+.catalog_checkboxses {
     display: flex;
     flex-direction: column;
-    row-gap:4px;
+    row-gap: 4px;
 }
+
 .custom_checkbox {
     position: absolute;
     z-index: -1;
@@ -688,7 +711,7 @@ footer {
 
 }
 
-.single_checkbox{
+.single_checkbox {
     margin-top: 18px;
 }
 
@@ -722,10 +745,10 @@ footer {
 
 .catalog_title {
     @include Medium(18px);
-  
+
 }
 
-.catalog_subtitle{
+.catalog_subtitle {
     @include Lite(14px);
     margin: 18px 0;
 }

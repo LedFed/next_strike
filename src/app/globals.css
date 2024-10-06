@@ -183,6 +183,8 @@ header nav {
   -moz-column-gap: 6px;
        column-gap: 6px;
   overflow-y: scroll;
+  background: #fff;
+  z-index: 1;
 }
 .search_items.active {
   display: flex;
@@ -290,6 +292,24 @@ span {
   letter-spacing: 0.02em;
   color: #fff;
   z-index: 1;
+}
+
+.breadcrumb {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  list-style-type: none;
+  margin: 40px 0;
+}
+
+.breadcrumb_text {
+  /* text-decoration: underline; */
+  color: #5e5e5e;
+}
+
+.breadcrumb_text a {
+  text-decoration: unset;
+  color: #5e5e5e;
 }
 
 .category_items {
@@ -788,16 +808,18 @@ footer {
 
 /*basket_block*/
 .basket_block {
-  margin-top: 120px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 140px;
   -moz-column-gap: 70px;
        column-gap: 70px;
 }
 
 .basket_items {
   display: flex;
+  flex-direction: column;
   flex-basis: 80%;
+  row-gap: 20px;
 }
 
 .basket_item {
@@ -805,7 +827,7 @@ footer {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.05);
   background: #fff;
   border-radius: 10px;
-  height: 275px;
+  min-height: 275px;
   -moz-column-gap: 20px;
        column-gap: 20px;
   flex: 1;
@@ -815,6 +837,8 @@ footer {
   padding: 10px;
   -o-object-fit: cover;
      object-fit: cover;
+  height: 100%;
+  width: 255px;
 }
 
 .basket_item_right {
@@ -885,6 +909,8 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 24px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .basket_info_block .btn {
   align-self: center;

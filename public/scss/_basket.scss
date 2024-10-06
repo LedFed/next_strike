@@ -1,9 +1,9 @@
 /*basket_block*/
 .basket_block {
-    margin-top: 120px;
+    // margin-top: 120px;
     display: flex;
     justify-content: space-between;
-
+    margin-bottom: 140px;
 
     // flex-direction: column;
     // min-height: 50vh;
@@ -12,7 +12,9 @@
 
 .basket_items {
     display: flex;
+    flex-direction: column;
     flex-basis: 80%;
+    row-gap: 20px;
 }
 
 .basket_item {
@@ -22,7 +24,7 @@
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.05);
     background: #fff;
     border-radius: 10px;
-    height: 275px;
+    min-height: 275px;
     column-gap: 20px;
     flex: 1;
 }
@@ -30,6 +32,8 @@
 .basket_picture {
     padding: 10px;
     object-fit: cover;
+    height: 100%;
+    width: 255px;
 }
 
 .basket_item_right {
@@ -97,7 +101,7 @@
     display: flex;
     flex-direction: column;
     padding: 24px;
-
+    height: fit-content;
     .btn {
         align-self: center;
         margin-top: 20px;
