@@ -68,7 +68,7 @@ const Header = ({ productList, basket, product }) => {
                                 placeholder="Поиск"
                                 type="text"
                                 value={searchTerm}
-                                onFocus={handleFocus} // Обработчик фокуса
+                                onFocus={handleFocus} 
                                 onBlur={handleBlur}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
@@ -98,8 +98,8 @@ const Header = ({ productList, basket, product }) => {
 
             <div className={isSearching && filteredProducts.length > 0 ? 'search_items active' : 'search_items'}>
                 {isSearching && filteredProducts.map(item => (
-                    <Link href={`/product/${item.code}`} key={item.id}>
-                        <div className="search_item">
+                    // <Link >
+                        <Link className="search_item" href={`/product/${item.code}`} key={item.id}>
                             <img src={item.images.rows[0].meta.downloadHref} alt={item.name} className="search_picture" />
                             <div className="search_block_text">
                                 <h4 className="search_title">{item.name}</h4>
@@ -115,8 +115,8 @@ const Header = ({ productList, basket, product }) => {
                                     toggleCartItem(item)
                                 }
                                 } />
-                        </div>
-                    </Link>
+                        </Link>
+                    // </Link>
                 ))}
 
             </div>
