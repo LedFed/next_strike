@@ -158,4 +158,55 @@
     padding: 10px;
 }
 
-/*current_card */
+// Стили выпадающего
+.catalog{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+.catalog_sort_right{
+    display: grid;
+    justify-content: end;
+    margin-bottom: 26px;
+}
+
+.catalog_sort {
+    background: none;
+    /* Убираем фон */
+    border: none;
+    /* Убираем обводку */
+    cursor: pointer;
+    /* Указатель при наведении */
+    outline: none;
+    border: none;
+    box-shadow: none;
+    padding: 12px;
+}
+
+.catalog_sort_option {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.05);
+    background: #fff;
+}
+
+//Стили выпадающего
+
+/*current_card */ 
+
+
+//Стиили для страница доставки, заказы
+.pattern_blcok{
+    margin-left: 20px;
+}
+
+.pattern_title{
+    @include Bold(20px);
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.pattern_text{
+    @include Lite(16px);
+    margin-bottom: 24px;
+}

@@ -8,12 +8,39 @@ export default function Feedback() {
     const [phone, setPhone] = useState('');
     const [status, setStatus] = useState('');
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     const consultationData = {
+    //         type: 'consultation',
+    //         data: {
+    //             name: name,
+    //             phone: phone,
+    //         },
+    //     };
+
+    //     // Отправка данных на сервер
+    //     try {
+
+    //         const response = await axios.post('/api/telegram', consultationData)
+    //         console.log(response.data);
+    //     } catch (error) {
+    //         console.error('Ошибка при отправке заявки на консультацию:', error);
+    //     }
+
+    // };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('Отправка...');
-
+        const consultationData = {
+            type: 'consultation',
+            data: {
+                name: name,
+                phone: phone,
+            },
+        };
         try {
-            await axios.post('/api/telegram', { name, phone });
+            await axios.post('/api/telegram', consultationData)
             setStatus('Сообщение отправлено!');
             setName('');
             setPhone('');

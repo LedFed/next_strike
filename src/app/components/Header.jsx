@@ -48,8 +48,8 @@ const Header = ({ productList, basket, product }) => {
 
                         <ul className="header_items">
                             <li className="header_item"><Link href="/" className="header_links">Главная</Link></li>
-                            <li className="header_item"><a href="#" className="header_links">Каталог</a></li>
-                            <li className="header_item"><a href="#" className="header_links">Доставка</a></li>
+                            <li className="header_item"><Link href="/catalog" className="header_links">Каталог</Link></li>
+                            <li className="header_item"><Link href="/delivery" className="header_links">Доставка</Link></li>
                             <li className="header_item none">
                                 <a className="number" href="tel: +7953553053">+ 7 9(535)-530-53</a>
                             </li>

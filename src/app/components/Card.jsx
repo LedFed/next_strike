@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { useCart } from '../context/CartProvider';
 import CardItem from '../../app/components/CardItem';
 
+
 export default function Card() {
     const { toggleCartItem } = useCart();
     const [items, setItems] = useState([]);
     const [visibleCount, setVisibleCount] = useState(3); //Задаем кол-во выдаваемых элементов на странице
+
 
     const getProduct = async () => {
         const response = await fetch('api/products');
@@ -31,13 +33,16 @@ export default function Card() {
     return (
         <>
             <div className="card_items">
+
+
                 {items.length > 0 ? (
-                        items.slice(0, visibleCount).map(item => (
-                            <CardItem key={item.code} product={item} />
-                        ))
-                    ) : (
-                        <div>Загрузка</div>
-                    )}   
+                    items.slice(0, visibleCount).map(item => (
+                        <CardItem key={item.code} product={item} />
+                    ))
+                ) : (
+                    <div>Загрузка</div>
+                )}
+
 
             </div>
 

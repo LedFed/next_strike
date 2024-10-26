@@ -2,6 +2,8 @@
 import React from 'react';
 import { useCart } from '../context/CartProvider';
 import Breadcrumbs from '../components/Breadcrumbs';
+import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 export default function page() {
   const { cart, toggleCartItem, loadCartFromLocalStorage, getProducts, totalQuant, totalSum, formatNumber, increment, decrement } = useCart();
@@ -14,11 +16,74 @@ export default function page() {
     { title: 'Корзина', link: `/basket` }
   ];
 
+
+
+
+  const handleOrder = async () => {
+    const orderData = {
+      type: 'order',
+      data: {
+        cart: cart,
+        totalSum: totalSum,
+      },
+    };
+
+    try {
+      const response = await fetch('/api/telegram', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        // alert('Заказ успешно отправлен!');
+        // toast.success('Заказ успешно отправлен!');
+        toast.success('Заказ успешно отправлен!', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          // transition: Bounce,
+        });
+      } else {
+        toast.error('Ошибка при отправке заказа.', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    } catch (error) {
+      toast.error('Ошибка при отправке заказа.', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
+
   console.log(cart);
   return (
     <>
       <div className="container">
-        <Breadcrumbs items={breadcrumbsItems}/>
+        <Breadcrumbs items={breadcrumbsItems} />
+  
         <div className="basket_block">
           <div className="basket_items">
             {cart.length > 0 ? (
@@ -58,13 +123,14 @@ export default function page() {
               <div className="result">Итого</div>
               <div className="all_price">{formatNumber(totalSum)}</div>
             </div>
-            <div className="btn">Заказать</div>
+            <div className="btn" onClick={handleOrder}>Заказать</div>
             <div className="basket_info_polity">Соглашаюсь <span>с правилами пользования торговой площадкой</span> и
               возврата</div>
           </div>
 
 
         </div>
+        <ToastContainer />
       </div>
     </>
   )

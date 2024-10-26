@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import "../globals.css";
+// import "../globals.css";
 import { useCart } from '../context/CartProvider';
+import Slider from 'react-slick';
+
 
 export default function Productpages({ product }) {
     const { toggleCartItem, cart, loadCartFromLocalStorage } = useCart();
@@ -14,6 +16,16 @@ export default function Productpages({ product }) {
         { id: 3, text: 'Возврат/Обмен', description: 'Описание текста 3' },
         { id: 4, text: 'Доставка', description: 'Описание текста 2' },
     ];
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+    };
+
+
 
     const handleTextClick = (index, description) => {
         setCurrentText(description);
@@ -60,19 +72,28 @@ export default function Productpages({ product }) {
                         розничных магазинах</div>
 
                     <div className={cart.some(item => item.id === product.id) ? `btn active` : 'btn'} onClick={handleAddToCart}>{cart.some(item => item.id === product.id) ? 'удалить' : "добавить в корзину"}</div>
-                    <div className="current_chapter">
+                    {/* <Slider {...settings} className="current_chapter">
                         {texts.map((item, i) => (
                             <p
                                 key={item.id}
                                 className={`current_text ${activeIndex === i ? 'active' : ''}`}
                                 onClick={() => handleTextClick(i, item.description)}
                             >{item.text}</p>
-                        ))}
-                        {/* <p className="current_text active">Описание</p>
-                <p className="current_text">Как купить</p>
-                <p className="current_text">Возврат/Обмен</p>
-                <p className="current_text">Доставка</p> */}
-                    </div>
+                        ))} */}
+                 
+                    {/* <Slider {...settings} className="current_chapter">
+                        <p className="current_text active">Описание</p>
+                        <p className="current_text">Как купить</p>
+                        <p className="current_text">Возврат/Обмен</p>
+                        <p className="current_text">Доставка</p>
+                    </Slider> */}
+
+                    {/* <Slider {...settings}>
+                        <div>1</div>
+                        <div>1</div>
+                        <div>1</div>
+                        <div>1</div>
+                    </Slider> */}
 
                     <p className="current_descript">{currentText || product.description}</p>
 

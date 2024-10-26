@@ -1,9 +1,26 @@
 // card_item 
 
+.catalog {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    column-gap:20px;
+}
+
+.catalog_cards {
+    .card_items {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
 .card_items {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
+
 }
 
 .card_item {

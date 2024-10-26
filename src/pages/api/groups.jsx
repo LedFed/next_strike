@@ -64,7 +64,7 @@ export default async function handler(req, res) {
         try {
             const response = await axios.get(`https://api.moysklad.ru/api/remap/1.2/entity/product?${value}`, {
                 headers: {
-                    'Authorization': 'Bearer a7ef8af7d85be3c8cf29236ff11f74c7ab20a89c',
+                    'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
                     'Accept-Encoding': 'gzip',
                 },
                 params: {
