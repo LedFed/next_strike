@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Footer() {
@@ -14,32 +15,32 @@ export default function Footer() {
                                     fill="white" />
                             </svg>
                             </div>
-                            <p className="footer_copyright_text">2024 © Интернет-Магазин PyroFX</p>
+                            <p className="footer_copyright_text">2024 © Интернет-Магазин strikeops</p>
                         </div>
 
                         <div className="footer_pages">
                             <div className="footer_info">
                                 <h6 className="footer_title">Информация</h6>
-                                <div className="footer_text">Как оформить заказ</div>
-                                <div className="footer_text">Условия оплаты</div>
-                                <div className="footer_text">Условия доставки</div>
-                                <div className="footer_text">Гарантия на товар</div>
+                                <Link href="/delivery" className="footer_text">Как оформить заказ</Link>
+                                <Link href="/delivery" className="footer_text">Условия оплаты</Link>
+                                <Link href="/delivery" className="footer_text">Условия доставки</Link>
+                                <Link href="/delivery" className="footer_text">Гарантия на товар</Link>
                             </div>
 
                             <div className="footer_market">
                                 <h6 className="footer_title">Магазин</h6>
-                                <div className="footer_text">Как оформить заказ</div>
-                                <div className="footer_text">Условия оплаты</div>
-                                <div className="footer_text">Условия доставки</div>
-                                <div className="footer_text">Гарантия на товар</div>
+                                <Link href="/catalog" className="footer_text">Католог</Link>
+                                <Link href="/" className="footer_text">FAQ</Link>
+                                {/* <Link href="/delivery" className="footer_text">О магазине</Link> */}
+                              
                             </div>
 
                             <div className="footer_buyers">
                                 <h6 className="footer_title">Покупателям</h6>
-                                <div className="footer_text">Как оформить заказ</div>
-                                <div className="footer_text">Условия оплаты</div>
-                                <div className="footer_text">Условия доставки</div>
-                                <div className="footer_text">Гарантия на товар</div>
+                                <Link href="/delivery" className="footer_text">Оплата</Link>
+                                <Link href="/delivery" className="footer_text">Возврат</Link>
+                                <Link href="/delivery" className="footer_text">Доставка</Link>
+                                <Link href="/delivery" className="footer_text">Контакты</Link>
                             </div>
                         </div>
 

@@ -1,13 +1,10 @@
 "use client";
 import React, { useState } from 'react';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Link from 'next/link';
 import Card from './components/Card';
 import Category from './components/Category';
-import Accordion from './components/Accordion';
 import Feedback from './components/Feedback';
 import Slider from 'react-slick';
+import Accordions from './components/Accordions';
 
 export default function Main() {
 
@@ -20,22 +17,26 @@ export default function Main() {
     slidesToScroll: 1,
   };
 
+  const items = [
+    { title: 'Как сделать заказ? ', content: 'Перейдите в каталог товаров и выберите интересующий вас продукт > Нажмите кнопку "Добавить в корзину" > Перейдите в корзину, проверьте выбранные товары и нажмите "Оформить заказ" > Дальше наш менджер свяжеться с вами ватсап или телеграм' },
+    { title: 'Как проходит оплата?', content: 'После того как вы выбрали товар, с вами свяжеться наш мендежер. Мы принимаем оплату по системе СБП, также возможна оплата по расчетному счету' },
+    { title: 'Как происходит доставка ?', content: 'После оплаты заказа мы собираем и упаковываем ваши товары. Заказ передается в службу доставки, которая осуществляет его транспортировку. Вы получите трек-номер для отслеживания статуса доставки вашего заказа.' },
+    { title: 'Какие сроки доставки?', content: 'Стоимость доставки и ее время зависит от вашего местоположение и габаритов поссылки Обычно занимает от 3 до 7 рабочих дней. Точные сроки доставки можно уточнить на этапе оформления заказа или связавшись с нашей службой поддержки в Telegram или watshap' },
+  ];
+
   return (
     <>
       <div className="container">
 
-        <Slider {...settings}>
+        {/* <Slider {...settings}> */}
           <div className="banner">
             <h1 className="main_title">Самые низкие цены</h1>
           </div>
-          <div className="banner">
+          {/* <div className="banner">
             <h1 className="main_title">Самые низкие цены</h1>
           </div>
-        </Slider>
-        {/* <>Привет мир</> */}
-        {/* <div className="banner">
-          <h1 className="main_title">Самые низкие цены</h1>
-        </div> */}
+        </Slider> */}
+
         <h2 className="title">Категории товаров</h2>
         <Category />
         <h2 className="title">Популярные товары</h2>
@@ -44,7 +45,7 @@ export default function Main() {
         <Feedback />
 
         <h2 className="title center">FaQ</h2>
-        <Accordion />
+        <Accordions items={items} />
       </div>
 
 

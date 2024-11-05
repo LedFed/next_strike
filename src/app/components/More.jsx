@@ -9,7 +9,7 @@ export default function More() {
         const response = await fetch('api/products');
         const data = await response.json();
         console.log(data);
-        return data.rows; // Верните данные для использования в useEffect
+        return data.rows; 
     }
 
     useEffect(() => {

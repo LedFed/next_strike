@@ -2,10 +2,6 @@
 import axios from "axios";
 import Productpages from "../../app/components/Productpages";
 import Breadcrumbs from "../../app/components/Breadcrumbs";
-// import { useCart } from "../../context/CartProvider";
-import { useRouter } from "next/router";
-import Layout from "../../app/layout";
-
 
 export async function getStaticPaths() {
     try {
@@ -44,64 +40,9 @@ export async function getStaticProps({ params }) {
 const ProductPage = ({ product }) => {
 
     const breadcrumbsItems = [
-        { title: 'Home', link: '/' },
+        { title: 'Главная', link: '/' },
         { title: product.name, link: `/product/${product.code}` }
     ];
-
-    // const { toggleCartItem } = useCart();
-    // const [productList, setProductList] = useState([]);
-    // const handleAddToCart = () => {
-    //     toggleCartItem(product); // Вызываем функцию при добавлении товара
-    // };
-
-    // getProducts();
-    // useEffect(() => {
-    //     const fetchProducts = async () => {
-    //         const products = await getProducts(); // Предполагается, что getProducts возвращает массив продуктов
-    //         setProductList(products);
-    //     };
-
-    //     fetchProducts();
-    // }, []); // П
-
-    // const router = useRouter();
-    // const { value } = router.query; // Извлекаем значение из query
-    // const value = '392b5fd1-7dcd-11ef-0a80-05c00027a337';
-    // console.log(value);
-    // const [products, setProducts] = useState([]);
-
-    // const getProducts = async (value) => {
-    //     try {
-    //         console.log(value);
-    //         const response = await fetch(`/api/groups?value=${encodeURIComponent(value)}`);
-    //         console.log(value);
-    //         console.log(response);
-    //         const data = await response.json();
-    //         console.log(data);
-    //         // setProducts(data);
-    //         console.log('Вот я получаю все успешно ' + response);
-    //         return data;
-    //     } catch (error) {
-    //         console.error('Error fetching products:', error);
-    //         return null;
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     console.log(value);
-    //     if (value) {
-    //         const fetchProducts = async () => {
-    //             const productData = await getProducts(value);
-    //             console.log(productData);
-    //             if (productData) {
-    //                 setProducts(productData); // Предполагаем, что данные находятся в поле rows
-    //                 console.log(productData);
-    //             }
-    //         };
-
-    //         fetchProducts();
-    //     }    
-    // }, [value]);
 
     console.log(product);
 
@@ -115,16 +56,8 @@ const ProductPage = ({ product }) => {
                 <Breadcrumbs items={breadcrumbsItems} />
                 <Productpages
                     product={product}
-                    // toggleCartItem={toggleCartItem}
                 />
-
             </div>
-            {/* <Layout> */}
-                {/* <Productpages
-                    product={product}
-
-                /> */}
-            {/* </Layout> */}
         </>
     );
 };

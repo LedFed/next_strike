@@ -5,7 +5,6 @@ import Breadcrumbs from "../../app/components/Breadcrumbs";
 import CardItem from '../../app/components/CardItem';
 import "@/app/globals.css";
 
-
 export async function getStaticPaths() {
     try {
         const response = await fetch('http://localhost:3000/api/products')
@@ -46,7 +45,7 @@ const Stage = ({ product }) => {
     const { id } = router.query;
     console.log(Object.keys(product).length + 'Гранаты 3');
     const breadcrumbsItems = [
-        { title: 'Home', link: '/' },
+        { title: 'Главная', link: '/' },
         { title: product.pathName, link: `/product/${product.id}` }
     ];
     return (

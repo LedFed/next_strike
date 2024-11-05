@@ -57,6 +57,14 @@ header nav {
   justify-content: space-between;
   position: relative;
   height: 70px;
+  transition: 0.5s cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.logo {
+  width: 200px;
+}
+.logo img {
+  width: inherit;
 }
 
 .loading {
@@ -278,6 +286,7 @@ span {
 .banner {
   margin-top: 24px;
   background-image: url(../../public/img/baner.png);
+  background-color: #0b76ef;
   background-repeat: no-repeat;
   height: 397px;
   background-position: center center;
@@ -289,7 +298,7 @@ span {
   margin-top: 50px;
   padding: 55px 24px;
   position: relative;
-  z-index: -3;
+  z-index: -1;
 }
 .banner::after {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
@@ -504,7 +513,7 @@ span {
   transition: transform 0.7s ease;
 }
 .accordion_title.active {
-  height: auto;
+  transition: 0.2s linear;
 }
 .accordion_title.active::before {
   transform: rotate(0deg);
@@ -518,13 +527,14 @@ span {
 
 .accordion_content {
   margin: 0 auto;
+  width: 940px;
   cursor: pointer;
 }
 .accordion_content hr {
   height: 1px;
   width: 100%;
   background: transparent;
-  transition: 0.6s linear;
+  transition: 0.3s linear;
 }
 .accordion_content.active .accordion_descript {
   opacity: 1;
@@ -546,7 +556,7 @@ span {
   height: 0;
   max-width: 757px;
   color: #5e5e5e;
-  transition: 0.4s linear;
+  transition: height, opacity 0.2s linear;
 }
 
 footer {
@@ -610,6 +620,7 @@ footer {
   letter-spacing: 0.02em;
   color: #000;
   cursor: pointer;
+  text-decoration: unset;
   color: #fff;
 }
 
@@ -929,7 +940,6 @@ footer {
   border: 1px solid var(--Title, #3d3d3d);
   border-radius: 7px;
   height: 28px;
-  opacity: 0.4;
   width: 28px;
 }
 
@@ -1146,12 +1156,22 @@ footer {
   background-size: cover;
 }
 
+.slider-container {
+  width: 100%;
+}
+
+.current_chapter_mobile {
+  display: none;
+}
+
 .current_chapter {
   display: flex;
   align-items: center;
   margin-top: 60px;
   justify-content: space-between;
   margin-bottom: 34px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .current_text {
@@ -1361,9 +1381,11 @@ footer {
     display: block;
   }
   .logo {
-    margin-top: 12px;
-    align-self: flex-start;
     flex: 1 1;
+    width: 150px;
+  }
+  .logo img {
+    width: inherit;
   }
   .header_container {
     flex-direction: column;
@@ -1400,8 +1422,21 @@ footer {
   .search_img {
     display: block;
   }
+  nav.active .logo {
+    display: none;
+  }
   .search {
     display: none;
+    margin: 0;
+    background-color: #fff;
+  }
+  .search.active {
+    display: flex;
+    width: 100%;
+  }
+  .search_items {
+    left: 0;
+    height: 100vh;
   }
   .number {
     display: block;
@@ -1412,6 +1447,56 @@ footer {
   }
   .card_items {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .accordion_main {
+    width: 100%;
+  }
+  .accordion_content {
+    width: 100%;
+  }
+  .accordion_content.active .accordion_descript {
+    padding: 0 8px 10px;
+  }
+  .current_block_column {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .current_descript {
+    display: none;
+  }
+  .current_info {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .current_chapter_mobile {
+    display: block;
+    margin-top: 32px;
+  }
+  .current_chapter_mobile .accordion_main {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .current_chapter_mobile .accordion_content {
+    width: 100%;
+  }
+  .current_chapter_mobile .accordion_title {
+    font-family: "Niramit", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: #181818;
+  }
+  .current_chapter_mobile .accordion_title::before {
+    right: 0;
+  }
+  .current_chapter_mobile .accordion_descript {
+    font-family: "Niramit", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
+  .current_chapter {
+    display: none;
   }
   .footer_main {
     flex-direction: column-reverse;
@@ -1435,15 +1520,35 @@ footer {
     row-gap: 32px;
   }
   .basket_item {
-    height: 225px;
+    min-height: 160px;
     -moz-column-gap: 0px;
          column-gap: 0px;
+  }
+  .basket_picture {
+    width: 120px;
+  }
+  .basket_block_title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 170%;
+    letter-spacing: 0.02em;
+    color: #3d3d3d;
+    color: #000;
+  }
+  .basket_articul {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 170%;
+    letter-spacing: 0.02em;
+    color: #3d3d3d;
+    color: #000;
   }
   .basket_block_column {
     margin-top: 18px;
   }
   .bakset_item_bottom {
-    margin-bottom: 14px;
+    align-items: flex-end;
+    margin-bottom: 8px;
   }
 }
 @media (max-width: 565px) {

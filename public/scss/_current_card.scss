@@ -100,13 +100,22 @@
         background-size: cover;
     }
 }
+.slider-container{
+    width: 100%;
+}
 
+.current_chapter_mobile{
+    display: none;
+}
 .current_chapter {
     display: flex;
     align-items: center;
     margin-top: 60px;
+    // gap:30px;
     justify-content: space-between;
     margin-bottom: 34px;
+    width: 100%;
+    max-width: 100%;
 }
 
 .current_text {

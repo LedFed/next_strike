@@ -1,50 +1,67 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-// import "../globals.css";
-import { useCart } from '../context/CartProvider';
 import Slider from 'react-slick';
-
+import { useCart } from '../context/CartProvider';
+import Accordions from './Accordions';
 
 export default function Productpages({ product }) {
-    const { toggleCartItem, cart, loadCartFromLocalStorage } = useCart();
+    const { toggleCartItem, cart, loadCartFromLocalStorage, formatNumber } = useCart();
     const [activeIndex, setActiveIndex] = useState(0);
     const [currentText, setCurrentText] = useState('');
+    const [currentImage, setCurrentImage] = useState(product.images.rows[0].meta.downloadHref);
 
-    const texts = [
-        { id: 1, text: 'Описание', description: product.description },
-        { id: 2, text: 'Как купить', description: 'Описание текста 2' },
-        { id: 3, text: 'Возврат/Обмен', description: 'Описание текста 3' },
-        { id: 4, text: 'Доставка', description: 'Описание текста 2' },
-    ];
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 2,
-        slidesToScroll: 1,
+    // Функция для обработки клика по изображению
+    const handleImgClick = (imgSrc) => {
+        setCurrentImage(imgSrc);
     };
 
+    const texts = [
+        { id: 1, title: 'Описание', content: product.description },
+        { id: 2, title: 'Как купить', content: 'Нажмите кнопку "Добавить в корзину" > Перейдите в корзину, проверьте выбранные товары и нажмите "Оформить заказ" > Дальше наш менджер свяжеться с вами ватсап или телеграм' },
+        { id: 3, title: 'Возврат/Обмен', content: 'Описание текста 3' },
+        { id: 4, title: 'Доставка', content: 'После оплаты заказа мы собираем и упаковываем ваши товары. Заказ передается в службу доставки, которая осуществляет его транспортировку. Вы получите трек-номер для отслеживания статуса доставки вашего заказа.' },
+    ];
 
+    // const settings = {
+    //     slidesToScroll: false,
+    //     slidesToShow: 3,
+    //     dots: false,
+    //     infinite: false,
+    //     responsive: [
+    //         {
+    //             breakpoint: 770,
+    //             settings: {
+    //                 dots: false,
+    //                 infinite: false,
+    //                 speed: 500,
+    //                 slidesToShow: 2,
+    //                 swipeToSlide: true,
+    //                 slidesToScroll: 1,
+    //             }
+    //         },
+    //     ]
+
+    // }; 
+    // Настройки для slider
 
     const handleTextClick = (index, description) => {
         setCurrentText(description);
         setActiveIndex(index);
     };
 
-    const handleImgClick = (src) => {
-        setCurrentImg(src);
-    }
-
     const handleAddToCart = () => {
         toggleCartItem(product); // Вызываем функцию при добавлении товара
     };
+
+    if (!product) {
+        return <div> Загрузка... </div>
+    }
 
     return (
         <div className="container">
             <div className="current_card " key={product.id}>
                 <div className="current_card_left">
-                    <img src={product.images.rows[0].meta.downloadHref}
+                    <img src={currentImage}
                         alt={product.name}
                         className="main_img" />
                     <div className="current_carusel">
@@ -57,8 +74,6 @@ export default function Productpages({ product }) {
                                 className="current_img" />
                         ))}
 
-                        {/* <img src="./img/f-1.jpg" alt="" className="current_img" />
-                <img src="./img/f-1.jpg" alt="" className="current_img" /> */}
                     </div>
                 </div>
                 <div className="current_card_right">
@@ -67,32 +82,32 @@ export default function Productpages({ product }) {
                         <p className="current_articul">{product.article || 'Пусто'}</p>
                     </div>
                     <div className="sale">Хит продаж</div>
-                    <p className="current_price">{product.salePrices[0].value}</p>
+                    <p className="current_price">{formatNumber(product.salePrices[0].value)}</p>
                     <div className="current_clue">Цена действительна только для интернет-магазина и может отличаться от цен в
                         розничных магазинах</div>
 
-                    <div className={cart.some(item => item.id === product.id) ? `btn active` : 'btn'} onClick={handleAddToCart}>{cart.some(item => item.id === product.id) ? 'удалить' : "добавить в корзину"}</div>
-                    {/* <Slider {...settings} className="current_chapter">
+                    <div className={cart.some(item => item.id === product.id) ? `btn active` : 'btn'} onClick={handleAddToCart}>
+                        {cart.some(item => item.id === product.id) ? 'Удалить из корзины' : "Добавить в корзину"}</div>
+
+                    <div className="current_chapter_mobile">
+                        <Accordions items={texts} />
+                    </div>
+
+                    <div className="current_chapter"  >
                         {texts.map((item, i) => (
                             <p
                                 key={item.id}
                                 className={`current_text ${activeIndex === i ? 'active' : ''}`}
-                                onClick={() => handleTextClick(i, item.description)}
-                            >{item.text}</p>
-                        ))} */}
-                 
-                    {/* <Slider {...settings} className="current_chapter">
-                        <p className="current_text active">Описание</p>
-                        <p className="current_text">Как купить</p>
-                        <p className="current_text">Возврат/Обмен</p>
-                        <p className="current_text">Доставка</p>
-                    </Slider> */}
+                                onClick={() => handleTextClick(i, item.content)}
+                            >{item.title}</p>
+                        ))}
+                    </div>
 
-                    {/* <Slider {...settings}>
-                        <div>1</div>
-                        <div>1</div>
-                        <div>1</div>
-                        <div>1</div>
+                    {/* <Slider {...setting} className="current_chapter">
+                        <div>   <p className="current_text active">Описание</p></div>
+                        <div><p className="current_text">Как купить</p></div>
+                        {/* <div>   <p className="current_text">Возврат/Обмен</p></div>
+                        <div>       <p className="current_text">Доставка</p></div> }
                     </Slider> */}
 
                     <p className="current_descript">{currentText || product.description}</p>

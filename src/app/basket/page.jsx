@@ -3,21 +3,16 @@ import React from 'react';
 import { useCart } from '../context/CartProvider';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function page() {
-  const { cart, toggleCartItem, loadCartFromLocalStorage, getProducts, totalQuant, totalSum, formatNumber, increment, decrement } = useCart();
+  const { cart, toggleCartItem, totalQuant, totalSum, formatNumber, increment, decrement } = useCart();
 
-  // useEffect(() => {
-  //   loadCartFromLocalStorage();
-  // }, []);
+ 
   const breadcrumbsItems = [
-    { title: 'Home', link: '/' },
+    { title: 'Главная', link: '/' },
     { title: 'Корзина', link: `/basket` }
   ];
-
-
-
 
   const handleOrder = async () => {
     const orderData = {
@@ -39,8 +34,7 @@ export default function page() {
 
       const data = await response.json();
       if (data.success) {
-        // alert('Заказ успешно отправлен!');
-        // toast.success('Заказ успешно отправлен!');
+      
         toast.success('Заказ успешно отправлен!', {
           position: "bottom-right",
           autoClose: 5000,
@@ -89,7 +83,7 @@ export default function page() {
             {cart.length > 0 ? (
               cart.map(product => (
                 <div key={product.id} className="basket_item">
-                  <img src={product.images.rows[0].meta.downloadHref} alt="" className="basket_picture" />
+                  <img src={product.images.rows[0].meta.href} alt="" className="basket_picture" />
                   <div className="basket_item_right">
                     <div className="basket_block_column">
                       <h4 className="basket_block_title">{product.name}</h4>
