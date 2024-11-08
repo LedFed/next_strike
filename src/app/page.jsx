@@ -8,7 +8,6 @@ import Accordions from './components/Accordions';
 
 export default function Main() {
 
-
   const settings = {
     dots: true,
     infinite: true,

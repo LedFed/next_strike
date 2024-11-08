@@ -8,7 +8,7 @@ export default function Card() {
 
 
     const getProduct = async () => {
-        const response = await fetch('/api/products');
+        const response = await fetch('api/products');
         const data = await response.json();
         console.log(data);
         return data.rows; // Верните данные для использования в useEffect
