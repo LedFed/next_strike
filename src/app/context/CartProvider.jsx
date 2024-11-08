@@ -15,7 +15,7 @@ export const CartProvider = ({ children }) => {
 
     async function getProducts() { //Возвращает продукт
         try {
-            const response = await fetch('api/products');// замените на ваш путь
+            const response = await fetch('/api/products');// замените на ваш путь
             const data = await response.json();
             console.log(data);
             setProducts(data.rows) 
