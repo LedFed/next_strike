@@ -15,10 +15,10 @@ export const CartProvider = ({ children }) => {
 
     async function getProducts() { //Возвращает продукт
         try {
-            const response = await fetch('http://localhost:3000/api/products');// замените на ваш путь
+            const response = await fetch('/api/products');// замените на ваш путь
             const data = await response.json();
             console.log(data);
-            setProducts(data.rows)
+            setProducts(data.rows) 
             // return data.rows;
             console.log(products);
         } catch (error) {

@@ -16,7 +16,6 @@ export default async function handler(req, res) {
         try {
             const response = await axios.get('https://api.moysklad.ru/api/remap/1.2/entity/product', {
                 headers: {
-                 
                     'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5', 
                     'Accept-Encoding': 'gzip',
                 },
@@ -25,10 +24,8 @@ export default async function handler(req, res) {
                     limit: 100,
                     fields: 'stock', // Добавляем параметр fields
                 },
-                
             });
             res.status(200).json(response.data); // Возвращаем данные
-            
         } catch (error) {
             console.error('ошибка:', error);
             res.status(500).json({ error: 'Ошибка' });

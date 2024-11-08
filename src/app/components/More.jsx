@@ -6,7 +6,7 @@ export default function More() {
     const [items, setItems] = useState([]);
 
     const getProduct = async () => {
-        const response = await fetch('api/products');
+        const response = await fetch('/api/products');
         const data = await response.json();
         console.log(data);
         return data.rows; 
