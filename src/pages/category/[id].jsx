@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import { useRouter } from 'next/router';
 import Breadcrumbs from "../../app/components/Breadcrumbs";
@@ -7,7 +7,7 @@ import "@/app/globals.css";
 
 export async function getStaticPaths() {
     try {
-        const response = await fetch('api/products')
+        const response = await fetch(`${process.env.API_HOST}/products`)
         const data = await response.json();
         console.log(data);
 

@@ -5,7 +5,7 @@ import Breadcrumbs from "../../app/components/Breadcrumbs";
 
 export async function getStaticPaths() {
     try {
-        const response = await axios.get('http://localhost:3000/api/products'); // замените на ваш путь
+        const response = await axios.get('/api/products'); // замените на ваш путь
         const data = response.data;
 
         const paths = data.rows.map(product => ({
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     try {
-        const response = await axios.get(`api/groups?value=${encodeURIComponent(params.id)}`);// замените на ваш путь
+        const response = await axios.get(`${process.env.API_HOST}/groups?value=${encodeURIComponent(params.id)}`);// замените на ваш путь
         const data = response.data;
         console.log(data);
 
