@@ -16,7 +16,7 @@ export const CartProvider = ({ children }) => {
     async function getProducts() { //Возвращает продукт
         try {
             // const response = await fetch('/api/products');// замените на ваш путь
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`);
+            const response = await fetch(`${process.env.API_HOST}/products`);
             const data = await response.json();
             console.log(data);
             setProducts(data.rows) 
