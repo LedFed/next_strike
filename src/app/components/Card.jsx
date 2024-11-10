@@ -8,10 +8,14 @@ export default function Card() {
 
 
     const getProduct = async () => {
-        const response = await fetch('/api/products');
-        const data = await response.json();
-        console.log(data);
-        return data.rows; // Верните данные для использования в useEffect
+        try {
+            const response = await fetch('/api/products');
+            const data = await response.json();
+            console.log(data);
+            return data.rows; // Верните данные для использования в useEffect
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     useEffect(() => {
@@ -21,10 +25,10 @@ export default function Card() {
         };
 
         fetchProducts();
-    }, []); 
+    }, []);
 
     const handleShowMore = () => {
-        setVisibleCount(prevCount => prevCount + 4); 
+        setVisibleCount(prevCount => prevCount + 4);
     };
 
     return (
@@ -39,7 +43,7 @@ export default function Card() {
                 )}
             </div>
 
-            {visibleCount < items.length && ( 
+            {visibleCount < items.length && (
                 <div className="btn" onClick={handleShowMore}>Показать еще</div>
             )}
         </>
