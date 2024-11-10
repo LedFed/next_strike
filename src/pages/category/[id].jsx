@@ -7,7 +7,7 @@ import "@/app/globals.css";
 
 export async function getStaticPaths() {
     try {
-        const response = await fetch(`api/products`)
+        const response = await fetch(`/products`)
         const data = await response.json();
         console.log(data);
 
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     try {
-        const response = await fetch(`api/categoriy?value=${encodeURIComponent(params.id)}`);
+        const response = await fetch(`/categoriy?value=${encodeURIComponent(params.id)}`);
         const data = await response.json();
         console.log(data);
         const product = data.rows;
