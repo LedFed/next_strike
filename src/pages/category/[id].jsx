@@ -7,7 +7,7 @@ import "@/app/globals.css";
 
 export async function getStaticPaths() {
     try {
-        const response = await fetch(`api/products`)
+        const response = await fetch(`${process.env.API_HOST}/api/products`)
         const data = await response.json();
         console.log(data);
 
