@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     try {
-        const response = await axios.get(`${process.env.API_HOST}/groups?value=${encodeURIComponent(params.id)}`);// замените на ваш путь
+        const response = await axios.get(`/groups?value=${params.id}`);// замените на ваш путь
         const data = response.data;
         console.log(data);
 
