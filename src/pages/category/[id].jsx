@@ -7,9 +7,19 @@ import "@/app/globals.css";
 
 export async function getStaticPaths() {
     try {
-        const response = await fetch(`${process.env.API_HOST}/products`)
+        const response = await fetch('https://api.moysklad.ru/api/remap/1.2/entity/product', {
+            headers: {
+                'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
+                'Accept-Encoding': 'gzip',
+            },
+            params: {
+                expand: 'images, attributes',
+                limit: 100,
+                // fields: 'stock', 
+            },
+        });
+
         const data = await response.json();
-        console.log(data);
 
         const paths = data.rows.map(product => ({
             params: { id: product.pathName.toString() },
@@ -26,9 +36,19 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     try {
-        const response = await fetch(`${process.env.API_HOST}/categoriy?value=${encodeURIComponent(params.id)}`);
+        const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product?filter=pathName=${params.id}`, {
+            headers: {
+                'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
+                'Accept-Encoding': 'gzip',
+            },
+            params: {
+                expand: 'images, attributes',
+                limit: 100,
+            },
+
+        });
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         const product = data.rows;
         // const product = data.rows.find(i => i.pathName === params.id) || null; // Если продукт не найден, возвращаем null
         console.log('Вернем это!!!' + product);
@@ -37,20 +57,16 @@ export async function getStaticProps({ params }) {
         console.error('Ошибка при получении данных продукта:', error);
         return { props: { product: null } };
     }
-    // return { props: { product: response.data } };
 }
 
 const Stage = ({ product }) => {
-    const router = useRouter();
-    const { id } = router.query;
-    console.log(Object.keys(product).length + 'Гранаты 3');
+
     const breadcrumbsItems = [
         { title: 'Главная', link: '/' },
         { title: product.pathName, link: `/product/${product.id}` }
     ];
     return (
         <div>
-            {/* <h1>Страница для ID: {id}</h1> */}
             <div className="container">
                 <Breadcrumbs items={breadcrumbsItems} />
                 <div className="card_items">
@@ -60,7 +76,6 @@ const Stage = ({ product }) => {
                         ))}
                 </div>
             </div>
-            {/* <p>{product ? JSON.stringify(product) </p> */}
         </div>
     );
 };

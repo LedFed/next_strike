@@ -1,18 +1,26 @@
 'use client';
-import axios from "axios";
+// import axios from "axios";
 import Productpages from "../../app/components/Productpages";
 import Breadcrumbs from "../../app/components/Breadcrumbs";
 
 export async function getStaticPaths() {
     try {
-        const response = await axios.get(`${process.env.API_HOST}/products`); // замените на ваш путь
-        const data = response.data;
+        const response = await fetch('https://api.moysklad.ru/api/remap/1.2/entity/product', {
+            headers: {
+                'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
+                'Accept-Encoding': 'gzip',
+            },
+            params: {
+                expand: 'images, attributes',
+                limit: 100,
+                // fields: 'stock', 
+            },
+        });
 
+        const data = await response.json();
         const paths = data.rows.map(product => ({
             params: { id: product.code.toString() },
         }));
-
-        console.log(paths);
 
         return { paths, fallback: false };
     } catch (error) {
@@ -23,9 +31,19 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     try {
-        const response = await axios.get(`/groups?value=${params.id}`);// замените на ваш путь
-        const data = response.data;
-        console.log(data);
+        const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product?${params.id}`, {
+            headers: {
+                'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
+                'Accept-Encoding': 'gzip',
+            },
+            params: {
+                expand: 'images, attributes',
+                limit: 100,
+                // fields: 'stock', // Добавляем параметр fields
+            },
+
+        });
+        const data = await response.json();
 
         const product = data.rows.find(i => i.code === params.id) || null; // Если продукт не найден, возвращаем null
 
@@ -43,8 +61,6 @@ const ProductPage = ({ product }) => {
         { title: 'Главная', link: '/' },
         { title: product.name, link: `/product/${product.code}` }
     ];
-
-    console.log(product);
 
     if (!product) {
         return <div>Продукт не найден</div>; // Обработка случая, когда продукт не найден
