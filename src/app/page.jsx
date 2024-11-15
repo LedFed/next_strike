@@ -37,7 +37,7 @@ export default function Main() {
         </Slider> */}
 
         <h2 className="title">Категории товаров</h2>
-        <Category />
+        {/* <Category /> */}
         <h2 className="title">Популярные товары</h2>
         <Card />
 
