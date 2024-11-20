@@ -8,7 +8,7 @@ export default function CardItem({ product }) {
     return (
         <Link className="card_item" href={`/product/${product.code}`} passHref >
             {/* <img src={product.images.rows[0].meta.downloadHref} alt={product.name} className="card_img" /> */}
-            <img src={`../img/${product.images.rows[0].filename}`} alt={product.name} className="card_img"/>
+            {/* <img src={`../img/${product.images.rows[0].filename}`} alt={product.name} className="card_img"/> */}
             <h3 className="card_title">{product.name}</h3>
             <p className="card_arct">Артикул:{product.article}</p>
             <div className="card_bottom">

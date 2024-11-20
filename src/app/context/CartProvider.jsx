@@ -16,7 +16,19 @@ export const CartProvider = ({ children }) => {
     async function getProducts() { //Возвращает продукт
         try {
             // const response = await fetch('/api/products');// замените на ваш путь
-            const response = await fetch(`${process.env.API_HOST}/api/products`);
+            // const response = await fetch(`${process.env.API_HOST}/api/products`);
+            // const data = await response.json();
+            const response = await fetch('https://api.moysklad.ru/api/remap/1.2/entity/product', {
+                headers: {
+                    'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
+                    'Accept-Encoding': 'gzip',
+                },
+                params: {
+                    expand: 'images, attributes',
+                    limit: 100,
+                    // fields: 'stock', 
+                },
+            });
             const data = await response.json();
             console.log(data);
             setProducts(data.rows) 

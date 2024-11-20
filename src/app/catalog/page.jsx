@@ -7,26 +7,46 @@ import Breadcrumbs from '../components/Breadcrumbs';
 
 const Catalog = () => {
 
-    const { toggleCartItem, products } = useCart();
+    const { toggleCartItem} = useCart();
 
-    const [sortedProducts, setSortedProducts] = useState(products);
-    const [visibleCount, setVisibleCount] = useState(3);
+    const [sortedProducts, setSortedProducts] = useState([]);
+    const [visibleCount, setVisibleCount] = useState(6);
 
     const breadcrumbsItems = [
         { title: 'Главная', link: '/' },
         { title: 'Каталог', link: `/catalog` }
     ];
 
+    const getProduct = async () => {
+        try {
+            const response = await fetch('/api/products');
+            const data = await response.json();
+            return data.rows; // Верните данные для использования в useEffect
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
-        setSortedProducts(products);
-    }, [products])
+        const fetchProducts = async () => {
+            const products = await getProduct();
+            setSortedProducts(products);
+        };
+
+        fetchProducts();
+    }, []);
+
+    // useEffect(() => {
+    //     setSortedProducts(products);
+    //     console.log(products + 'КаТаЛог');
+    // }, [products])
 
     const handleShowMore = () => {
         setVisibleCount(prevCount => prevCount + 4); // Увеличиваем количество видимых элементов на 4
     };
 
     const sortProducts = (criteria) => {
-        let sortedArray = [...products];
+        let sortedArray = [...sortedProducts];
 
         switch (criteria) {
             case 'priceAsc':
@@ -40,7 +60,7 @@ const Catalog = () => {
             default:
                 break;
         }
-
+        console.log(sortedArray + 'Поменяли');
         setSortedProducts(sortedArray);
     };
 
