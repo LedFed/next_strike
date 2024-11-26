@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import { useCart } from '../context/CartProvider';
 import Accordions from './Accordions';
 
-export default function Productpages({ product }) {
+export default function Productpages({ product, images }) {
     const { toggleCartItem, cart, loadCartFromLocalStorage, formatNumber } = useCart();
     const [activeIndex, setActiveIndex] = useState(0);
     const [currentText, setCurrentText] = useState('');
@@ -16,18 +16,18 @@ export default function Productpages({ product }) {
     //     setCurrentImage(imgSrc);
     // };
 
-    const [imageSrc, setImageSrc] = useState('');
+    // const [imageSrc, setImageSrc] = useState('');
 
-    useEffect(() => {
-        if (product.images.rows.length > 0) {
-            const imagePath = `../img/${ product.images.rows[0].filename}`;
-            setImageSrc(imagePath);
-        } else {
-            setImageSrc('../img/photo_2024-10-27_03-14-02.jpg'); // Путь к изображению по умолчанию
-        }
-    }, [product]);
+    // useEffect(() => {
+    //     if (product.images.rows.length > 0) {
+    //         const imagePath = `../img/${product.images.rows[0].filename}`;
+    //         setImageSrc(imagePath);
+    //     } else {
+    //         setImageSrc('../img/photo_2024-10-27_03-14-02.jpg'); // Путь к изображению по умолчанию
+    //     }
+    // }, [product]);
 
-    console.log(product + 'Мы ведьмак');
+    // console.log(product + 'Мы ведьмак');
     const texts = [
         { id: 1, title: 'Описание', content: product.description },
         { id: 2, title: 'Как купить', content: 'Нажмите кнопку "Добавить в корзину" > Перейдите в корзину, проверьте выбранные товары и нажмите "Оформить заказ" > Дальше наш менджер свяжеться с вами ватсап или телеграм' },
@@ -71,21 +71,24 @@ export default function Productpages({ product }) {
     }
 
     return (
-        <div className="container">
+        // <div className="container">
             <div className="current_card " key={product.id}>
                 <div className="current_card_left">
-                    <img src={imageSrc}
+                    <img src={`../img/${images.rows[0].filename}`}
                         alt={product.name}
                         className="main_img" />
                     <div className="current_carusel">
-                        {/* {product.images.rows.map((img, i) => (
+                        {images.rows.map((img, i) => (
                             <img
                                 onClick={() => handleImgClick(img.meta.downloadHref)}
                                 key={i}
-                                src={img.meta.downloadHref}
+                                // src={img.meta.downloadHref}
+                                src={`../img/${images.rows[i].filename}`}
                                 alt={product.name}
                                 className="current_img" />
-                        ))} */}
+                        ))}
+
+                        {/* <img src={`../img/${images.rows[0].filename}`} alt="" /> */}
 
                     </div>
                 </div>
@@ -135,6 +138,6 @@ export default function Productpages({ product }) {
                     </div>
                 </div>
             </div>
-        </div>
+        // </div>
     )
 }

@@ -11,31 +11,33 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [totalQuant, settotalQuant] = useState(0);
     const [totalSum, settotalSum] = useState(0);
-    const [products, setProducts] = useState(0);
+    const [products, setProducts] = useState([]);
 
     async function getProducts() { //Возвращает продукт
         try {
-            // const response = await fetch('/api/products');// замените на ваш путь
-            // const response = await fetch(`${process.env.API_HOST}/api/products`);
-            // const data = await response.json();
-            const response = await fetch('https://api.moysklad.ru/api/remap/1.2/entity/product', {
+            const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product`, {
                 headers: {
                     'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
                     'Accept-Encoding': 'gzip',
                 },
+                mode: 'no-cors' ,
                 params: {
                     expand: 'images, attributes',
                     limit: 100,
-                    // fields: 'stock', 
+                    // fields: 'stock', // Добавляем параметр fields
                 },
+    
             });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
             const data = await response.json();
-            console.log(data);
-            setProducts(data.rows) 
+            console.log('вывод' + data + 'вывод');
+            setProducts(data.rows);
             // return data.rows;
-            console.log(products);
+            console.log('вроде успех' + products);
         } catch (error) {
-            console.log(error);
+            console.log('Ошибка получение в контекст' + error);
         }
     }
     // getProducts();

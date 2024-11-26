@@ -92,7 +92,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     try {
-        const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product?${params.id}`, {
+        // const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product?${params.id}`, {
+        const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product`, {
             headers: {
                 'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
                 'Accept-Encoding': 'gzip',
@@ -108,18 +109,34 @@ export async function getStaticProps({ params }) {
         if (!response.ok) {
             throw new Error(`Ошибка сети: ${response.status} - ${response.statusText}`);
         }
-
         const data = await response.json();
-        const product = data.rows.find(i => i.code === params.id) || null; // Если продукт не найден, возвращаем null
-        console.log(product + 'Оу');
-        return { props: { product } };
+        const product = data.rows.find(i => i.code === params.id) || null;
+        // const product = data.rows.find(i => i.code === params.id) || null;
+        const imagess = await product.images.meta.href;
+        const responseImage = await fetch(imagess, {
+            headers: {
+                'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
+                'Accept-Encoding': 'gzip',
+            },
+            params: {
+                expand: 'images, attributes',
+                limit: 100,
+                fields: 'stock',
+            },
+        })
+        const imagesData = await responseImage.json();
+        // const data = await response.json();
+        // const product = data.rows.find(i => i.code === params.id) || null; // Если продукт не найден, возвращаем null
+        // console.log(product + 'Оу');
+        // return { props: { product } };
+        return { props: { product, images: imagesData } }
     } catch (error) {
         console.error('Ошибка при получении данных продукта:', error);
         return { props: { product: null } }; // Возвращаем null, если продукт не найден
     }
 }
 
-const Stage = ({ product }) => {
+const Stage = ({ product, images }) => {
     // const breadcrumbsItems = [
     //     { title: 'Главная', link: '/' },
     //     { title: product.pathName, link: `/product/${product.id}` }
@@ -129,7 +146,7 @@ const Stage = ({ product }) => {
 
             <div className="container">
                 {/* <Breadcrumbs items={breadcrumbsItems} /> */}
-                <div className="card_items">
+                {/* <div className="card_items"> */}
                     {/* {
                         product.map(i => (
                             <Productpages
@@ -138,9 +155,10 @@ const Stage = ({ product }) => {
                         ))} */}
                     <Productpages
                         product={product}
+                        images={images}
                     />
                     {/* <CardItem product={product} /> */}
-                </div>
+                {/* </div> */}
             </div>
 
         </div>
