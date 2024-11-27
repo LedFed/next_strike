@@ -112,7 +112,7 @@ const Header = ({ productList, basket, product }) => {
 
                         <ul className="header_items">
                             <li className="header_item"><Link href="/" className="header_links" onClick={ () => setIsChecked(false)}>Главная</Link></li>
-                            <li className="header_item"><Link href="/catalog" className="header_links"  onClick={ () => setIsChecked(false)}>Каталог</Link></li>
+                            {/* <li className="header_item"><Link href="/catalog" className="header_links"  onClick={ () => setIsChecked(false)}>Каталог</Link></li> */}
                             <li className="header_item"><Link href="/delivery" className="header_links"  onClick={ () => setIsChecked(false)}>Доставка</Link></li>
                             <li className="header_item none">
                                 <a className="number" href="tel: +7953553053">+ 7 9(535)-530-53</a>

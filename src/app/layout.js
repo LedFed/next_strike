@@ -22,9 +22,9 @@ export default function RootLayout({ children }) {
         <div>
 
           <CartProvider>
-            <Header />
+            {/* <Header /> */}
             {children}
-            <Footer />
+            {/* <Footer /> */}
 
           </CartProvider>
         </div>

@@ -1,36 +1,36 @@
-'use client';
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+// app/pages/products.js (или другой файл страницы)
+import React from 'react';
+import { getProductsData } from '../../app/lib/getProductsData';
 
-export default function More() {
-    const [items, setItems] = useState([]);
+const More = ({ products }) => {
+    console.log(products);
+    return (
+        <div>
+            <h1>Продукты</h1>
+            <ul>
+                {/* {products.map(product => (
+                    <li key={product.id}>{product.code}</li>
+                ))} */}
+            </ul>
+        </div>
+    );
+};
 
-    const getProduct = async () => {
-        const response = await fetch('/api/products');
-        const data = await response.json();
-        console.log(data);
-        return data.rows; 
+export async function getStaticProps() {
+    let products = [];
+    try {
+        products = await getProductsData(); // Получаем данные продуктов
+        console.log(products);
+    } catch (error) {
+        console.error(error);
     }
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const products = await getProduct();
-            setItems(products);
-        };
-
-        fetchProducts();
-    }, []); // Пустой массив зависимостей
-
-    return (
-        <>
-            {items.length > 0 ? (
-                items.map(item => (
-                    <Link key={item.id} href={`/product/${item.code}`}>{item.name}</Link >
-                ))
-            ) : (
-                <div>Загрузка</div>
-            )
-            }
-        </>
-    )
+    return {
+        props: {
+            products,
+        },
+        // revalidate: 10, // Опционально: обновление данных каждые 10 секунд
+    };
 }
+
+export default More;

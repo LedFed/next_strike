@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Card from './components/Card';
 import Category from './components/Category';
 import Feedback from './components/Feedback';
+import More from './components/More';
 import Slider from 'react-slick';
 import Accordions from './components/Accordions';
 
@@ -28,10 +29,10 @@ export default function Main() {
       <div className="container">
 
         {/* <Slider {...settings}> */}
-          <div className="banner">
-            <h1 className="main_title">Самые низкие цены</h1>
-          </div>
-          {/* <div className="banner">
+        <div className="banner">
+          <h1 className="main_title">Самые низкие цены</h1>
+        </div>
+        {/* <div className="banner">
             <h1 className="main_title">Самые низкие цены</h1>
           </div>
         </Slider> */}
@@ -39,8 +40,8 @@ export default function Main() {
         <h2 className="title">Категории товаров</h2>
         <Category />
         <h2 className="title">Популярные товары</h2>
-        <Card />
-
+        {/* <Card /> */}
+        <More />
         {/* <Feedback /> */}
 
         <h2 className="title center">FaQ</h2>
