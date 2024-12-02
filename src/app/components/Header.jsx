@@ -35,20 +35,20 @@ const Header = ({ productList, basket, product }) => {
     //     }
     // }, [searchTerm]);
 
-    useEffect(() => {
-        if (isSearching) {
-            try {
-                const productArray = Object.values(products);
-                const results = productArray.filter(product => 
-                    product.name && product.name.toLowerCase().includes(searchTerm.toLowerCase())
-                );
-                setFilteredProducts(results);
-            } catch (error) {
-                console.error("Ошибка при фильтрации продуктов:", error);
-            }
-        }
-    }, [searchTerm]);
-    
+    // useEffect(() => { вот это поиск закоментил заработоло)
+    //     if (isSearching) {
+    //         try {
+    //             const productArray = Object.values(products);
+    //             const results = productArray.filter(product =>
+    //                 product.name && product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    //             );
+    //             setFilteredProducts(results);
+    //         } catch (error) {
+    //             console.error("Ошибка при фильтрации продуктов:", error);
+    //         }
+    //     }
+    // }, [searchTerm]);
+
 
     // const handleFocus = () => {
     //     setIsSearching(true); // Устанавливаем состояние поиска в true
@@ -111,9 +111,9 @@ const Header = ({ productList, basket, product }) => {
                     <div className={isChecked ? 'header_container active' : 'header_container'}>
 
                         <ul className="header_items">
-                            <li className="header_item"><Link href="/" className="header_links" onClick={ () => setIsChecked(false)}>Главная</Link></li>
-                            {/* <li className="header_item"><Link href="/catalog" className="header_links"  onClick={ () => setIsChecked(false)}>Каталог</Link></li> */}
-                            <li className="header_item"><Link href="/delivery" className="header_links"  onClick={ () => setIsChecked(false)}>Доставка</Link></li>
+                            <li className="header_item"><Link href="/" className="header_links" onClick={() => setIsChecked(false)}>Главная</Link></li>
+                            <li className="header_item"><Link href="/catalog" className="header_links" onClick={() => setIsChecked(false)}>Каталог</Link></li>
+                            <li className="header_item"><Link href="/delivery" className="header_links" onClick={() => setIsChecked(false)}>Доставка</Link></li>
                             <li className="header_item none">
                                 <a className="number" href="tel: +7953553053">+ 7 9(535)-530-53</a>
                             </li>
@@ -126,7 +126,7 @@ const Header = ({ productList, basket, product }) => {
 
                     <div className="header_functional">
                         <div className="header_search">
-                            <input
+                            {/* <input
                                 className={isSearching ? 'search active' : 'search'}
 
                                 placeholder="Поиск"
@@ -137,7 +137,7 @@ const Header = ({ productList, basket, product }) => {
                                 // onFocus={handleFocus}
                                 onBlur={handleBlur}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                            />
+                            /> */}
                             <img
                                 onTouchStart={handleTouch}
                                 onClick={handleFocus}
@@ -153,7 +153,7 @@ const Header = ({ productList, basket, product }) => {
 
                     <div className="menu back menu--3" onChange={handleInputChange}>
                         <label className="burger">
-                            <input type="checkbox"  defaultChecked={isChecked}/>
+                            <input type="checkbox" defaultChecked={isChecked} />
                             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="50" cy="50" r="30" />
                                 <path className="line--1" d="M0 40h62c18 0 18-20-17 5L31 55" />
@@ -166,7 +166,7 @@ const Header = ({ productList, basket, product }) => {
                 </nav>
             </div>
 
-            <div className={isSearching && filteredProducts.length > 0 ? 'search_items active' : 'search_items'}>
+            {/* <div className={isSearching && filteredProducts.length > 0 ? 'search_items active' : 'search_items'}>
                 {isSearching && filteredProducts.map(item => (
                     // <Link >
                     <Link className="search_item" href={`/product/${item.code}`} key={item.id}>
@@ -189,7 +189,7 @@ const Header = ({ productList, basket, product }) => {
                     // </Link>
                 ))}
 
-            </div>
+            </div> */}
 
         </header>
 

@@ -1,7 +1,5 @@
 "use client";
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import Cors from 'cors';
-import initMiddleware from '../../app/lib/init-middleware';
 
 const CartContext = createContext();
 
@@ -15,41 +13,43 @@ export const CartProvider = ({ children }) => {
     const [totalSum, settotalSum] = useState(0);
     const [products, setProducts] = useState([]);
 
-    const cors = initMiddleware(
-        Cors({
-            methods: ['GET', 'POST', 'OPTIONS'],
-        })
-    );
 
-    async function getProducts(req, res) { //Возвращает продукт
-        await cors(req, res);
-        if (req.method === 'GET') {
-            try {
-                const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product`, {
-                    headers: {
-                        'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
-                        'Accept-Encoding': 'gzip',
-                    },
+    async function getProducts() { //Возвращает продукт
+        // await cors(req, res);
+        // if (req.method === 'GET') {
+        // const params = new URLSearchParams({
+        //     expand: 'images, attributes',
+        //     limit: 100,
+        //     fields: 'stock',
+        // });
+        try {
+            // const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product?${params}`, {
+                const response = await fetch(`/api/products`, {
+                // method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
+                    'Accept-Encoding': 'gzip',
+                },
 
-                    params: {
-                        expand: 'images, attributes',
-                        limit: 100,
-                        fields: 'stock', // Добавляем параметр fields
-                    },
+                // params: {
+                //     expand: 'images, attributes',
+                //     limit: 100,
+                //     fields: 'stock', // Добавляем параметр fields
+                // },
 
-                });
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                console.log('вывод' + data + 'вывод');
-                setProducts(data.rows);
-                // return data.rows;
-                console.log('вроде успех' + products);
-            } catch (error) {
-                console.log('Ошибка получение в контекст' + error);
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
+            const data = await response.json();
+            console.log('вывод' + data + 'вывод');
+            setProducts(data.rows);
+            // return data.rows;
+            console.log('вроде успех' + products);
+        } catch (error) {
+            console.log('Ошибка получение в контекст' + error);
         }
+        // }
     }
     // getProducts();
     const loadCartFromLocalStorage = () => {

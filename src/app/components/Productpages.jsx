@@ -126,7 +126,7 @@ export default function Productpages({ product, images }) {
                         <div>       <p className="current_text">Доставка</p></div> }
                     </Slider> */}
 
-                    <p className="current_descript">{currentText || product.description}</p>
+                    {/* <p className="current_descript">{currentText || product.description}</p> */}
 
                     <div className="current_contacts">
                         <p className="current_info">Мы будем рады ответить на все Ваши вопросы в любом удобном мессенджере:</p>

@@ -218,7 +218,7 @@ const Catalog = () => {
                     <div className="card_items">
                         {sortedProducts.slice(0, visibleCount).map(product => (
                           
-                            <CardItem key={product.id} product={product} />
+                            <CardItem key={product.id} product={product}  />
                         ))}
                     </div>
 

@@ -79,8 +79,8 @@ const Stages = ({ product }) => {
                             <CardItem product={i} />
                         ))} */}
                     {product.map(i => (
-                        <CardItem product={i} />
-                        // <div>{i.name}</div>
+                        // <CardItem product={i} />
+                        <div>{i.name}</div>
                     ))}
 
                 </div>
