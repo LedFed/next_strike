@@ -25,7 +25,7 @@ export default function page() {
     };
 
     try {
-      const response = await fetch('https://strikeops.ru/api/telegram', {
+      const response = await fetch('/api/telegram', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
