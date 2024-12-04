@@ -14,11 +14,12 @@ export default function Category() {
     return (
         <div className="category_items">
             {catalog.map((item, index) => (
-                <Link className={item.active ? "category_item" : "category_item active"} href={`/category/${item.title}`} key={index}>
-                    <div className="category_img_theme"><img src={item.links} alt={item.title}
-                        className="category_icon" /></div>
-                    <p  className="category_title">{item.title}</p>
-                </Link>
+                item.active ?
+                    <Link className={item.active ? "category_item" : "category_item active"} href={`/category/${item.title}`} key={index}>
+                        <div className="category_img_theme"><img src={item.links} alt={item.title}
+                            className="category_icon" /></div>
+                        <p className="category_title">{item.title}</p>
+                    </Link> : null
             ))}
         </div>
     )

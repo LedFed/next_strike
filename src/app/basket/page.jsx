@@ -3,6 +3,7 @@ import React from 'react';
 import { useCart } from '../context/CartProvider';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { ToastContainer, toast } from 'react-toastify';
+import Link from 'next/link';
 
 
 export default function page() {
@@ -82,13 +83,13 @@ export default function page() {
           <div className="basket_items">
             {cart.length > 0 ? (
               cart.map(product => (
-                <div key={product.id} className="basket_item">
-                  <img src={product.images.rows[0].meta.href} alt="" className="basket_picture" />
+                <div key={product.id} className="basket_item" >
+                  <img src={`../img/${product.images.rows[0].filename}`} alt="" className="basket_picture" />
                   <div className="basket_item_right">
-                    <div className="basket_block_column">
+                    <Link className="basket_block_column" href={`/product/${product.code}`} passHref>
                       <h4 className="basket_block_title">{product.name}</h4>
                       <p className="basket_articul">Артикул:{product.article}</p>
-                    </div>
+                    </Link>
 
                     <div className="basket_functional">
                       <button className="decrement" onClick={() => decrement(product)}>-</button>
