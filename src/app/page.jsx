@@ -29,6 +29,7 @@ export default function Main() {
 
         {/* <Slider {...settings}> */}
         <div className="banner">
+          <img src="./img/baner.png" alt="" />
           <h1 className="main_title">Самые низкие цены</h1>
         </div>
         {/* <div className="banner">

@@ -149,8 +149,6 @@ export async function getStaticPaths() {
             },
         });
 
-        console.log(response.data.rows + ' получение путей');
-
         const paths = response.data.rows.map(product => ({
             params: { id: product.code.toString() },
         }));
@@ -191,7 +189,7 @@ export async function getStaticProps({ params }) {
 const Stage = ({ product }) => {
     // const breadcrumbsItems = [
     //     { title: 'Главная', link: '/' },
-    //     { title: product.pathName, link: `/product/${product.code}` }
+    //     { title: product && product.pathName ? product.pathName : 'товар', link: `/product/${product && product.code ? product.code : ''}`}
     // ];
     return (
         <div>

@@ -98,6 +98,10 @@ header nav {
   flex: 1;
 }
 
+.header_item:last-child {
+  display: none;
+}
+
 .header_functional {
   display: flex;
   align-items: center;
@@ -186,6 +190,14 @@ header nav {
   letter-spacing: 0.02em;
   text-align: center;
   color: #fff;
+}
+
+.basket_block_column {
+  text-decoration: none;
+}
+
+.basket_articul {
+  color: #000;
 }
 
 .search_items {
@@ -285,12 +297,8 @@ span {
 
 .banner {
   margin-top: 24px;
-  background-image: url(../../public/img/baner.png);
-  background-color: #0b76ef;
-  background-repeat: no-repeat;
   height: 397px;
   background-position: center center;
-  background-size: cover;
   border-radius: 10px;
   display: flex;
   height: 512px;
@@ -306,6 +314,10 @@ span {
   content: "";
   inset: 0;
   position: absolute;
+}
+.banner img {
+  width: 100%;
+  height: 100%;
 }
 
 .main_title {
@@ -862,6 +874,10 @@ footer {
   height: 25px;
   background-repeat: no-repeat;
 }
+.addCard.active {
+  background-image: url(../../public/icons/free-icon-checklist-4379544\ 1.svg);
+  background-size: contain;
+}
 
 /*basket_block*/
 .basket_block {
@@ -960,6 +976,7 @@ footer {
 .deleted {
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 
 .basket_info_block {
@@ -1387,6 +1404,9 @@ footer {
   .logo img {
     width: inherit;
   }
+  .logo svg {
+    width: inherit;
+  }
   .header_container {
     flex-direction: column;
     height: 100%;
@@ -1418,6 +1438,9 @@ footer {
     width: 100%;
     background: #fff;
     margin: 0;
+  }
+  .header_item:last-child {
+    display: block;
   }
   .search_img {
     display: block;

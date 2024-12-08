@@ -97,4 +97,8 @@
     width: 25px;
     height: 25px;
     background-repeat: no-repeat;
+    &.active{
+        background-image: url(../../public/icons/free-icon-checklist-4379544\ 1.svg);
+        background-size: contain;
+    }
 }

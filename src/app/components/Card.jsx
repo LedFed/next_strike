@@ -6,7 +6,7 @@ import { getProductsData } from '../../app/lib/getProductsData';
 
 export default function Card() {
     const [items, setItems] = useState([]);
-    const [visibleCount, setVisibleCount] = useState(3); //Задаем кол-во выдаваемых элементов на странице
+    const [visibleCount, setVisibleCount] = useState(4); //Задаем кол-во выдаваемых элементов на странице
     const { toggleCartItem, cart, loadCartFromLocalStorage, products, formatNumber } = useCart();
 
     // console.log(products);

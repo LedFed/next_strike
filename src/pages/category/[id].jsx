@@ -109,7 +109,7 @@ export async function getStaticProps({ params }) {
         console.error('Ошибка при получении данных продукта:', error);
         return { props: { product: null } };
     }
-    // return { props: { product: response.data } };
+    // return { props: { product: response.data } }; link: `/product/${product.code}` link: `/product/${product.id}`
 }
 
 // export async function getStaticPaths() {
@@ -191,10 +191,10 @@ export async function getStaticProps({ params }) {
 const Stages = ({ product }) => {
     // const breadcrumbsItems = [
     //     { title: 'Главная', link: '/' },
-    //     { title: product.pathName, link: `/product/${product.id}` }
+    //     { title: product && product.pathName ? product.pathName : 'товары', link: `/product/${product && product.pathName ? product.pathName : ''}` }
     // ];
     // console.log(images);
-    console.log(product);
+    // console.log(product);
     // console.log('Категория');
     if (!product) {
         return <div> Загрузка... </div>
