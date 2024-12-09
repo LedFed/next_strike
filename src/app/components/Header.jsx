@@ -35,19 +35,19 @@ const Header = ({ productList, basket, product }) => {
     //     }
     // }, [searchTerm]);
 
-    // useEffect(() => { вот это поиск закоментил заработоло)
-    //     if (isSearching) {
-    //         try {
-    //             const productArray = Object.values(products);
-    //             const results = productArray.filter(product =>
-    //                 product.name && product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    //             );
-    //             setFilteredProducts(results);
-    //         } catch (error) {
-    //             console.error("Ошибка при фильтрации продуктов:", error);
-    //         }
-    //     }
-    // }, [searchTerm]);
+    useEffect(() => {
+        if (isSearching) {
+            try {
+                const productArray = Object.values(products);
+                const results = productArray.filter(product =>
+                    product.name && product.name.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+                setFilteredProducts(results);
+            } catch (error) {
+                console.error("Ошибка при фильтрации продуктов:", error);
+            }
+        }
+    }, [searchTerm]);
 
 
     // const handleFocus = () => {
@@ -126,7 +126,7 @@ const Header = ({ productList, basket, product }) => {
 
                     <div className="header_functional">
                         <div className="header_search">
-                            {/* <input
+                            <input
                                 className={isSearching ? 'search active' : 'search'}
 
                                 placeholder="Поиск"
@@ -137,7 +137,7 @@ const Header = ({ productList, basket, product }) => {
                                 // onFocus={handleFocus}
                                 onBlur={handleBlur}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                            /> */}
+                            />
                             <img
                                 onTouchStart={handleTouch}
                                 onClick={handleFocus}
@@ -166,11 +166,11 @@ const Header = ({ productList, basket, product }) => {
                 </nav>
             </div>
 
-            {/* <div className={isSearching && filteredProducts.length > 0 ? 'search_items active' : 'search_items'}>
+            <div className={isSearching && filteredProducts.length > 0 ? 'search_items active' : 'search_items'}>
                 {isSearching && filteredProducts.map(item => (
                     // <Link >
                     <Link className="search_item" href={`/product/${item.code}`} key={item.id}>
-                        <img src={item.images.rows[0].meta.downloadHref} alt={item.name} className="search_picture" />
+                        <img src={`../img/${item.images.rows[0].filename}`} alt={item.name} className="search_picture" />
                         <div className="search_block_text">
                             <h4 className="search_title">{item.name}</h4>
                             <span className="search_price">{formatNumber(item.salePrices[0].value)}</span>
@@ -189,7 +189,7 @@ const Header = ({ productList, basket, product }) => {
                     // </Link>
                 ))}
 
-            </div> */}
+            </div>
 
         </header>
 

@@ -187,15 +187,15 @@ export async function getStaticProps({ params }) {
     }
 }
 const Stage = ({ product }) => {
-    // const breadcrumbsItems = [
-    //     { title: 'Главная', link: '/' },
-    //     { title: product && product.pathName ? product.pathName : 'товар', link: `/product/${product && product.code ? product.code : ''}`}
-    // ];
+    const breadcrumbsItems = [
+        { title: 'Главная', link: '/' },
+        { title: product && product.pathName ? product.pathName : 'товар', link: `/product/${product && product.code ? product.code : ''}`}
+    ];
     return (
         <div>
 
             <div className="container">
-                {/* <Breadcrumbs items={breadcrumbsItems} /> */}
+                <Breadcrumbs items={breadcrumbsItems} />
                 <Productpages
                         product={product}
                         // images={images}

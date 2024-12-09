@@ -393,7 +393,7 @@ span {
 .category_items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 74px);
+    // grid-template-rows: repeat(3, 74px);
     gap: 30px;
     margin: 0 65px;
 }
