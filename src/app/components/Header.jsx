@@ -117,12 +117,15 @@ const Header = ({ productList, basket, product }) => {
                             <li className="header_item none">
                                 <a className="number" href="tel: +7953553053">+ 7 9(535)-530-53</a>
                             </li>
-                            <Link href='/basket' className="header_item "><div className="basket">
-                                <span className="basket_count">1</span>
+                            <Link href='/basket' className="header_item "><div className="basket" onClick={() => setIsChecked(false)}>
+                                <span className="basket_count">{cart.length}</span>
                             </div></Link>
                         </ul>
 
                     </div>
+
+
+                    
 
                     <div className="header_functional">
                         <div className="header_search">
