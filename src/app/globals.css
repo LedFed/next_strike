@@ -781,12 +781,6 @@ footer {
        column-gap: 20px;
 }
 
-.catalog_cards .card_items {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .card_items {
   display: grid;
   gap: 20px;
@@ -941,6 +935,7 @@ footer {
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .basket_functional {
@@ -956,6 +951,9 @@ footer {
   border-radius: 7px;
   height: 28px;
   width: 28px;
+  cursor: pointer;
+  outline: none;
+  background: #fff;
 }
 
 .bakset_item_bottom {
@@ -1046,6 +1044,9 @@ footer {
   margin-top: 30px;
   position: relative;
   margin-left: 32px;
+}
+.basket_info_polity a {
+  color: #a6acb4;
 }
 .basket_info_polity::before {
   content: url(../../public/icons/left_arrow.svg);

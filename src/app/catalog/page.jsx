@@ -10,7 +10,7 @@ const Catalog = () => {
     const { toggleCartItem} = useCart();
 
     const [sortedProducts, setSortedProducts] = useState([]);
-    const [visibleCount, setVisibleCount] = useState(6);
+    const [visibleCount, setVisibleCount] = useState(16);
 
     const breadcrumbsItems = [
         { title: 'Главная', link: '/' },
@@ -42,7 +42,7 @@ const Catalog = () => {
     // }, [products])
 
     const handleShowMore = () => {
-        setVisibleCount(prevCount => prevCount + 4); // Увеличиваем количество видимых элементов на 4
+        setVisibleCount(prevCount => prevCount + 8); // Увеличиваем количество видимых элементов на 4
     };
 
     const sortProducts = (criteria) => {
@@ -74,7 +74,7 @@ const Catalog = () => {
 
             <Breadcrumbs items={breadcrumbsItems} />
             <div className="catalog">
-                <div className="catalog_filter">
+                {/* <div className="catalog_filter">
                     <h2 className="catalog_title">Фильтр</h2>
 
                     <p className="catalog_subtitle">Производитель</p>
@@ -202,7 +202,7 @@ const Catalog = () => {
                         <label className="catalog_text" htmlFor="skoba" >Активная скоба</label>
                     </div>
 
-                </div>
+                </div> */}
 
                 <div className="catalog_cards">
 

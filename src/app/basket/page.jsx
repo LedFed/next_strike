@@ -9,7 +9,7 @@ import Link from 'next/link';
 export default function page() {
   const { cart, toggleCartItem, totalQuant, totalSum, formatNumber, increment, decrement } = useCart();
 
- 
+
   const breadcrumbsItems = [
     { title: 'Главная', link: '/' },
     { title: 'Корзина', link: `/basket` }
@@ -35,7 +35,7 @@ export default function page() {
 
       const data = await response.json();
       if (data.success) {
-      
+
         toast.success('Заказ успешно отправлен!', {
           position: "bottom-right",
           autoClose: 5000,
@@ -78,7 +78,7 @@ export default function page() {
     <>
       <div className="container">
         <Breadcrumbs items={breadcrumbsItems} />
-  
+
         <div className="basket_block">
           <div className="basket_items">
             {cart.length > 0 ? (
@@ -119,8 +119,8 @@ export default function page() {
               <div className="all_price">{formatNumber(totalSum)}</div>
             </div>
             <div className="btn" onClick={handleOrder}>Заказать</div>
-            <div className="basket_info_polity">Соглашаюсь <span>с правилами пользования торговой площадкой</span> и
-              возврата</div>
+            <div className="basket_info_polity"><span>Соглашаюсь с правилами пользования торговой площадкой и <Link href='/delivery'>возврата</Link> </span>
+            </div>
           </div>
 
 

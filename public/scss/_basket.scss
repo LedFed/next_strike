@@ -58,6 +58,7 @@
 
 .basket_articul {
     @include Lite(12px);
+    white-space: nowrap;
 }
 
 .basket_functional {
@@ -73,6 +74,9 @@
     height: 28px;
     // opacity: .4;
     width: 28px;
+    cursor: pointer;
+    outline: none;
+    background: #fff;
 }
 
 .count {}
@@ -103,6 +107,7 @@
     flex-direction: column;
     padding: 24px;
     height: fit-content;
+
     .btn {
         align-self: center;
         margin-top: 20px;
@@ -147,6 +152,10 @@
     margin-top: 30px;
     position: relative;
     margin-left: 32px;
+
+    a {
+        color: #a6acb4;
+    }
 
     &::before {
         content: url(../../public/icons/left_arrow.svg);

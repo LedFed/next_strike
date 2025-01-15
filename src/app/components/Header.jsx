@@ -137,7 +137,7 @@ const Header = ({ productList, basket, product }) => {
                                 ref={inputRef}
                                 value={searchTerm}
                                 // onFocus={() => setIsSearching(true)} 
-                                // onFocus={handleFocus}
+                                onFocus={handleFocus}
                                 onBlur={handleBlur}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />

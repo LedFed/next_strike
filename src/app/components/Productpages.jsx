@@ -16,6 +16,8 @@ export default function Productpages({ product }) {
         setCurrentImage(imgSrc);
     };
 
+    // const productDescription = product ? product.description : 'Нет описания';
+
     // const [imageSrc, setImageSrc] = useState('');
 
     // useEffect(() => {
@@ -29,8 +31,8 @@ export default function Productpages({ product }) {
 
     // console.log(product + 'Мы ведьмак');
     const texts = [
-        // { id: 1, title: 'Описание', content: `${product.description ? product.description: 'Нет описания'} ` },
-        { id: 1, title: 'Описание', content: 'Нет описания' },
+        { id: 1, title: 'Описание', content: `${product?.description || 'Нет описания'} ` },
+        // { id: 1, title: 'Описание', content: 'Нет описания' },
         { id: 2, title: 'Как купить', content: 'Нажмите кнопку "Добавить в корзину" > Перейдите в корзину, проверьте выбранные товары и нажмите "Оформить заказ" > Дальше наш менджер свяжеться с вами ватсап или телеграм' },
         { id: 3, title: 'Возврат/Обмен', content: 'Описание текста 3' },
         { id: 4, title: 'Доставка', content: 'После оплаты заказа мы собираем и упаковываем ваши товары. Заказ передается в службу доставки, которая осуществляет его транспортировку. Вы получите трек-номер для отслеживания статуса доставки вашего заказа.' },
@@ -140,7 +142,7 @@ export default function Productpages({ product }) {
                     <p className="current_info">Мы будем рады ответить на все Ваши вопросы в любом удобном мессенджере:</p>
                     <div className="current_links">
                         <a href="" className="current_link">Telegram</a>
-                        <a href="" className="current_link">Wathap</a>
+                        <a href="" className="current_link">Whatsapp </a>
                         <a href="" className="current_link">+7 (909) 024-56-94</a>
                     </div>
                 </div>
