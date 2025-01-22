@@ -1,14 +1,15 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../context/CartProvider';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { ToastContainer, toast } from 'react-toastify';
 import Link from 'next/link';
-
+import Modal from '../modal/Modal';
 
 export default function page() {
   const { cart, toggleCartItem, totalQuant, totalSum, formatNumber, increment, decrement } = useCart();
 
+  const [active, setActive] = useState(false);
 
   const breadcrumbsItems = [
     { title: 'Главная', link: '/' },
@@ -78,7 +79,7 @@ export default function page() {
     <>
       <div className="container">
         <Breadcrumbs items={breadcrumbsItems} />
-
+        <Modal active={active} handleOrder={handleOrder} setActive={setActive} />
         <div className="basket_block">
           <div className="basket_items">
             {cart.length > 0 ? (
@@ -118,7 +119,9 @@ export default function page() {
               <div className="result">Итого</div>
               <div className="all_price">{formatNumber(totalSum)}</div>
             </div>
-            <div className="btn" onClick={handleOrder}>Заказать</div>
+            <div className="btn" onClick={() => setActive(true)
+              //  onClick={handleOrder}
+            }>Заказать</div>
             <div className="basket_info_polity"><span>Соглашаюсь с правилами пользования торговой площадкой и <Link href='/delivery'>возврата</Link> </span>
             </div>
           </div>
