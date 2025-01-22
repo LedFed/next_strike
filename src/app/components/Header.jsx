@@ -111,13 +111,13 @@ const Header = ({ productList, basket, product }) => {
                     <div className={isChecked ? 'header_container active' : 'header_container'}>
 
                         <ul className="header_items">
-                            <li className="header_item"><Link href="/" className="header_links" onClick={() => setIsChecked(false)}>Главная</Link></li>
-                            <li className="header_item"><Link href="/catalog" className="header_links" onClick={() => setIsChecked(false)}>Каталог</Link></li>
-                            <li className="header_item"><Link href="/delivery" className="header_links" onClick={() => setIsChecked(false)}>Доставка</Link></li>
+                            <li className="header_item"><Link href="/" className="header_links" onClick={handleInputChange}>Главная</Link></li>
+                            <li className="header_item"><Link href="/catalog" className="header_links" onClick={handleInputChange}>Каталог</Link></li>
+                            <li className="header_item"><Link href="/delivery" className="header_links" onClick={handleInputChange}>Доставка</Link></li>
                             <li className="header_item none">
                                 <a className="number" href="tel: +7953553053">+ 7 9(535)-530-53</a>
                             </li>
-                            <Link href='/basket' className="header_item "><div className="basket" onClick={() => setIsChecked(false)}>
+                            <Link href='/basket' className="header_item "><div className="basket" onClick={handleInputChange}>
                                 <span className="basket_count">{cart.length}</span>
                             </div></Link>
                         </ul>
@@ -149,14 +149,14 @@ const Header = ({ productList, basket, product }) => {
                         </div>
 
                         <a className="number" href="tel: +7953553053">+ 7 9(535)-530-53</a>
-                        <Link href="/basket" className="basket">
+                        <Link href="/basket" className="basket" onClick={handleInputChange}>
                             <span className="basket_count">{cart.length}</span>
                         </Link>
                     </div>
 
-                    <div className="menu back menu--3" onChange={handleInputChange}>
+                    <div className="menu back menu--3" onChange={handleInputChange}  onBlur={handleBlur}>
                         <label className="burger">
-                            <input type="checkbox" defaultChecked={isChecked} />
+                            <input type="checkbox" defaultChecked={isChecked} checked={isChecked} />
                             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="50" cy="50" r="30" />
                                 <path className="line--1" d="M0 40h62c18 0 18-20-17 5L31 55" />
@@ -172,7 +172,7 @@ const Header = ({ productList, basket, product }) => {
             <div className={isSearching && filteredProducts.length > 0 ? 'search_items active' : 'search_items'}>
                 {isSearching && filteredProducts.map(item => (
                     // <Link >
-                    <Link className="search_item" href={`/product/${item.code}`} key={item.id}>
+                    <Link className="search_item" href={`/product/${item.code}`} key={item.id} onClick={handleInputChange}>
                         <img src={`../img/${item.images.rows[0].filename}`} alt={item.name} className="search_picture" />
                         <div className="search_block_text">
                             <h4 className="search_title">{item.name}</h4>
