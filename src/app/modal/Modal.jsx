@@ -33,7 +33,9 @@ export default function Modal({ active, handleOrder, setActive }) {
                                 </ul>
                             </div>
                         </div>
-                        <form action="mail.php" method="post" className="order-modal__form order">
+                        <div
+                            // action="mail.php" method="post" 
+                            className="order-modal__form order">
                             <input type="hidden" name="theme" value="Обратный звонок" />
                             <input type="hidden" name="admin_email[]" value="strugov7@mail.ru" />
                             <input type="hidden" name="form_subject" value="Заявка с сайта Сайт" />
@@ -50,7 +52,7 @@ export default function Modal({ active, handleOrder, setActive }) {
                                 <input type="email" name="Email" className="order__input" placeholder="post@gmail.com" />
                             </label>
                             <button className="order__btn btn" onClick={handleOrder}>Оформить заказ</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
