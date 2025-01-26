@@ -6,6 +6,7 @@ import Feedback from './components/Feedback';
 import More from './components/More';
 import Slider from 'react-slick';
 import Accordions from './components/Accordions';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function Main() {
   const settings = {
@@ -25,6 +26,7 @@ export default function Main() {
 
   return (
     <>
+      <ScrollToTop />
       <div className="container">
 
         {/* <Slider {...settings}> */}

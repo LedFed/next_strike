@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body >
         <div>
-
+       
           <CartProvider>
             <Header />
             {children}

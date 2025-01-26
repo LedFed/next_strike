@@ -2,7 +2,7 @@ import React from 'react'
 import { useCart } from '../context/CartProvider';
 
 export default function Modal({ active, handleOrder, setActive }) {
-    const { cart, totalQuant, totalSum, formatNumber, } = useCart();
+    const { cart, totalQuant, totalSum, formatNumber } = useCart();
     return (
         <>
             <div className={active ? 'modal is-open' : 'modal'} onClick={() => setActive(false)}>

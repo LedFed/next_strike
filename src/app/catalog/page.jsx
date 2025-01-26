@@ -74,6 +74,7 @@ const Catalog = () => {
 
             <Breadcrumbs items={breadcrumbsItems} />
             <div className="catalog">
+                
                 {/* <div className="catalog_filter">
                     <h2 className="catalog_title">Фильтр</h2>
 
