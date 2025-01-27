@@ -1,7 +1,8 @@
 'use client';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useCart } from '../context/CartProvider';
 import Link from 'next/link'
+// import { useRouter } from 'next/router';
 
 export default function CardItem({ product }) {
     const { toggleCartItem, formatNumber, cart } = useCart();
@@ -13,12 +14,31 @@ export default function CardItem({ product }) {
     const handleAddToCart = () => {
         toggleCartItem(product); // Вызываем функцию при добавлении товара
     };
-    // console.log(product);
-    // console.log(filename);
-    // console.log('Карточка');
+
+    // const router = useRouter();
+
+    // const scrollToTop = () => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'smooth',
+    //     });
+    // };
+
+    // useEffect(() => {
+    //     const handleRouteChange = () => {
+    //         scrollToTop();
+    //     };
+
+    //     router.events.on('routeChangeComplete', handleRouteChange);
+
+    //     return () => {
+    //         router.events.off('routeChangeComplete', handleRouteChange);
+    //     };
+    // }, [router.events]);
+
     return (
-        <Link className="card_item" href={`/product/${product.code}`} passHref >
-             <img src={`../img/${filename}`} alt={product.name} className="card_img" />
+        <Link className="card_item" href={`/product/${product.code}`} passHref scroll={true} >
+            <img src={`../img/${filename}`} alt={product.name} className="card_img" />
             {/* {filename !== 'defaultFilename' ? (
                 <img src={`../img/${filename}`} alt={product.name} className="card_img" />
             ) : (

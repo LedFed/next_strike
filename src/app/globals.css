@@ -823,7 +823,6 @@ footer {
   padding: 20px;
   cursor: default;
   text-align: left;
-  display: none;
 }
 .modal__container.modal-open {
   display: inline-block;
@@ -860,7 +859,7 @@ footer {
   font-size: 12px;
   line-height: 20px;
   text-align: right;
-  color: green;
+  color: #000;
 }
 
 .order-modal__info {
@@ -871,7 +870,7 @@ footer {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-  color: green;
+  color: #000000;
 }
 .order-modal__info span {
   font-weight: 600;
@@ -890,7 +889,7 @@ footer {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-  color: green;
+  color: #000000;
 }
 .order-modal__btn::after {
   content: "";
@@ -933,6 +932,9 @@ footer {
   background-color: #000000;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+}
+.order .btn:disabled {
+  background-color: #979797;
 }
 
 .order__label {

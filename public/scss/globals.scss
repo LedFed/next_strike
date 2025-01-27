@@ -868,7 +868,7 @@ footer {
     padding: 20px;
     cursor: default;
     text-align: left;
-    display: none;
+    // display: none;
 
     &.modal-open {
         display: inline-block;
@@ -906,7 +906,7 @@ footer {
     font-size: 12px;
     line-height: 20px;
     text-align: right;
-    color: green;
+    color: #000;
 }
 
 .order-modal__info {
@@ -917,7 +917,7 @@ footer {
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
-    color: green;
+    color: #000000;
 
     span {
         font-weight: 600;
@@ -938,7 +938,7 @@ footer {
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
-    color: green;
+    color: #000000;
 
     &::after {
         content: "";
@@ -984,6 +984,9 @@ footer {
     background-color: #000000;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    &:disabled{
+        background-color:#979797;
+    }
 }
 
 .order__label {

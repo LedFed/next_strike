@@ -187,6 +187,7 @@ export async function getStaticProps({ params }) {
     }
 }
 const Stage = ({ product }) => {
+    
     const breadcrumbsItems = [
         { title: 'Главная', link: '/' },
         { title: product && product?.name || 'товар', link: `/product/${product?.code || ''}`}

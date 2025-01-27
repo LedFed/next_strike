@@ -13,11 +13,15 @@ export default async function handler(req, res) {
       const { name, phone } = data;
       message = `Заявка на консультацию от ${name}:n${phone}`;
     } else if (type === 'order') {
-      const { cart, totalSum } = data;
+      const { cart, totalSum, customer } = data;
+      // const productsMessage = cart.map(product => {
+      //   return `${product.name} (Артикул: ${product.article}) - ${product.count} шт. по ${product.salePrices[0].value} ₽ ? от ${customer.name} номер:${customer.phone}`;
+      // }).join('n');
+      // message = `${productsMessage}nИтого: ${totalSum} ₽`;
       const productsMessage = cart.map(product => {
-        return `${product.name} (Артикул: ${product.article}) - ${product.count} шт. по ${product.salePrices[0].value} ₽`;
-      }).join('n');
-      message = `${productsMessage}nИтого: ${totalSum} ₽`;
+        return `${product.name}\n Артикул: ${product.article} - ${product.count} шт. \n по ${product.salePrices[0].value}₽ `;
+      }).join('\n');
+      message = `${productsMessage}\n Итого: ${totalSum}₽\n Заказ сделал: ${customer.name}\n Номер телефона: ${customer.phone}`;
     } else {
       return res.status(400).json({ success: false, error: 'Неверный тип сообщения' });
     }
