@@ -11,7 +11,7 @@ export default function Productpages({ product }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const [currentText, setCurrentText] = useState('');
     const [currentImage, setCurrentImage] = useState('');
-
+    const router = useRouter();
     // Функция для обработки клика по изображению `../img/${product.images.rows[0].filename}`
     const handleImgClick = (imgSrc) => {
         setCurrentImage(imgSrc);
@@ -19,7 +19,8 @@ export default function Productpages({ product }) {
 
     useEffect(() => {
         setCurrentImage('');
-    }, [])
+        window.scrollTo(0, 0); // Прокручиваем страницу вверх
+    }, [router.asPath]);
 
 
     // const productDescription = product ? product.description : 'Нет описания';
