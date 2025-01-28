@@ -17,6 +17,11 @@ export default function Productpages({ product }) {
         setCurrentImage(imgSrc);
     };
 
+    useEffect(() => {
+        setCurrentImage('');
+    }, [])
+
+
     // const productDescription = product ? product.description : 'Нет описания';
 
     // const [imageSrc, setImageSrc] = useState('');
