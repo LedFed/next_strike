@@ -16,12 +16,16 @@ export default function page() {
     { title: 'Корзина', link: `/basket` }
   ];
 
-  const handleOrder = async () => {
+  const handleOrder = async (name, phone) => {
     const orderData = {
       type: 'order',
       data: {
         cart: cart,
         totalSum: totalSum,
+        customer: {
+          name,
+          phone,
+        },
       },
     };
 
