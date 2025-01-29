@@ -4,13 +4,16 @@ import { useCart } from '../context/CartProvider';
 import { useEffect, useState } from 'react';
 import CardItem from '../components/CardItem';
 import Breadcrumbs from '../components/Breadcrumbs';
+import Loading from '../dashboard/loading';
+
 
 const Catalog = () => {
 
-    const { toggleCartItem} = useCart();
+    const { toggleCartItem } = useCart();
 
     const [sortedProducts, setSortedProducts] = useState([]);
     const [visibleCount, setVisibleCount] = useState(16);
+    const [loader, setLoader] = useState(true);
 
     const breadcrumbsItems = [
         { title: 'Главная', link: '/' },
@@ -31,6 +34,7 @@ const Catalog = () => {
         const fetchProducts = async () => {
             const products = await getProduct();
             setSortedProducts(products);
+            setLoader(false);
         };
 
         fetchProducts();
@@ -71,10 +75,10 @@ const Catalog = () => {
 
     return (
         <div className='container'>
-
+            {/* <Loading/> */}
             <Breadcrumbs items={breadcrumbsItems} />
             <div className="catalog">
-                
+
                 {/* <div className="catalog_filter">
                     <h2 className="catalog_title">Фильтр</h2>
 
@@ -217,10 +221,17 @@ const Catalog = () => {
                     </div>
 
                     <div className="card_items">
-                        {sortedProducts.slice(0, visibleCount).map(product => (
-                          
-                            <CardItem key={product.id} product={product}  />
-                        ))}
+                        {loader ? (
+                            Array.from({ length: 6 }).map((_, i) => (
+                                <Loading key={i} />
+                            ))
+                        ) : (
+                            sortedProducts.slice(0, visibleCount).map(product => (
+                                <CardItem key={product.id} product={product} />
+                            ))
+                        )}
+
+
                     </div>
 
                     {visibleCount < sortedProducts.length && ( // Проверяем, есть ли еще элементы для отображения

@@ -10,12 +10,14 @@
     "json-server": "json-server --watch pages/api/products.jsx --port 5000"
   },
   "dependencies": {
+    "@heroui/skeleton": "^2.2.6",
     "axios": "^1.7.7",
     "cors": "^2.8.5",
     "corsa": "^1.0.2",
     "json-server": "^1.0.0-beta.3",
     "next": "^14.2.14",
     "react": "^18",
+    "react-content-loader": "^7.0.2",
     "react-dom": "^18",
     "react-slick": "^0.30.2",
     "react-toastify": "^10.0.6",

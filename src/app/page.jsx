@@ -8,6 +8,8 @@ import Slider from 'react-slick';
 import Accordions from './components/Accordions';
 import ScrollToTop from './components/ScrollToTop';
 
+
+
 export default function Main() {
   const settings = {
     dots: true,
@@ -34,6 +36,9 @@ export default function Main() {
           <img src="./img/baner.png" alt="" />
           <h1 className="main_title">Самые низкие цены</h1>
         </div>
+
+    
+        
         {/* <div className="banner">
             <h1 className="main_title">Самые низкие цены</h1>
           </div>
