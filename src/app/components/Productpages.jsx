@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import { useCart } from '../context/CartProvider';
 import Accordions from './Accordions';
 import Popular from './Popular';
+import Loading from '../dashboard/loading';
 
 export default function Productpages({ product }) {
     const { toggleCartItem, cart, loadCartFromLocalStorage, formatNumber, products } = useCart();
@@ -157,6 +158,17 @@ export default function Productpages({ product }) {
                 </div>
             </div>
             <Popular mas={products}></Popular>
+            {!products.length > 0  ? (
+                            Array.from({ length: 3 }).map((_, i) => (
+                                <Loading key={i} />
+                            ))
+                        ) : (
+                            // sortedProducts.slice(0, visibleCount).map(product => (
+                                // <CardItem key={product.id} product={product} />
+                                <Popular mas={products}></Popular>
+                            // ))
+                        )}
+            
         </>
         // </div >
 

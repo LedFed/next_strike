@@ -48,6 +48,7 @@ export default function Main() {
         <Category />
         <h2 className="title">Популярные товары</h2>
         <Card />
+        
         {/* <More /> */}
         <Feedback />
 

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import CardItem from '../../app/components/CardItem';
 import { useCart } from '../../app/context/CartProvider';
 import { getProductsData } from '../../app/lib/getProductsData';
-
+import Loading from '../dashboard/loading';
 export default function Card() {
     const [items, setItems] = useState([]);
     const [visibleCount, setVisibleCount] = useState(4); //Задаем кол-во выдаваемых элементов на странице
@@ -60,12 +60,22 @@ export default function Card() {
     return (
         <>
             <div className="card_items">
-                {items.length > 0 ? (
+                {/* {items.length > 0 ? (
                     items.slice(0, visibleCount).map(item => (
                         <CardItem key={item.code} product={item} />
                     ))
                 ) : (
                     <div>Загрузка</div>
+                )} */}
+
+                {!items.length > 0 ? (
+                    Array.from({ length: 6 }).map((_, i) => (
+                        <Loading key={i} />
+                    ))
+                ) : (
+                    items.slice(0, visibleCount).map(item => (
+                        <CardItem key={item.code} product={item} />
+                    ))
                 )}
                 {/* {products.length > 0 ? (
                     products.slice(0, visibleCount).map(item => (
