@@ -235,7 +235,7 @@ const Catalog = () => {
                     </div>
 
                     {visibleCount < sortedProducts.length && ( // Проверяем, есть ли еще элементы для отображения
-                        <div className="btn" onClick={handleShowMore}>Показать ее</div>
+                        <div className="btn" onClick={handleShowMore}>Показать еще</div>
                     )}
                 </div>
 
