@@ -984,8 +984,9 @@ footer {
     background-color: #000000;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    &:disabled{
-        background-color:#979797;
+
+    &:disabled {
+        background-color: #979797;
     }
 }
 
@@ -1281,6 +1282,13 @@ footer {
         }
     }
 
+    .breadcrumb {
+       margin-top: 30px;
+       margin-bottom: 10px;
+    }
+
+    
+
     // }
     .search_items {
         left: 0;
@@ -1311,7 +1319,7 @@ footer {
 
     .accordion_content.active .accordion_descript {
         padding: 0 8px 10px;
-
+        font-size: 16px;
     }
 
     .current_block_column {
@@ -1355,7 +1363,13 @@ footer {
         }
     }
 
+    .catalog {
+        grid-template-columns: auto;
+    }
 
+    .catalog_sort_right{
+        margin-bottom: 16px;
+    }
 
     .current_chapter {
         display: none;
@@ -1449,6 +1463,7 @@ footer {
     .current_card {
         grid-template-columns: 1fr;
         row-gap: 20px;
+        margin: 0 0 100px;
     }
 
     .current_card_left {

@@ -206,6 +206,16 @@ const Stages = ({ product }) => {
             <div className="container">
                 <Breadcrumbs items={breadcrumbsItems} />
                 <div className="card_items">
+                    {product ? (
+                        Array.from({ length: 8 }).map((_, i) => (
+                            <Loading key={i} />
+                        ))
+                    ) : (
+                        product.slice(0, visibleCount).map(i => (
+                            <CardItem key={i.id} product={i} />
+                        ))
+                    )}
+                    
                     {
                         product.map(i => (
                             <CardItem product={i} />

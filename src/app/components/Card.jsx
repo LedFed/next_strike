@@ -9,6 +9,13 @@ export default function Card() {
     const [visibleCount, setVisibleCount] = useState(4); //Задаем кол-во выдаваемых элементов на странице
     const { toggleCartItem, cart, loadCartFromLocalStorage, products, formatNumber } = useCart();
 
+    const handleClick = () => {
+        // Плавная прокрутка к началу страницы
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
     // console.log(products);
     // const getProduct = async () => {
     //     try {
@@ -74,7 +81,7 @@ export default function Card() {
                     ))
                 ) : (
                     items.slice(0, visibleCount).map(item => (
-                        <CardItem key={item.code} product={item} />
+                        <CardItem onClick={handleClick} key={item.code} product={item} />
                     ))
                 )}
                 {/* {products.length > 0 ? (

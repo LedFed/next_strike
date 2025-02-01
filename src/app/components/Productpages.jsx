@@ -157,18 +157,20 @@ export default function Productpages({ product }) {
                     </div>
                 </div>
             </div>
-            <Popular mas={products}></Popular>
-            {!products.length > 0  ? (
-                            Array.from({ length: 3 }).map((_, i) => (
-                                <Loading key={i} />
-                            ))
-                        ) : (
-                            // sortedProducts.slice(0, visibleCount).map(product => (
-                                // <CardItem key={product.id} product={product} />
-                                <Popular mas={products}></Popular>
-                            // ))
-                        )}
-            
+            {/* <Popular mas={products}></Popular> */}
+            <h2 className="title">Вам могут понравиться</h2>
+            <div className="card_items">
+                {!products.length > 0 ? (
+                    Array.from({ length: 3 }).map((_, i) => (
+                        <Loading key={i} />
+                    ))
+                ) : (
+                    // sortedProducts.slice(0, visibleCount).map(product => (
+                    // <CardItem key={product.id} product={product} />
+                    <Popular mas={products}></Popular>
+                    // ))
+                )}
+            </div >
         </>
         // </div >
 

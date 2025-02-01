@@ -12,11 +12,11 @@ export default function Popular({mas}) {
 
     return (
         <>
-            <div className="card_items">
+            {/* <div className="card_items"> */}
                 {mas.slice(0, count).map(product => (
                     <CardItem key={product.id} product={product} />
                 ))}
-            </div>
+            {/* </div> */}
 
             {
                 count < mas.length && (
