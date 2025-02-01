@@ -216,11 +216,11 @@ const Stages = ({ product }) => {
                         ))
                     )}
                     
-                    {
+                    {/* {
                         product.map(i => (
                             <CardItem product={i} />
                             // <CardItem product={i} />
-                        ))}
+                        ))} */}
                     {/* {product.map(i => (
                         <div>{i.name}</div>
                     ))} */}
