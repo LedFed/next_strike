@@ -5,6 +5,7 @@ import Breadcrumbs from "../../app/components/Breadcrumbs";
 import CardItem from '../../app/components/CardItem';
 import "@/app/globals.css";
 import axios from 'axios';
+import Loading from '@/app/dashboard/loading';
 
 // export async function getStaticPaths() {
 //     try {
@@ -196,9 +197,9 @@ const Stages = ({ product }) => {
     // console.log(images);
     // console.log(product);
     // console.log('Категория');
-    if (!product) {
-        return <div> Загрузка... </div>
-    }
+    // if (!product) {
+    //     return <div> Загрузка... </div>
+    // }
 
     return (
         <div>
@@ -206,16 +207,18 @@ const Stages = ({ product }) => {
             <div className="container">
                 <Breadcrumbs items={breadcrumbsItems} />
                 <div className="card_items">
-                    {product ? (
+                    {!product ? (
                         Array.from({ length: 8 }).map((_, i) => (
                             <Loading key={i} />
                         ))
                     ) : (
-                        product.slice(0, visibleCount).map(i => (
+                        // product.slice(0, visibleCount).map(i => (
+                        product.map(i => (
                             <CardItem key={i.id} product={i} />
                         ))
+                        // ))
                     )}
-                    
+
                     {/* {
                         product.map(i => (
                             <CardItem product={i} />
