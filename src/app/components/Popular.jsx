@@ -3,7 +3,7 @@ import CardItem from '../components/CardItem';
 
 export default function Popular({mas}) {
 
-    const [count, setCount] = useState(3);
+    const [count, setCount] = useState(4);
 
     const handleShowMore = () => {
         setCount(count + 4);

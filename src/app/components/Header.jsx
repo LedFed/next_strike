@@ -3,8 +3,7 @@ import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
 import { useCart } from '../context/CartProvider';
 
-const Header = ({ productList, basket, product }) => {
-    // const [products, setProducts] = useState([]);
+const Header = () => {
     const inputRef = useRef(null);
     const { toggleCartItem, cart, loadCartFromLocalStorage, products, formatNumber } = useCart();
     const [searchTerm, setSearchTerm] = useState('');
@@ -18,7 +17,8 @@ const Header = ({ productList, basket, product }) => {
 
     const handleTouch = (e) => {
         e.preventDefault(); // предотвращаем стандартное поведение
-        handleFocus();
+        // handleFocus();
+        setTimeout(handleFocus, 1); // Устанавливаем фокус с небольшой задержкой
     };
 
     // useEffect(() => {
@@ -124,9 +124,6 @@ const Header = ({ productList, basket, product }) => {
 
                     </div>
 
-
-                    
-
                     <div className="header_functional">
                         <div className="header_search">
                             <input
@@ -138,7 +135,7 @@ const Header = ({ productList, basket, product }) => {
                                 value={searchTerm}
                                 // onFocus={() => setIsSearching(true)} 
                                 onFocus={handleFocus}
-                                onBlur={handleBlur}
+                                // onBlur={handleBlur}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
                             <img
@@ -171,7 +168,7 @@ const Header = ({ productList, basket, product }) => {
 
             <div className={isSearching && filteredProducts.length > 0 ? 'search_items active' : 'search_items'}>
                 {isSearching && filteredProducts.map(item => (
-                    // <Link >
+                 
                     <Link className="search_item" href={`/product/${item.code}`} key={item.id} onClick={handleInputChange}>
                         <img src={`../img/${item.images.rows[0].filename}`} alt={item.name} className="search_picture" />
                         <div className="search_block_text">
@@ -189,7 +186,7 @@ const Header = ({ productList, basket, product }) => {
                             }
                             } />
                     </Link>
-                    // </Link>
+                
                 ))}
 
             </div>

@@ -565,6 +565,10 @@ span {
     }
 }
 
+.accordion_content.active .accordion_descript {
+    letter-spacing: 1.5px;
+}
+
 .accordion_main {
     display: flex;
     flex-direction: column;
@@ -1283,11 +1287,11 @@ footer {
     }
 
     .breadcrumb {
-       margin-top: 30px;
-       margin-bottom: 10px;
+        margin-top: 30px;
+        margin-bottom: 10px;
     }
 
-    
+
 
     // }
     .search_items {
@@ -1367,12 +1371,18 @@ footer {
         grid-template-columns: auto;
     }
 
-    .catalog_sort_right{
+    .catalog_sort_right {
         margin-bottom: 16px;
     }
 
     .current_chapter {
         display: none;
+    }
+
+    .current_carusel {
+        &:hover {
+            border: 1px solid transparent;
+        }
     }
 
     // .basket {}

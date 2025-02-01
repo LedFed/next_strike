@@ -40,6 +40,12 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid #000;
+    }
 }
 
 .current_card_right {
@@ -100,13 +106,15 @@
         background-size: cover;
     }
 }
-.slider-container{
+
+.slider-container {
     width: 100%;
 }
 
-.current_chapter_mobile{
+.current_chapter_mobile {
     display: none;
 }
+
 .current_chapter {
     display: flex;
     align-items: center;
@@ -168,11 +176,12 @@
 }
 
 // Стили выпадающего
-.catalog{
+.catalog {
     display: grid;
     grid-template-columns: auto 1fr;
 }
-.catalog_sort_right{
+
+.catalog_sort_right {
     display: grid;
     justify-content: end;
     margin-bottom: 26px;
@@ -201,21 +210,21 @@
 
 //Стили выпадающего
 
-/*current_card */ 
+/*current_card */
 
 
 //Стиили для страница доставки, заказы
-.pattern_blcok{
+.pattern_blcok {
     margin-left: 20px;
 }
 
-.pattern_title{
+.pattern_title {
     @include Bold(20px);
     padding-top: 10px;
     margin-bottom: 20px;
 }
 
-.pattern_text{
+.pattern_text {
     @include Lite(16px);
     margin-bottom: 24px;
 }

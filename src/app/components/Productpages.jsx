@@ -161,7 +161,7 @@ export default function Productpages({ product }) {
             <h2 className="title">Вам могут понравиться</h2>
             <div className="card_items">
                 {!products.length > 0 ? (
-                    Array.from({ length: 3 }).map((_, i) => (
+                    Array.from({ length: 4 }).map((_, i) => (
                         <Loading key={i} />
                     ))
                 ) : (
