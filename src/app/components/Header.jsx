@@ -137,7 +137,7 @@ const Header = () => {
                                 value={searchTerm}
                                 // onFocus={() => setIsSearching(true)} 
                                 onFocus={handleFocus}
-                                onBlur={handleBlur}
+                                // onBlur={handleBlur}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
                             <img
