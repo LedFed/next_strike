@@ -1711,13 +1711,16 @@ footer {
     display: none;
   }
   .search {
-    display: none;
+    transition: width 0.3s ease;
+    opacity: 0;
+    width: 0;
     margin: 0;
     background-color: #fff;
   }
   .search.active {
     display: flex;
-    width: 100%;
+    width: 200px;
+    opacity: 1;
   }
   .breadcrumb {
     margin-top: 30px;
@@ -1726,6 +1729,7 @@ footer {
   .search_items {
     left: 0;
     height: 100vh;
+    width: 100%;
   }
   .number {
     display: block;

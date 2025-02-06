@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react';
 import { useCart } from '../context/CartProvider';
 
 const Header = () => {
@@ -17,8 +17,8 @@ const Header = () => {
 
     const handleTouch = (e) => {
         e.preventDefault(); // предотвращаем стандартное поведение
-        // handleFocus();
-        setTimeout(handleFocus, 1); // Устанавливаем фокус с небольшой задержкой
+        handleFocus();
+        setTimeout(handleFocus, 0); // Устанавливаем фокус с небольшой задержкой
     };
 
     // useEffect(() => {
@@ -54,23 +54,24 @@ const Header = () => {
     //     setIsSearching(true); // Устанавливаем состояние поиска в true
     // };
 
-    // const handleFocus = () => {
-    //     if (inputRef.current) {
-    //         inputRef.current.focus();
-    //     }
-    // };
-    // const handleBlur = () => {
-    //     setTimeout(() => {
-    //         setIsSearching(!isSearching);
-    //     }, 200);
-    // };
-
     const handleFocus = () => {
         setIsSearching(true);
         if (inputRef.current) {
             inputRef.current.focus();
         }
     };
+    // const handleBlur = () => {
+    //     setTimeout(() => {
+    //         setIsSearching(!isSearching);
+    //     }, 200);
+    // };
+
+    // const handleFocus = () => {
+    //     setIsSearching(true);
+
+    //     inputRef.current?.focus();
+
+    // };
 
     const handleBlur = () => {
         // Убираем фокус через некоторое время, чтобы не терять его сразу
@@ -125,7 +126,8 @@ const Header = () => {
                     </div>
 
                     <div className="header_functional">
-                        <div className="header_search">
+                        <div className="header_search"
+                        >
                             <input
                                 className={isSearching ? 'search active' : 'search'}
 
@@ -135,7 +137,7 @@ const Header = () => {
                                 value={searchTerm}
                                 // onFocus={() => setIsSearching(true)} 
                                 onFocus={handleFocus}
-                                // onBlur={handleBlur}
+                                onBlur={handleBlur}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
                             <img
@@ -151,7 +153,7 @@ const Header = () => {
                         </Link>
                     </div>
 
-                    <div className="menu back menu--3" onChange={handleInputChange}  onBlur={handleBlur}>
+                    <div className="menu back menu--3" onChange={handleInputChange}  >
                         <label className="burger">
                             <input type="checkbox" defaultChecked={isChecked} checked={isChecked} />
                             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -168,7 +170,7 @@ const Header = () => {
 
             <div className={isSearching && filteredProducts.length > 0 ? 'search_items active' : 'search_items'}>
                 {isSearching && filteredProducts.map(item => (
-                 
+
                     <Link className="search_item" href={`/product/${item.code}`} key={item.id} onClick={handleInputChange}>
                         <img src={`../img/${item.images.rows[0].filename}`} alt={item.name} className="search_picture" />
                         <div className="search_block_text">
@@ -186,7 +188,7 @@ const Header = () => {
                             }
                             } />
                     </Link>
-                
+
                 ))}
 
             </div>

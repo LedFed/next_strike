@@ -1273,13 +1273,18 @@ footer {
 
     // .header_search{
     .search {
-        display: none;
+        // display: none;
+        transition: width 0.3s ease;
+        opacity: 0;
+
+        width: 0;
         margin: 0;
         background-color: #fff;
 
         &.active {
             display: flex;
-            width: 100%;
+            width: 200px;
+            opacity: 1;
             // .logo{
             //     display: none;
             // }
@@ -1297,6 +1302,7 @@ footer {
     .search_items {
         left: 0;
         height: 100vh;
+        width: 100%;
     }
 
     .number {
