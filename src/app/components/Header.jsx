@@ -81,24 +81,24 @@ const Header = () => {
     };
 
     // функция служит для мобилок, убирает фокус с инпута когда закрываеться клавиатура
-    const handleResize = () => {
-        if (window.innerHeight > 500) { // Задайте подходящее значение для вашей ситуации
-            setIsSearching(false);
-            if (inputRef.current) {
-                inputRef.current.blur(); // Убираем фокус с input
-            }
-        }
-    };
+    // const handleResize = () => {
+    //     if (window.innerHeight > 500) { // Задайте подходящее значение для вашей ситуации
+    //         setIsSearching(false);
+    //         if (inputRef.current) {
+    //             inputRef.current.blur(); // Убираем фокус с input
+    //         }
+    //     }
+    // };
 
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
+    // useEffect(() => {
+    //     window.addEventListener('resize', handleResize);
 
-        handleResize();
+    //     handleResize();
 
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize);
+    //     };
+    // }, []);
 
     return (
 
@@ -137,7 +137,7 @@ const Header = () => {
                                 value={searchTerm}
                                 // onFocus={() => setIsSearching(true)} 
                                 onFocus={handleFocus}
-                                // onBlur={handleBlur}
+                                onBlur={handleBlur}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
                             <img
@@ -153,7 +153,7 @@ const Header = () => {
                         </Link>
                     </div>
 
-                    <div className="menu back menu--3" onChange={handleInputChange}  >
+                    <div className="menu back menu--3" onChange={handleInputChange}  onBlur={handleBlur}>
                         <label className="burger">
                             <input type="checkbox" defaultChecked={isChecked} checked={isChecked} />
                             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
