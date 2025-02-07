@@ -15,11 +15,7 @@ const Header = () => {
         setIsChecked(!isChecked);
     };
 
-    const handleTouch = (e) => {
-        e.preventDefault(); // предотвращаем стандартное поведение
-        handleFocus();
-        setTimeout(handleFocus, 0); // Устанавливаем фокус с небольшой задержкой
-    };
+  
 
     // useEffect(() => {
     //     // if (isSearching )
@@ -60,6 +56,12 @@ const Header = () => {
             inputRef.current.focus();
         }
     };
+
+    const handleTouch = (e) => {
+        e.preventDefault(); // предотвращаем стандартное поведение
+        // handleFocus();
+        setTimeout(handleFocus, 0); // Устанавливаем фокус с небольшой задержкой
+    };
     // const handleBlur = () => {
     //     setTimeout(() => {
     //         setIsSearching(!isSearching);
@@ -81,24 +83,24 @@ const Header = () => {
     };
 
     // функция служит для мобилок, убирает фокус с инпута когда закрываеться клавиатура
-    // const handleResize = () => {
-    //     if (window.innerHeight > 500) { // Задайте подходящее значение для вашей ситуации
-    //         setIsSearching(false);
-    //         if (inputRef.current) {
-    //             inputRef.current.blur(); // Убираем фокус с input
-    //         }
-    //     }
-    // };
+    const handleResize = () => {
+        if (window.innerHeight > 500) { // Задайте подходящее значение для вашей ситуации
+            setIsSearching(false);
+            if (inputRef.current) {
+                inputRef.current.blur(); // Убираем фокус с input
+            }
+        }
+    };
 
-    // useEffect(() => {
-    //     window.addEventListener('resize', handleResize);
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
 
-    //     handleResize();
+        handleResize();
 
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize);
-    //     };
-    // }, []);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
 
@@ -142,7 +144,7 @@ const Header = () => {
                             />
                             <img
                                 onTouchStart={handleTouch}
-                                onClick={handleFocus}
+                                // onClick={handleFocus}
                                 className="search_img"
                                 src="/icons/search.svg" alt="" />
                         </div>
