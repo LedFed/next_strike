@@ -15,11 +15,7 @@ const Header = () => {
         setIsChecked(!isChecked);
     };
 
-    const handleTouch = (e) => {
-        e.preventDefault(); // предотвращаем стандартное поведение
-        // handleFocus();
-        setTimeout(handleFocus, 2000); // Устанавливаем фокус с небольшой задержкой
-    };
+  
 
     // useEffect(() => {
     //     // if (isSearching )
@@ -59,6 +55,12 @@ const Header = () => {
         if (inputRef.current) {
             inputRef.current.focus();
         }
+    };
+
+    const handleTouch = (e) => {
+        e.preventDefault(); // предотвращаем стандартное поведение
+        // handleFocus();
+        setTimeout(handleFocus, 0); // Устанавливаем фокус с небольшой задержкой
     };
     // const handleBlur = () => {
     //     setTimeout(() => {

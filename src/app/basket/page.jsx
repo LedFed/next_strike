@@ -40,7 +40,7 @@ export default function page() {
 
       const data = await response.json();
       if (data.success) {
-
+        setActive(false);
         toast.success('Заказ успешно отправлен!', {
           position: "bottom-right",
           autoClose: 5000,
