@@ -1800,6 +1800,16 @@ footer {
   .current_carusel:hover {
     border: 1px solid transparent;
   }
+  .order-modal {
+    padding: 20px;
+    width: 95%;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
+  .order__label {
+    row-gap: 16px;
+    flex-direction: column;
+  }
   .footer_main {
     flex-direction: column-reverse;
     row-gap: 60px;
