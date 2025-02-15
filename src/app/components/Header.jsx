@@ -17,8 +17,8 @@ const Header = () => {
 
     const handleTouch = (e) => {
         e.preventDefault(); // предотвращаем стандартное поведение
-        handleFocus();
-        setTimeout(handleFocus, 0); // Устанавливаем фокус с небольшой задержкой
+        // handleFocus();
+        setTimeout(handleFocus, 2000); // Устанавливаем фокус с небольшой задержкой
     };
 
     // useEffect(() => {
@@ -81,24 +81,24 @@ const Header = () => {
     };
 
     // функция служит для мобилок, убирает фокус с инпута когда закрываеться клавиатура
-    // const handleResize = () => {
-    //     if (window.innerHeight > 500) { // Задайте подходящее значение для вашей ситуации
-    //         setIsSearching(false);
-    //         if (inputRef.current) {
-    //             inputRef.current.blur(); // Убираем фокус с input
-    //         }
-    //     }
-    // };
+    const handleResize = () => {
+        if (window.innerHeight > 500) { // Задайте подходящее значение для вашей ситуации
+            setIsSearching(false);
+            if (inputRef.current) {
+                inputRef.current.blur(); // Убираем фокус с input
+            }
+        }
+    };
 
-    // useEffect(() => {
-    //     window.addEventListener('resize', handleResize);
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
 
-    //     handleResize();
+        handleResize();
 
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize);
-    //     };
-    // }, []);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
 
@@ -137,12 +137,12 @@ const Header = () => {
                                 value={searchTerm}
                                 // onFocus={() => setIsSearching(true)} 
                                 onFocus={handleFocus}
-                                onBlur={handleBlur}
+                                // onBlur={handleBlur}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
                             <img
                                 onTouchStart={handleTouch}
-                                onClick={handleFocus}
+                                // onClick={handleFocus}
                                 className="search_img"
                                 src="/icons/search.svg" alt="" />
                         </div>

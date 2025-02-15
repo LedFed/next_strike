@@ -1,24 +1,31 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 
-const ScrollToTop = () => {
-  const router = useRouter();
+const MyComponent = () => {
+  const e = useRouter();
 
   useEffect(() => {
-    const handleRouteChange = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    if (!e.events) {
+      console.error('Router events are undefined');
+      return;
+    }
+
+    const t = () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      });
     };
 
-    // Подписываемся на событие изменения маршрута
-    router.events.on('routeChangeComplete', handleRouteChange);
+    e.events.on("routeChangeComplete", t);
 
-    // Очистка подписки при размонтировании компонента
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
+      e.events.off("routeChangeComplete", t);
     };
-  }, [router.events]);
+  }, [e.events]);
 
-  return null;
+  return null; // Или ваш JSX
 };
 
-export default ScrollToTop;
+export default MyComponent;

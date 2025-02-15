@@ -159,7 +159,7 @@ export default function Productpages({ product }) {
             </div>
             {/* <Popular mas={products}></Popular> */}
             <h2 className="title">Вам могут понравиться</h2>
-            <div className="card_items">
+            {/* <div className="card_items"> */}
                 {!products.length > 0 ? (
                     Array.from({ length: 4 }).map((_, i) => (
                         <Loading key={i} />
@@ -170,7 +170,7 @@ export default function Productpages({ product }) {
                     <Popular mas={products}></Popular>
                     // ))
                 )}
-            </div >
+            {/* </div > */}
         </>
         // </div >
 

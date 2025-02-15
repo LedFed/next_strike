@@ -6,6 +6,7 @@ import "@/app/globals.css";
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import { CartProvider } from "../app/context/CartProvider";
+import ScrollToTop from "@/app/components/ScrollToTop";
 
 
 export default function MyApp({ Component, pageProps }) {
@@ -13,6 +14,7 @@ export default function MyApp({ Component, pageProps }) {
         <>
             <CartProvider>
                 <Header />
+                <ScrollToTop />
                 <Component {...pageProps} />
                 <Footer />
             </CartProvider>
