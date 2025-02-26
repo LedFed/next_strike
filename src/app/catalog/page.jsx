@@ -24,7 +24,7 @@ const Catalog = () => {
         try {
             const response = await fetch('/api/products');
             const data = await response.json();
-            return data.rows; // Верните данные для использования в useEffect
+            return data; // Верните данные для использования в useEffect
         } catch (error) {
             console.log(error);
         }

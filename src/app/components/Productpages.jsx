@@ -92,13 +92,13 @@ export default function Productpages({ product }) {
                         alt={product.name}
                         className="main_img" /> */}
                     <img
-                        src={currentImage ? `../img/${currentImage}` : `../img/${product.images.rows[0].filename}`}
+                        src={currentImage ? `../img/${currentImage}` : `../img/${product.src[0]}`}
                         alt={product.name}
                         className="main_img" />
                     <div className="current_carusel">
-                        {product.images.rows.map((img, i) => (
+                        {product.src.map((img, i) => (
                             <img
-                                onClick={() => handleImgClick(img.filename)}
+                                onClick={() => handleImgClick(img)}
                                 key={i}
                                 // src={img.meta.downloadHref}
                                 // src={`../img/${images.rows[i].filename}`}
@@ -107,17 +107,15 @@ export default function Productpages({ product }) {
                                 className="current_img" />
                         ))}
 
-                        {/* <img src={`../img/${images.rows[0].filename}`} alt="" /> */}
-
                     </div>
                 </div>
                 <div className="current_card_right">
                     <div className="current_block_column">
                         <h5 className=" current_title">{product.name}</h5>
-                        <p className="current_articul">{product.article || 'Пусто'}</p>
+                        {/* <p className="current_articul">{product.article || 'Пусто'}</p> */}
                     </div>
                     <div className="sale">Хит продаж</div>
-                    <p className="current_price">{formatNumber(product.salePrices[0].value)}</p>
+                    <p className="current_price">{product.price}</p>
                     <div className="current_clue">Цена действительна только для интернет-магазина и может отличаться от цен в
                         розничных магазинах</div>
 
@@ -125,7 +123,7 @@ export default function Productpages({ product }) {
                         {cart.some(item => item.id === product.id) ? 'Удалить из корзины' : "Добавить в корзину"}</div>
 
                     <div className="current_chapter_mobile">
-                        <Accordions items={texts} />
+                        {/* <Accordions items={texts} /> */}
                     </div>
 
                     <div className="current_chapter"  >
@@ -141,8 +139,8 @@ export default function Productpages({ product }) {
                     {/* <Slider {...setting} className="current_chapter">
                         <div>   <p className="current_text active">Описание</p></div>
                         <div><p className="current_text">Как купить</p></div>
-                        {/* <div>   <p className="current_text">Возврат/Обмен</p></div>
-                        <div>       <p className="current_text">Доставка</p></div> }
+                        <div>   <p className="current_text">Возврат/Обмен</p></div>
+                        <div>       <p className="current_text">Доставка</p></div>
                     </Slider> */}
 
                     <p className="current_descript">{currentText || product.description}</p>
@@ -157,20 +155,8 @@ export default function Productpages({ product }) {
                     </div>
                 </div>
             </div>
-            {/* <Popular mas={products}></Popular> */}
-            <h2 className="title">Вам могут понравиться</h2>
-            {/* <div className="card_items"> */}
-                {!products.length > 0 ? (
-                    Array.from({ length: 4 }).map((_, i) => (
-                        <Loading key={i} />
-                    ))
-                ) : (
-                    // sortedProducts.slice(0, visibleCount).map(product => (
-                    // <CardItem key={product.id} product={product} />
-                    <Popular mas={products}></Popular>
-                    // ))
-                )}
-            {/* </div > */}
+            <Popular mas={products}></Popular>
+
         </>
         // </div >
 

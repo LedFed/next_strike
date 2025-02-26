@@ -42,8 +42,8 @@ export const CartProvider = ({ children }) => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            console.log('вывод' + data + 'вывод');
-            setProducts(data.rows);
+            console.log('вывод' + JSON.stringify(data) + 'вывод');
+            setProducts(data);
             // return data.rows;
             console.log('вроде успех' + products);
         } catch (error) {

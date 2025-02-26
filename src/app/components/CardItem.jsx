@@ -6,8 +6,8 @@ import Link from 'next/link'
 
 export default function CardItem({ product }) {
     const { toggleCartItem, formatNumber, cart } = useCart();
-    const filename = product && product.images && product.images.rows && product.images.rows.length > 1
-        ? product.images.rows[0].filename
+    const filename = product && product.src && product.src.length > 1
+        ? product.src[0]
         : 'defaultFilename';
 
 
@@ -38,7 +38,7 @@ export default function CardItem({ product }) {
 
     return (
         <Link className="card_item" href={`/product/${product.code}`} passHref scroll={true} >
-            <img src={`../img/${filename}`} alt={product.name} className="card_img" />
+            <img src={`../img/${product.src[0]}`} alt={product.name} className="card_img" />
             {/* {filename !== 'defaultFilename' ? (
                 <img src={`../img/${filename}`} alt={product.name} className="card_img" />
             ) : (
@@ -47,7 +47,7 @@ export default function CardItem({ product }) {
             <h3 className="card_title">{product.name}</h3>
             <p className="card_arct">Артикул:{product.article}</p>
             <div className="card_bottom">
-                <p className="card_price">{formatNumber(product.salePrices[0].value)}</p>
+                <p className="card_price">{product.price}</p>
                 {/* <div className="addCard" onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();

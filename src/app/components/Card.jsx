@@ -45,7 +45,7 @@ export default function Card() {
         try {
             const response = await fetch('/api/products');
             const data = await response.json();
-            return data.rows; // Верните данные для использования в useEffect
+            return data; // Верните данные для использования в useEffect
         } catch (error) {
             console.log(error);
         }
@@ -55,15 +55,16 @@ export default function Card() {
         const fetchProducts = async () => {
             const products = await getProduct();
             setItems(products);
+            console.log(items);
         };
 
         fetchProducts();
     }, []);
 
-    useEffect(() => {
-        console.log(products); // Логируем продукты в консоль
-        console.log(products.length);
-    }, [products]);
+    // useEffect(() => {
+    //     console.log(products); // Логируем продукты в консоль
+    //     console.log(products.length);
+    // }, [products]);
     return (
         <>
             <div className="card_items">

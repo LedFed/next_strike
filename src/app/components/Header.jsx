@@ -174,10 +174,10 @@ const Header = () => {
                 {isSearching && filteredProducts.map(item => (
 
                     <Link className="search_item" href={`/product/${item.code}`} key={item.id} onClick={handleInputChange}>
-                        <img src={`../img/${item.images.rows[0].filename}`} alt={item.name} className="search_picture" />
+                        <img src={`../img/${item.src[0]}`} alt={item.name} className="search_picture" />
                         <div className="search_block_text">
                             <h4 className="search_title">{item.name}</h4>
-                            <span className="search_price">{formatNumber(item.salePrices[0].value)}</span>
+                            <span className="search_price">{item.price}</span>
                         </div>
 
                         <img src="/icons/free-icon-remove-from-cart-4379564 1.svg"
