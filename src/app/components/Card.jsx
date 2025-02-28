@@ -4,6 +4,9 @@ import CardItem from '../../app/components/CardItem';
 import { useCart } from '../../app/context/CartProvider';
 import { getProductsData } from '../../app/lib/getProductsData';
 import Loading from '../dashboard/loading';
+import fs from 'fs';
+import path from 'path';
+
 export default function Card() {
     const [items, setItems] = useState([]);
     const [visibleCount, setVisibleCount] = useState(4); //Задаем кол-во выдаваемых элементов на странице
@@ -43,8 +46,11 @@ export default function Card() {
 
     const getProduct = async () => {
         try {
-            const response = await fetch('/api/products');
-            const data = await response.json();
+            // const response = await fetch('/api/products');
+            const filePath = path.join(process.cwd(), 'src', 'pages', 'api', 'bdlist.json');
+            const jsonData = fs.readFileSync(filePath);
+            const data = JSON.parse(jsonData);
+            // const data = await response.json();
             return data; // Верните данные для использования в useEffect
         } catch (error) {
             console.log(error);

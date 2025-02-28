@@ -89,7 +89,7 @@ export default function page() {
             {cart.length > 0 ? (
               cart.map(product => (
                 <div key={product.id} className="basket_item" >
-                  <img src={`../img/${product.images.rows[0].filename}`} alt="" className="basket_picture" />
+                  <img src={`../img/${product.src[0]}`} alt="" className="basket_picture" />
                   <div className="basket_item_right">
                     <Link className="basket_block_column" href={`/product/${product.code}`} passHref>
                       <h4 className="basket_block_title">{product.name}</h4>

@@ -26,10 +26,10 @@ export const CartProvider = ({ children }) => {
             // const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product?${params}`, {
                 const response = await fetch(`/api/products`, {
                 // method: 'GET',
-                headers: {
-                    'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
-                    'Accept-Encoding': 'gzip',
-                },
+                // headers: {
+                //     'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
+                //     'Accept-Encoding': 'gzip',
+                // },
 
                 // params: {
                 //     expand: 'images, attributes',
