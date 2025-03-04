@@ -27,7 +27,7 @@ export const CartProvider = ({ children }) => {
                 // const filePath = path.join(process.cwd(), 'src', 'pages', 'api', 'bdlist.json');
                 // const jsonData = fs.readFileSync(filePath);
                 // const products = JSON.parse(jsonData);
-                const res = await fetch('http://localhost:3000/bdlist.json')
+                const res = await fetch('/bdlist.json')
                 const data = await res.json();
                 setProducts(data);
                 console.log('Полученные данные:', data);
