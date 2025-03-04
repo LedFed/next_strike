@@ -1,17 +1,18 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 import CardItem from '../../app/components/CardItem';
-import { useCart } from '../../app/context/CartProvider';
-import { getProductsData } from '../../app/lib/getProductsData';
+// import { useCart } from '../../app/context/CartProvider';
+// import { getProductsData } from '../../app/lib/getProductsData';
 import Loading from '../dashboard/loading';
 // import fs from 'fs';
 // import path from 'path';
 
-export default function Card() {
-    const [items, setItems] = useState([]);
+export default function Card({products}) {
+    const [items, setItems] = useState(products);
     const [visibleCount, setVisibleCount] = useState(4); //Задаем кол-во выдаваемых элементов на странице
-    const { toggleCartItem, cart, loadCartFromLocalStorage, products, formatNumber } = useCart();
-
+    // const { toggleCartItem, cart, loadCartFromLocalStorage, products, formatNumber } = useCart();
+    console.log(items);
+    console.log(products);
     const handleClick = () => {
         // Плавная прокрутка к началу страницы
         window.scrollTo({
@@ -46,15 +47,15 @@ export default function Card() {
 
   
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const response = await fetch('/api/products');
-            const data = await response.json();
-            setItems(data);
-        };
+    // useEffect(() => {
+    //     const fetchProducts = async () => {
+    //         // const response = await fetch('/api/products');
+    //         // const data = await response.json();
+    //         setItems(products);
+    //     };
 
-        fetchProducts();
-    }, []);
+    //     fetchProducts();
+    // }, []);
 
     // const getProduct = async () => {
     //     try {
