@@ -7,10 +7,10 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Loading from '../dashboard/loading';
 
 
-const Catalog = () => {
+export default function Catalog() {
 
-    const { toggleCartItem } = useCart();
-
+    const { products } = useCart();
+    // const [product, setProduct] = useCart([]);
     const [sortedProducts, setSortedProducts] = useState([]);
     const [visibleCount, setVisibleCount] = useState(16);
     const [loader, setLoader] = useState(true);
@@ -20,30 +20,33 @@ const Catalog = () => {
         { title: 'Каталог', link: `/catalog` }
     ];
 
-    const getProduct = async () => {
-        try {
-            const response = await fetch('/api/products');
-            const data = await response.json();
-            return data; // Верните данные для использования в useEffect
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const products = await getProduct();
-            setSortedProducts(products);
-            setLoader(false);
-        };
-
-        fetchProducts();
-    }, []);
+    // const getProduct = async () => {
+    //     try {
+    //         const response = await fetch('/api/products');
+    //         const data = await response.json();
+    //         return data; // Верните данные для использования в useEffect
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
     // useEffect(() => {
+    //     // const fetchProducts = async () => {
+    //     //     const products = await getProduct();
+    //     //     setSortedProducts(products);
+    //     //     setLoader(false);
+    //     // };
+    //     setLoader(false);
     //     setSortedProducts(products);
-    //     console.log(products + 'КаТаЛог');
-    // }, [products])
+    //     // setProduct(products)
+    //     // fetchProducts();
+    // }, [products]);
+
+    useEffect(() => {
+
+        setLoader(false);
+        setSortedProducts(products);
+    }, [products]);
 
     const handleShowMore = () => {
         setVisibleCount(prevCount => prevCount + 8); // Увеличиваем количество видимых элементов на 4
@@ -54,17 +57,16 @@ const Catalog = () => {
 
         switch (criteria) {
             case 'priceAsc':
-                sortedArray.sort((a, b) => b.salePrices[0].value - a.salePrices[0].value);
+                sortedArray.sort((a, b) => b.price - a.price);
                 break;
             case 'priceDesc':
-                sortedArray.sort((a, b) => a.salePrices[0].value - b.salePrices[0].value);
+                sortedArray.sort((a, b) => a.price - b.price);
                 break;
             case 'popularity':
                 break;
             default:
                 break;
         }
-        console.log(sortedArray + 'Поменяли');
         setSortedProducts(sortedArray);
     };
 
@@ -230,10 +232,16 @@ const Catalog = () => {
                                 <CardItem key={product.id} product={product} />
                             ))
                         )}
+{/* 
+                        {
+                            sortedProducts.map(item => (
+                                <CardItem key={item.code} product={item} />
+                            )
+                            )} */}
 
 
                     </div>
-
+                    
                     {visibleCount < sortedProducts.length && ( // Проверяем, есть ли еще элементы для отображения
                         <div className="btn" onClick={handleShowMore}>Показать еще</div>
                     )}
@@ -246,4 +254,4 @@ const Catalog = () => {
     );
 };
 
-export default Catalog;
+

@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 // import React from 'react'
 import { useRouter } from 'next/router';
-import Slider from 'react-slick';
+// import Slider from 'react-slick';
 import { useCart } from '../context/CartProvider';
 import Accordions from './Accordions';
 import Popular from './Popular';
-import Loading from '../dashboard/loading';
+// import Loading from '../dashboard/loading';
 
 export default function Productpages({ product }) {
     const { toggleCartItem, cart, loadCartFromLocalStorage, formatNumber, products } = useCart();
@@ -20,8 +20,10 @@ export default function Productpages({ product }) {
 
     useEffect(() => {
         setCurrentImage('');
-        window.scrollTo(0, 0); // Прокручиваем страницу вверх
-    }, [router.asPath]);
+        // window.scrollTo(0, 0); // Прокручиваем страницу вверх
+    }, [router.asPath]
+        // [router.asPath]
+    );
 
 
     // const productDescription = product ? product.description : 'Нет описания';
@@ -77,18 +79,18 @@ export default function Productpages({ product }) {
         toggleCartItem(product); // Вызываем функцию при добавлении товара
     };
 
-    console.log(product);
+    // console.log(product);
 
     if (!product) {
         return <div> Загрузка... </div>
     }
 
     return (
-        // <div className="container">
+
         <>
             <div className="current_card " key={product.id}>
                 <div className="current_card_left">
-                    {/* <img src={`../img/${product.images.rows[0].filename}`}
+                    {/* <img src={`../img/${product.src[0]}`}
                         alt={product.name}
                         className="main_img" /> */}
                     <img
@@ -100,9 +102,7 @@ export default function Productpages({ product }) {
                             <img
                                 onClick={() => handleImgClick(img)}
                                 key={i}
-                                // src={img.meta.downloadHref}
-                                // src={`../img/${images.rows[i].filename}`}
-                                src={`../img/${img.filename}`}
+                                src={`../img/${img}`}
                                 alt={product.name}
                                 className="current_img" />
                         ))}
@@ -112,9 +112,9 @@ export default function Productpages({ product }) {
                 <div className="current_card_right">
                     <div className="current_block_column">
                         <h5 className=" current_title">{product.name}</h5>
-                        {/* <p className="current_articul">{product.article || 'Пусто'}</p> */}
+                        <p className="current_articul">{product.article || 'Пусто'}</p>
                     </div>
-                    <div className="sale">Хит продаж</div>
+                    <div className="sale">Хит продаж</div> {/* Добавить акцию */}
                     <p className="current_price">{product.price}</p>
                     <div className="current_clue">Цена действительна только для интернет-магазина и может отличаться от цен в
                         розничных магазинах</div>
@@ -123,7 +123,7 @@ export default function Productpages({ product }) {
                         {cart.some(item => item.id === product.id) ? 'Удалить из корзины' : "Добавить в корзину"}</div>
 
                     <div className="current_chapter_mobile">
-                        {/* <Accordions items={texts} /> */}
+                        <Accordions items={texts} />
                     </div>
 
                     <div className="current_chapter"  >
@@ -136,7 +136,7 @@ export default function Productpages({ product }) {
                         ))}
                     </div>
 
-                    {/* <Slider {...setting} className="current_chapter">
+                    {/* <Slider {...setting} className="current_chapter"> аналог информационного блока 
                         <div>   <p className="current_text active">Описание</p></div>
                         <div><p className="current_text">Как купить</p></div>
                         <div>   <p className="current_text">Возврат/Обмен</p></div>
@@ -155,10 +155,10 @@ export default function Productpages({ product }) {
                     </div>
                 </div>
             </div>
+
             <Popular mas={products}></Popular>
 
         </>
-        // </div >
 
     )
 }

@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Modal from '../modal/Modal';
 
 export default function page() {
-  const { cart, toggleCartItem, totalQuant, totalSum, formatNumber, increment, decrement } = useCart();
+  const { cart, toggleCartItem, totalQuant, totalSum, increment, decrement } = useCart();
 
   const [active, setActive] = useState(false);
 
@@ -30,7 +30,7 @@ export default function page() {
     };
 
     try {
-      const response = await fetch('/api/telegram', {
+      const response = await fetch('http://localhost:3000/api/telegram', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ export default function page() {
                     </div>
 
                     <div className="bakset_item_bottom">
-                      <p className="price">{formatNumber(product.salePrices[0].value)}</p>
+                      <p className="price">{product.price}</p>
                       <img className="deleted" onClick={() => toggleCartItem(product)} src="./icons/free-icon-delete-1214428 1.svg" alt="" />
                     </div>
                   </div>
@@ -121,7 +121,7 @@ export default function page() {
             <p className="basket_info_text">Товары, {totalQuant} шт.</p>
             <div className="basket_info_total">
               <div className="result">Итого</div>
-              <div className="all_price">{formatNumber(totalSum)}</div>
+              <div className="all_price">{totalSum}</div>
             </div>
             <div className="btn" onClick={() => setActive(true)
               //  onClick={handleOrder}

@@ -5,11 +5,10 @@ import Link from 'next/link'
 // import { useRouter } from 'next/router';
 
 export default function CardItem({ product }) {
-    const { toggleCartItem, formatNumber, cart } = useCart();
+    const { toggleCartItem, cart } = useCart();
     const filename = product && product.src && product.src.length > 1
         ? product.src[0]
-        : 'defaultFilename';
-
+        : 'defaultFilename.jpg';
 
     const handleAddToCart = () => {
         toggleCartItem(product); // Вызываем функцию при добавлении товара
@@ -38,12 +37,12 @@ export default function CardItem({ product }) {
 
     return (
         <Link className="card_item" href={`/product/${product.code}`} passHref scroll={true} >
-            <img src={`../img/${product.src[0]}`} alt={product.name} className="card_img" />
-            {/* {filename !== 'defaultFilename' ? (
+            {/* <img src={`../img/${product.src[0]}`} alt={product.name} className="card_img" /> */}
+            {filename !== 'defaultFilename' ? (
                 <img src={`../img/${filename}`} alt={product.name} className="card_img" />
             ) : (
                 <div>Нет изображений</div>
-            )} */}
+            )}
             <h3 className="card_title">{product.name}</h3>
             <p className="card_arct">Артикул:{product.article}</p>
             <div className="card_bottom">

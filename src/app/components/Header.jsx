@@ -15,7 +15,7 @@ const Header = () => {
         setIsChecked(!isChecked);
     };
 
-  
+
 
     // useEffect(() => {
     //     // if (isSearching )
@@ -155,7 +155,7 @@ const Header = () => {
                         </Link>
                     </div>
 
-                    <div className="menu back menu--3" onChange={handleInputChange}  onBlur={handleBlur}>
+                    <div className="menu back menu--3" onChange={handleInputChange} onBlur={handleBlur}>
                         <label className="burger">
                             <input type="checkbox" defaultChecked={isChecked} checked={isChecked} />
                             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -179,8 +179,14 @@ const Header = () => {
                             <h4 className="search_title">{item.name}</h4>
                             <span className="search_price">{item.price}</span>
                         </div>
+                        <div className={cart.some(i => i.id === item.id) ? `search_addBasket active` : 'search_addBasket'}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                toggleCartItem(item)
+                            }}></div>
 
-                        <img src="/icons/free-icon-remove-from-cart-4379564 1.svg"
+                        {/* <img src="/icons/free-icon-remove-from-cart-4379564 1.svg"
                             alt=""
                             className="search_addBasket"
                             onClick={(e) => {
@@ -188,7 +194,8 @@ const Header = () => {
                                 e.stopPropagation()
                                 toggleCartItem(item)
                             }
-                            } />
+                            } /> */}
+
                     </Link>
 
                 ))}

@@ -1,25 +1,24 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 import CardItem from '../../app/components/CardItem';
-// import { useCart } from '../../app/context/CartProvider';
-// import { getProductsData } from '../../app/lib/getProductsData';
 import Loading from '../dashboard/loading';
+import { useCart } from '../../app/context/CartProvider';
+// import { getProductsData } from '../../app/lib/getProductsData';
 // import fs from 'fs';
 // import path from 'path';
 
-export default function Card({products}) {
-    const [items, setItems] = useState(products);
+export default function Card() {
     const [visibleCount, setVisibleCount] = useState(4); //Задаем кол-во выдаваемых элементов на странице
-    // const { toggleCartItem, cart, loadCartFromLocalStorage, products, formatNumber } = useCart();
-    console.log(items);
-    console.log(products);
-    const handleClick = () => {
-        // Плавная прокрутка к началу страницы
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
+    const { toggleCartItem, cart, loadCartFromLocalStorage, products, formatNumber } = useCart();
+    const [items, setItems] = useState([]);
+
+    // const handleClick = () => {
+    //     // Плавная прокрутка к началу страницы
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'smooth'
+    //     });
+    // };
     // console.log(products);
     // const getProduct = async () => {
     //     try {
@@ -45,7 +44,10 @@ export default function Card({products}) {
         setVisibleCount(prevCount => prevCount + 4);
     };
 
-  
+    useEffect(() => {
+        // Устанавливаем items при изменении products
+        setItems(products);
+    }, [products]); // Добавляем products как зависимость
 
     // useEffect(() => {
     //     const fetchProducts = async () => {
@@ -84,26 +86,26 @@ export default function Card({products}) {
     //     console.log(products); // Логируем продукты в консоль
     //     console.log(products.length);
     // }, [products]);
+    if (items.length === 0) {
+        return <Loading />; // Или другой индикатор загрузки
+    }
     return (
+
         <>
             <div className="card_items">
-                {/* {items.length > 0 ? (
+                {items.length > 0 ? (
                     items.slice(0, visibleCount).map(item => (
                         <CardItem key={item.code} product={item} />
                     ))
                 ) : (
                     <div>Загрузка</div>
-                )} */}
-
-                {!items.length > 0 ? (
-                    Array.from({ length: 6 }).map((_, i) => (
-                        <Loading key={i} />
-                    ))
-                ) : (
-                    items.slice(0, visibleCount).map(item => (
-                        <CardItem onClick={handleClick} key={item.code} product={item} />
-                    ))
                 )}
+
+                {/* {
+                    items.map(item => (
+                        <CardItem  key={item.code} product={item} />
+                    )
+                    )} */}
                 {/* {products.length > 0 ? (
                     products.slice(0, visibleCount).map(item => (
                         <CardItem key={item.code} product={item} />

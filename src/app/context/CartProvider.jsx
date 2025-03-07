@@ -14,43 +14,70 @@ export const CartProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
 
 
-    async function getProducts() { //Возвращает продукт
-        // await cors(req, res);
-        // if (req.method === 'GET') {
-        // const params = new URLSearchParams({
-        //     expand: 'images, attributes',
-        //     limit: 100,
-        //     fields: 'stock',
-        // });
-        try {
-            // const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product?${params}`, {
-                const response = await fetch(`/api/products`, {
-                // method: 'GET',
-                // headers: {
-                //     'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
-                //     'Accept-Encoding': 'gzip',
-                // },
+    // async function getProducts() {
+    //     const filePath = path.join(process.cwd(), 'src', 'pages', 'api', 'bdlist.json');
+    //     const jsonData = fs.readFileSync(filePath);
+    //     const products = JSON.parse(jsonData);
+    //     setProducts(products);
+    // }
 
-                // params: {
-                //     expand: 'images, attributes',
-                //     limit: 100,
-                //     fields: 'stock', // Добавляем параметр fields
-                // },
-
-            });
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                // const filePath = path.join(process.cwd(), 'src', 'pages', 'api', 'bdlist.json');
+                // const jsonData = fs.readFileSync(filePath);
+                // const products = JSON.parse(jsonData);
+                const res = await fetch('http://localhost:3000/bdlist.json')
+                const data = await res.json();
+                setProducts(data);
+                console.log('Полученные данные:', data);
+            } catch (error) {
+                console.log(error);
             }
-            const data = await response.json();
-            console.log('вывод' + JSON.stringify(data) + 'вывод');
-            setProducts(data);
-            // return data.rows;
-            console.log('вроде успех' + products);
-        } catch (error) {
-            console.log('Ошибка получение в контекст' + error);
         }
-        // }
-    }
+
+        fetchProducts();
+
+    }, [])
+
+
+    // async function getProducts() { //Возвращает продукт
+    //     // await cors(req, res);
+    //     // if (req.method === 'GET') {
+    //     // const params = new URLSearchParams({
+    //     //     expand: 'images, attributes',
+    //     //     limit: 100,
+    //     //     fields: 'stock',
+    //     // });
+    //     try {
+    //         // const response = await fetch(`https://api.moysklad.ru/api/remap/1.2/entity/product?${params}`, {
+    //             const response = await fetch(`/api/products`, {
+    //             // method: 'GET',
+    //             // headers: {
+    //             //     'Authorization': 'Bearer 04c229acda627c250062de4c2a82b1bc3c9293d5',
+    //             //     'Accept-Encoding': 'gzip',
+    //             // },
+
+    //             // params: {
+    //             //     expand: 'images, attributes',
+    //             //     limit: 100,
+    //             //     fields: 'stock', // Добавляем параметр fields
+    //             // },
+
+    //         });
+    //         if (!response.ok) {
+    //             throw new Error(`HTTP error! status: ${response.status}`);
+    //         }
+    //         const data = await response.json();
+    //         console.log('вывод' + JSON.stringify(data) + 'вывод');
+    //         setProducts(data);
+    //         // return data.rows;
+    //         console.log('вроде успех' + products);
+    //     } catch (error) {
+    //         console.log('Ошибка получение в контекст' + error);
+    //     }
+    //     // }
+    // }
     // getProducts();
     const loadCartFromLocalStorage = () => {
         const savedCart = localStorage.getItem('cart');
@@ -74,7 +101,7 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         loadCartFromLocalStorage();
-        getProducts();
+        // getProducts();
     }, []);
 
     const saveCartToLocalStorage = (updatedCart) => {
@@ -103,7 +130,7 @@ export const CartProvider = ({ children }) => {
         updatedCart.map(item => {
             // console.log(item);
             totalQuantity += item.count;
-            totalPrice += item.count * item.salePrices[0].value;
+            totalPrice += item.count * item.price;
         })
 
         settotalQuant(totalQuantity);

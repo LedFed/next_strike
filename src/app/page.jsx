@@ -2,24 +2,24 @@
 import React from 'react';
 import Card from './components/Card';
 // import Category from './components/Category';
-// import Feedback from './components/Feedback';
+import Feedback from './components/Feedback';
 // import More from './components/More';
 // import Slider from 'react-slick';
-// import Accordions from './components/Accordions';
-import fs from 'fs';
-import path from 'path';
+import Accordions from './components/Accordions';
+// import fs from 'fs';
+// import path from 'path';
 // import ScrollToTop from './components/ScrollToTop';
 
-async function getProducts() {
-  const filePath = path.join(process.cwd(), 'src', 'pages', 'api', 'bdlist.json');
-  const jsonData = fs.readFileSync(filePath);
-  const products = JSON.parse(jsonData);
-  return products;
-}
+// async function getProducts() {
+//   const filePath = path.join(process.cwd(), 'src', 'pages', 'api', 'bdlist.json');
+//   const jsonData = fs.readFileSync(filePath);
+//   const products = JSON.parse(jsonData);
+//   return products;
+// }
 
 export default async function Main() {
 
-  const products = await getProducts();
+  // const products = await getProducts();
 
   const settings = {
     dots: true,
@@ -43,7 +43,7 @@ export default async function Main() {
 
         {/* <Slider {...settings}> */}
         <div className="banner">
-          <img src="./img/baner.png" alt="" />
+          <img src="../../public/img/baner.png" alt="" />
           <h1 className="main_title">Самые низкие цены</h1>
         </div>
 
@@ -51,19 +51,21 @@ export default async function Main() {
 
         {/* <div className="banner">
             <h1 className="main_title">Самые низкие цены</h1>
-          </div>
-        </Slider> */}
+          </div> */}
+        {/* </Slider> */}
 
         <h2 className="title">Категории товаров</h2>
         {/* <Category /> */}
         <h2 className="title">Популярные товары</h2>
-        <Card products={products} />
+        <Card
+        // products={products}
+        />
 
         {/* <More /> */}
-        {/* <Feedback /> */}
+        <Feedback />
 
         <h2 className="title center">FaQ</h2>
-        {/* <Accordions items={items} /> */}
+        <Accordions items={items} />
       </div>
 
 

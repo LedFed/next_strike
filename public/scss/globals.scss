@@ -236,7 +236,8 @@ header {
     padding: 6px;
     border-radius: 10px;
     width: 422px;
-    height: 281px;
+    height: max-content;
+    max-height: 281px;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.05);
     display: none;
     flex-direction: column;
@@ -322,12 +323,23 @@ span {
     color: rgba(0, 0, 0, 0.53);
 }
 
+// .search_addBasket {
+//     width: 35px;
+//     height: 35px;
+//     padding-right: 10px;
+// }
+
 .search_addBasket {
+    background-image: url(../../public/icons/free-icon-remove-from-cart-4379564\ 1.svg);
+    background-size: contain;
     width: 35px;
     height: 35px;
-    padding-right: 10px;
+    background-repeat: no-repeat;
+    &.active{
+        background-image: url(../../public/icons/free-icon-checklist-4379544\ 1.svg);
+        background-size: contain;
+    }
 }
-
 .banner {
     margin-top: 24px;
     // background-image: url(../../public/img/baner.png);
