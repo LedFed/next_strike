@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       // }).join('n');
       // message = `${productsMessage}nИтого: ${totalSum} ₽`;
       const productsMessage = cart.map(product => {
-        return `${product.name}\n Артикул: ${product.article} - ${product.count} шт. \n по ${product.salePrices[0].value}₽ `;
+        return `${product.name}\n Артикул: ${product.article} - ${product.count} шт. \n по ${product.price}₽ `;
       }).join('\n');
       message = `${productsMessage}\n Итого: ${totalSum}₽\n Заказ сделал: ${customer.name}\n Номер телефона: ${customer.phone}`;
     } else {
