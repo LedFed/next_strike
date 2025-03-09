@@ -30,7 +30,7 @@ export default function page() {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/api/telegram', {
+      const response = await fetch('/api/telegram', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
