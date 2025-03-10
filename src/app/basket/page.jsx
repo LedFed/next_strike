@@ -30,7 +30,7 @@ export default function page() {
     };
 
     try {
-      const response = await fetch('/pages/api/telegram', {
+      const response = await fetch('/api/telegram', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -38,6 +38,10 @@ export default function page() {
         body: JSON.stringify(orderData),
       });
 
+      if (!response.ok) {
+        throw new Error(`Ошибка: ${response.status}`);
+    
+      }
       const data = await response.json();
       if (data.success) {
         setActive(false);
@@ -53,7 +57,7 @@ export default function page() {
           // transition: Bounce,
         });
       } else {
-        toast.error('Ошибка при отправке заказа.', {
+        toast.error('Ошибка при отправке Улетает в ошибку.', {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,
