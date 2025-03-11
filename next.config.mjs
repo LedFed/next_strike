@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export', // Настройка для экспорта статических файлов
+    reactStrictMode: false,
+    output: 'export',
+    distDir: 'dist',
+    trailingSlash: true,
 };
 
 export default nextConfig;
