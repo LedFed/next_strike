@@ -2,10 +2,10 @@
 import React from 'react';
 import Card from './components/Card';
 // import Category from './components/Category';
-import Feedback from './components/Feedback';
+// import Feedback from './components/Feedback';
 // import More from './components/More';
 // import Slider from 'react-slick';
-import Accordions from './components/Accordions';
+// import Accordions from './components/Accordions';
 // import fs from 'fs';
 // import path from 'path';
 // import ScrollToTop from './components/ScrollToTop';
@@ -62,10 +62,10 @@ export default async function Main() {
         />
 
         {/* <More /> */}
-        <Feedback />
+        {/* <Feedback /> */}
 
         <h2 className="title center">FaQ</h2>
-        <Accordions items={items} />
+        {/* <Accordions items={items} /> */}
       </div>
 
 

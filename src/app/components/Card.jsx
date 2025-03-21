@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 import CardItem from '../../app/components/CardItem';
-import Loading from '../dashboard/loading';
+// import Loading from '../dashboard/loading';
 import { useCart } from '../../app/context/CartProvider';
 // import { getProductsData } from '../../app/lib/getProductsData';
 // import fs from 'fs';
@@ -86,20 +86,24 @@ export default function Card() {
     //     console.log(products); // Логируем продукты в консоль
     //     console.log(products.length);
     // }, [products]);
-    if (items.length === 0) {
-        return <Loading />; // Или другой индикатор загрузки
-    }
+   
     return (
 
         <>
             <div className="card_items">
-                {items.length > 0 ? (
+                {/* {items.length > 0 ? (
                     items.slice(0, visibleCount).map(item => (
                         <CardItem key={item.code} product={item} />
                     ))
                 ) : (
                     <div>Загрузка</div>
-                )}
+                )} */}
+
+                {
+                     items.map(item => (
+                        <CardItem key={item.code} product={item} />
+                    ))
+                }
 
                 {/* {
                     items.map(item => (
@@ -119,9 +123,9 @@ export default function Card() {
                 ))} */}
             </div>
 
-            {visibleCount < items.length && (
+            {/* {visibleCount < items.length && (
                 <div className="btn" onClick={handleShowMore}>Показать еще</div>
-            )}
+            )} */}
         </>
     )
 }
