@@ -25,7 +25,7 @@ export default function Modal({ active, handleOrder, setActive }) {
                         </div>
                         <div className="order-modal__info">
                             <div className="order-modal__quantity order-modal__info-item">Товаров в заказе: <span>{totalQuant}</span></div>
-                            <div className="order-modal__summ order-modal__info-item">Общая сумма заказа: <span>{formatNumber(totalSum)} ₽</span></div>
+                            <div className="order-modal__summ order-modal__info-item">Общая сумма заказа: <span>{totalSum} ₽</span></div>
 
                             {/* ||Данный блок появится позже, тут можно будет просмотреть все выбранные товары и удалить или изменить кол-во!!! */}
 
