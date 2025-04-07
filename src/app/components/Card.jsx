@@ -100,7 +100,7 @@ export default function Card() {
                 )} */}
 
                 {
-                     items.map(item => (
+                     items.slice(0, visibleCount).map(item => (
                         <CardItem key={item.code} product={item} />
                     ))
                 }
@@ -123,9 +123,9 @@ export default function Card() {
                 ))} */}
             </div>
 
-            {/* {visibleCount < items.length && (
+            {visibleCount < items.length && (
                 <div className="btn" onClick={handleShowMore}>Показать еще</div>
-            )} */}
+            )}
         </>
     )
 }

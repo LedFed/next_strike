@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: baseline;
-    column-gap:20px;
+    column-gap: 20px;
 }
 
 // .catalog_cards {
@@ -15,6 +15,16 @@
 
 //     }
 // }
+.catalog_sort_right {
+    grid-template-columns: 1fr 1fr;
+
+    .btn {
+        display: none;
+        margin: 0;
+        // position: absolute;
+        z-index: 1;
+    }
+}
 
 .card_items {
     display: grid;
@@ -97,9 +107,9 @@
     width: 25px;
     height: 25px;
     background-repeat: no-repeat;
-    &.active{
+
+    &.active {
         background-image: url(../../public/icons/free-icon-checklist-4379544\ 1.svg);
         background-size: contain;
     }
 }
-

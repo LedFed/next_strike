@@ -13,6 +13,7 @@ export default function Catalog() {
     const [sortedProducts, setSortedProducts] = useState([]);
     const [visibleCount, setVisibleCount] = useState(16);
     const [loader, setLoader] = useState(true);
+    const [activeBtn, setActiveBtn] = useState(false);
 
     const breadcrumbsItems = [
         { title: 'Главная', link: '/' },
@@ -20,7 +21,7 @@ export default function Catalog() {
     ];
 
     const [filters, setFilters] = useState({
-        "clamp": true,
+        clamp: false,
         "filter": {
             'Горох': false,
             'Мел': false,
@@ -35,6 +36,10 @@ export default function Catalog() {
             'GH': false,
             'СтрайкАрт': false
         },
+        "power": {
+            'four': false,
+            'six': false
+        }
     });
     const [arr, setMas] = useState([]);
     const [listitem, setListitem] = useState([]);
@@ -74,13 +79,15 @@ export default function Catalog() {
         return result;
     };
 
+
+
     const filteredResults = extractTrueValues(filters);
 
     console.log(JSON.stringify(filteredResults) + 'Данные из фильтров');
 
     useEffect(() => {
         if (Object.keys(filteredResults).length !== 0) {
-            const filteredMas = listitem.filter(product => {
+            const filteredMas = products.filter(product => {
                 // Проверяем, есть ли поле attribute у продукта
                 if (product.attribute) {
                     return Object.keys(filteredResults).every(key => {
@@ -130,6 +137,10 @@ export default function Catalog() {
 
     };
 
+    const handleBtnFilters = () => {
+        setActiveBtn(!activeBtn);
+    }
+
     // const getProduct = async () => {
     //     try {
     //         const response = await fetch('/api/products');
@@ -153,7 +164,7 @@ export default function Catalog() {
     // }, [products]);
 
     const handleShowMore = () => {
-        setVisibleCount(prevCount => prevCount + 8); // Увеличиваем количество видимых элементов на 4
+        setVisibleCount(prevCount => prevCount + 12); // Увеличиваем количество видимых элементов на 4
     };
 
     const sortProducts = (criteria) => {
@@ -185,7 +196,7 @@ export default function Catalog() {
             <Breadcrumbs items={breadcrumbsItems} />
             <div className="catalog">
 
-                <div className="catalog_filter">
+                <div className={activeBtn ? "catalog_filter active" : "catalog_filter "}>
                     <h2 className="catalog_title">Фильтр</h2>
 
                     <p className="catalog_subtitle">Производитель</p>
@@ -304,20 +315,20 @@ export default function Catalog() {
                                 className="custom_checkbox"
                                 type="checkbox"
                                 name="PyroFX"
-                                id="4corsar"
-                                checked={filters['power']['4corsar']}
-                                onChange={() => handleCheckbox(['power'], '4corsar')} />
-                            <label className="catalog_text" htmlFor="4corsar">4 корсар</label>
+                                id="four"
+                                checked={filters['power']['four']}
+                                onChange={() => handleCheckbox(['power'], 'four')} />
+                            <label className="catalog_text" htmlFor="four">4 корсар</label>
                         </div>
                         <div>
                             <input
                                 className="custom_checkbox"
                                 type="checkbox"
                                 name="PyroFX"
-                                id="6corsar"
-                                checked={filters['power']['6corsar']}
-                                onChange={() => handleCheckbox(['power'], '6corsar')} />
-                            <label className="catalog_text" htmlFor="6corsar">6 корсар</label>
+                                id="six"
+                                checked={filters['power']['six']}
+                                onChange={() => handleCheckbox(['power'], 'six')} />
+                            <label className="catalog_text" htmlFor="six">6 корсар</label>
                         </div>
 
                     </div>
@@ -326,19 +337,23 @@ export default function Catalog() {
                         <input className="custom_checkbox"
                             type="checkbox"
                             name="activeSkoba"
-                            id="skoba"
+                            id="clamp"
                             checked={filters['clamp']}
                             onChange={() => handleCheckbox('clamp')}
                         />
 
-                        <label className="catalog_text" htmlFor="skoba" >Активная скоба</label>
+                        <label className="catalog_text" htmlFor="clamp" >Активная скоба</label>
                     </div>
 
                 </div>
 
                 <div className="catalog_cards">
 
+
                     <div className='catalog_sort_right'>
+                        <div className="btn"
+                            onClick={handleBtnFilters}>{activeBtn ? 'Назад' : 'Фильтры'}</div>
+
                         <select className='catalog_sort' onChange={(e) => sortProducts(e.target.value)}>
                             <option className='catalog_sort_option' value="popularity">Сначала популярные</option>
                             <option className='catalog_sort_option' value="priceDesc">Сначала дешевле</option>
@@ -366,7 +381,7 @@ export default function Catalog() {
 
                     </div>
 
-                    {visibleCount < sortedProducts.length && ( // Проверяем, есть ли еще элементы для отображения
+                    {visibleCount < listitem.length && ( // Проверяем, есть ли еще элементы для отображения
                         <div className="btn" onClick={handleShowMore}>Показать еще</div>
                     )}
                 </div>

@@ -127,7 +127,7 @@ export default function page() {
               <div className="result">Итого</div>
               <div className="all_price">{totalSum}</div>
             </div>
-            <div className="btn" onClick={() => setActive(true)
+            <div className="btn" onTouchStart={() => setActive(true)
               //  onClick={handleOrder}
             }>Заказать</div>
             <div className="basket_info_polity"><span>Соглашаюсь с правилами пользования торговой площадкой и <Link href='/delivery'>возврата</Link> </span>
