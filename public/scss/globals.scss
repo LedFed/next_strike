@@ -403,9 +403,9 @@ body {
 }
 
 .header_item {
-    &:last-child {
-        display: none;
-    }
+    // &:last-child {
+    //     display: none;
+    // }
 }
 
 // .header_functional {
@@ -430,8 +430,8 @@ body {
 }
 
 .search {
-    background: transparent;
-    width: 0;
+    // background: transparent;
+    // width: 0;
 
     border: none;
     outline: none;
@@ -462,7 +462,7 @@ body {
     height: 35px;
     position: relative;
     cursor: pointer;
-    margin-left: 40px;
+    // margin-left: 40px;
 }
 
 .basket_count {
@@ -656,6 +656,7 @@ span {
     column-gap: 10px;
     list-style-type: none;
     margin: 40px 0;
+    margin-top: 100px;
 }
 
 .breadcrumb_text {
@@ -1036,7 +1037,7 @@ footer {
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.05);
     padding: 16px 28px 20px;
     position: sticky;
-    top: 0;
+    top: 95px;
 }
 
 .catalog_checkboxses {
@@ -1475,6 +1476,15 @@ footer {
         margin: 0 12px;
     }
 
+    header {
+        grid-template-columns: 75px 75px 1fr 75px;
+        height: 75px;
+        width: 100%;
+        padding: 0;
+        align-items: center;
+        justify-items: unset;
+    }
+
     .menu--3 {
         display: block;
     }
@@ -1483,6 +1493,13 @@ footer {
         // margin-top: 12px;
         // align-self: flex-start;
         // flex: 1 1;
+        display: grid;
+        align-content: center;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
         width: 110px;
 
         img {
@@ -1493,6 +1510,19 @@ footer {
             width: inherit;
         }
     }
+
+    .main_header {
+        // height: 75px;
+        order: 0;
+    }
+
+    .header_container{
+        flex-direction: column;
+    }
+
+    // .header_links{
+    //     font-size: 22px;
+    // }
 
     // .header_container {
     //     flex-direction: column;
@@ -1528,6 +1558,15 @@ footer {
     //         display: none;
     //     }
     // }
+    .navigation {
+        position: absolute;
+        width: 100%;
+        top: 75px;
+        justify-content: center;
+        background: #fff;
+        height: calc(100vh - 75px);
+        transform: translateX(-101%);
+    }
 
     .header_items {
         // display: none;
@@ -1545,6 +1584,19 @@ footer {
         }
     }
 
+    .search {
+        background: transparent;
+        max-width: 0; //width
+
+        border-radius: unset;
+        background-color: #f0f0f0;
+        flex: none;
+        padding: 0;
+        border: none;
+        outline: none;
+
+    }
+
     .search_img {
         display: block;
     }
@@ -1555,6 +1607,14 @@ footer {
                 display: none;
             }
         }
+    }
+
+    .header_link {
+        font-size: 22px;
+    }
+
+    .header_search {
+        display: flex;
     }
 
     // .header_search{

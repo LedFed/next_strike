@@ -502,7 +502,7 @@
     "name": "Граната учебная Ф-1 Массогабаритная",
     "price": 650,
     "attribute": {
-      "filter": "Вес",
+      "filter": "Массогабаритная",
       "power": "six",
       "clamp": true,
       "mfr": "Смерш"
@@ -1194,7 +1194,7 @@
       "filter": "Горох",
       "power": "four",
       "clamp": false,
-      "mfr": "Другие"
+      "mfr": "other"
     },
     "src": [
       "20250314_192617.jpg",

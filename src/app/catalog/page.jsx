@@ -28,13 +28,20 @@ export default function Catalog() {
             'СветоШумовые': false,
             'Акустика': false,
             'СтрайкбольныеШары': false,
-            'ПейнтбольныеШары': false
+            'ПейнтбольныеШары': false,
+            'Массогабаритная':false
         },
         "mfr": {
             'PyroFX': false,
             'A2': false,
             'GH': false,
-            'СтрайкАрт': false
+            'СтрайкАрт': false,
+            'Арсенал':false,
+            'Смерш':false,
+            'БоеКомлект':false,
+            'other':false,
+            'RAG':false,
+            'TAG':false,
         },
         "power": {
             'four': false,
@@ -234,6 +241,83 @@ export default function Catalog() {
                             />
                             <label className="catalog_text" htmlFor="GH">GH</label>
                         </div>
+                        <div>
+                            <input
+                                className="custom_checkbox"
+                                type="checkbox"
+                                name="СтрайкАрт"
+                                id="СтрайкАрт"
+                                checked={filters['mfr']['СтрайкАрт']}
+                                onChange={() => handleCheckbox(['mfr'], 'СтрайкАрт')}
+                            />
+                            <label className="catalog_text" htmlFor="СтрайкАрт">СтрайкАрт</label>
+                        </div>
+                        <div>
+                            <input
+                                className="custom_checkbox"
+                                type="checkbox"
+                                name="Арсенал"
+                                id="Арсенал"
+                                checked={filters['mfr']['Арсенал']}
+                                onChange={() => handleCheckbox(['mfr'], 'Арсенал')}
+                            />
+                            <label className="catalog_text" htmlFor="Арсенал">Арсенал</label>
+                        </div>
+                        <div>
+                            <input
+                                className="custom_checkbox"
+                                type="checkbox"
+                                name="Смерш"
+                                id="Смерш"
+                                checked={filters['mfr']['Смерш']}
+                                onChange={() => handleCheckbox(['mfr'], 'Смерш')}
+                            />
+                            <label className="catalog_text" htmlFor="Смерш">Смерш</label>
+                        </div>
+                        <div>
+                            <input
+                                className="custom_checkbox"
+                                type="checkbox"
+                                name="БоеКомлект"
+                                id="БоеКомлект"
+                                checked={filters['mfr']['БоеКомлект']}
+                                onChange={() => handleCheckbox(['mfr'], 'БоеКомлект')}
+                            />
+                            <label className="catalog_text" htmlFor="БоеКомлект">БоеКомлект</label>
+                        </div>
+                        <div>
+                            <input
+                                className="custom_checkbox"
+                                type="checkbox"
+                                name="RAG"
+                                id="RAG"
+                                checked={filters['mfr']['RAG']}
+                                onChange={() => handleCheckbox(['mfr'], 'RAG')}
+                            />
+                            <label className="catalog_text" htmlFor="RAG">RAG</label>
+                        </div>
+                        <div>
+                            <input
+                                className="custom_checkbox"
+                                type="checkbox"
+                                name="TAG"
+                                id="TAG"
+                                checked={filters['mfr']['TAG']}
+                                onChange={() => handleCheckbox(['mfr'], 'TAG')}
+                            />
+                            <label className="catalog_text" htmlFor="TAG">TAG</label>
+                        </div>
+                        <div>
+                            <input
+                                className="custom_checkbox"
+                                type="checkbox"
+                                name="other"
+                                id="other"
+                                checked={filters['mfr']['other']}
+                                onChange={() => handleCheckbox(['mfr'], 'other')}
+                            />
+                            <label className="catalog_text" htmlFor="other">Другие</label>
+                        </div>
                     </div>
 
                     <p className="catalog_subtitle">Наполнитель</p>
@@ -303,6 +387,17 @@ export default function Catalog() {
                                 onChange={() => handleCheckbox(['filter'], 'ПейнтбольныеШары')}
                             />
                             <label className="catalog_text" htmlFor="ПейнтбольныеШары">Пейнтбольные шары</label>
+                        </div>
+                        <div>
+                            <input
+                                className="custom_checkbox"
+                                type="checkbox"
+                                name="Массогабаритная"
+                                id="Массогабаритная"
+                                checked={filters['filter']['Массогабаритная']}
+                                onChange={() => handleCheckbox(['filter'], 'Массогабаритная')}
+                            />
+                            <label className="catalog_text" htmlFor="Массогабаритная">Массогабаритная</label>
                         </div>
                     </div>
 
