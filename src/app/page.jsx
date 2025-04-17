@@ -1,11 +1,11 @@
 // "use client";
 import React from 'react';
 import Card from './components/Card';
-// import Category from './components/Category';
-// import Feedback from './components/Feedback';
+import Category from './components/Category';
+import Feedback from './components/Feedback';
+import Accordions from './components/Accordions';
 // import More from './components/More';
 // import Slider from 'react-slick';
-// import Accordions from './components/Accordions';
 // import fs from 'fs';
 // import path from 'path';
 // import ScrollToTop from './components/ScrollToTop';
@@ -55,17 +55,17 @@ export default async function Main() {
         {/* </Slider> */}
 
         <h2 className="title">Категории товаров</h2>
-        {/* <Category /> */}
+        <Category />
         <h2 className="title">Популярные товары</h2>
         <Card
         // products={products}
         />
 
         {/* <More /> */}
-        {/* <Feedback /> */}
+        <Feedback />
 
         <h2 className="title center">FaQ</h2>
-        {/* <Accordions items={items} /> */}
+        <Accordions items={items} />
       </div>
 
 

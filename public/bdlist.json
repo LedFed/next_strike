@@ -30,7 +30,7 @@
     "promotion": "",
     "id": 2,
     "name": "Граната 'Граната 'F-1' (Акустика) без скобы",
-    "price": 140,
+    "price": 150,
     "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
@@ -75,6 +75,7 @@
     "id": 4,
     "name": "Егерь Г4 (горох)",
     "price": 150,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -96,6 +97,7 @@
     "id": 5,
     "name": "Граната 'РГД-5' (CШ)",
     "price": 230,
+    "category": "Гранаты",
     "attribute": {
       "filter": "СветоШумовые",
       "power": "six",
@@ -117,6 +119,7 @@
     "id": 6,
     "name": "F-1 (A) граната акустическая",
     "price": 286,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -138,7 +141,8 @@
     "promotion": "",
     "id": 7,
     "name": "Граната 'F-1' (Акустика) без скобы",
-    "price": 140,
+    "price": 150,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -159,7 +163,8 @@
     "promotion": "",
     "id": 9,
     "name": "Граната 'РГД-5' (Горох)",
-    "price": 210,
+    "price": 220,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -180,7 +185,8 @@
     "promotion": "",
     "id": 10,
     "name": "GH 'Smoke' с чикой",
-    "price": 300,
+    "price": 330,
+    "category": "Дым",
     "filter": "Дым",
     "src": [
       "photo_2024-10-27_03-14-24 (2).jpg",
@@ -197,6 +203,7 @@
     "id": 11,
     "name": "F-1 (D) граната",
     "price": 295,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Мел",
       "power": "six",
@@ -219,6 +226,7 @@
     "id": 12,
     "name": "Егерь Г6 (горох)",
     "price": 160,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -239,7 +247,8 @@
     "promotion": "",
     "id": 13,
     "name": "Граната 'РГД-5' (Горох) без скобы",
-    "price": 140,
+    "price": 150,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -261,6 +270,7 @@
     "id": 14,
     "name": "Граната 'F-1' (СШ) Метал.Скоба",
     "price": 250,
+    "category": "Гранаты",
     "attribute": {
       "filter": "СветоШумовые",
       "power": "six",
@@ -283,6 +293,7 @@
     "id": 15,
     "name": "Граната 5.45 горох",
     "price": 100,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -304,6 +315,7 @@
     "id": 16,
     "name": "Шашка дымовая 'Заслон'",
     "price": 350,
+    "category": "Дым",
     "filter": "дым",
     "src": [
       "photo_2024-10-27_03-14-17 (2).jpg",
@@ -320,6 +332,7 @@
     "id": 17,
     "name": "Граната 'Хаттабка' А4 Метал.скоба",
     "price": 180,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "four",
@@ -341,6 +354,7 @@
     "id": 18,
     "name": "F-1 (S) граната",
     "price": 286,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -363,6 +377,7 @@
     "id": 19,
     "name": "Граната 'РГД-5' (Акустика) без скобы",
     "price": 140,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "four",
@@ -384,6 +399,7 @@
     "id": 20,
     "name": "Граната 'F-1' (Акустика) Метал.Скоба",
     "price": 230,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -406,6 +422,7 @@
     "id": 21,
     "name": "Граната 'РГД-5' (СШ) Метал.Скоба",
     "price": 250,
+    "category": "Гранаты",
     "attribute": {
       "filter": "СветоШумовые",
       "power": "six",
@@ -427,6 +444,7 @@
     "id": 22,
     "name": "F-1 (Р50) граната",
     "price": 345,
+    "category": "Гранаты",
     "attribute": {
       "filter": "ПейнтбольныеШары",
       "power": "six",
@@ -448,6 +466,7 @@
     "id": 23,
     "name": "Граната 'F-1' (Горох) без скобы",
     "price": 140,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -469,6 +488,7 @@
     "id": 24,
     "name": "Шашка дымовая 'GH' с чиркачем мини",
     "price": 150,
+    "category": "Дым",
     "filter": "дым",
     "src": [
       "photo_2024-10-27_03-14-24 (2).jpg",
@@ -485,6 +505,7 @@
     "id": 25,
     "name": "Дымовая шашка 'Штурм'",
     "price": 280,
+    "category": "Дым",
     "filter": "дым",
     "src": [
       "photo_2024-10-27_03-14-15.jpg",
@@ -501,6 +522,7 @@
     "id": 26,
     "name": "Граната учебная Ф-1 Массогабаритная",
     "price": 650,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Массогабаритная",
       "power": "six",
@@ -522,6 +544,7 @@
     "id": 27,
     "name": "Граната 5.45 Беркут (горох)",
     "price": 100,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -543,6 +566,7 @@
     "id": 28,
     "name": "Граната 'F-1' (Горох) Метал.Скоба",
     "price": 230,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -565,6 +589,7 @@
     "id": 29,
     "name": "Граната 'РГД-5' (Горох) без скобы",
     "price": 140,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -586,6 +611,7 @@
     "id": 30,
     "name": "Большая дымовая завеса 'GH'",
     "price": 450,
+    "category": "Дым",
     "filter": "дым",
     "src": [
       "photo_2024-10-27_03-14-12.jpg",
@@ -602,6 +628,7 @@
     "id": 31,
     "name": "Граната 'Хаттабка' Г4",
     "price": 180,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -623,6 +650,7 @@
     "id": 32,
     "name": "Граната 'РГД-5' (Акустика) розовая",
     "price": 220,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -644,6 +672,7 @@
     "id": 33,
     "name": "Граната учебная РГД-5 Массогабаритная",
     "price": 650,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Вес",
       "power": "six",
@@ -665,6 +694,7 @@
     "id": 34,
     "name": "Граната 'РГД-5' (Акустика)",
     "price": 210,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -686,6 +716,7 @@
     "id": 36,
     "name": "Граната 'РГД-5' (Горох) розовая",
     "price": 220,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -707,6 +738,7 @@
     "id": 37,
     "name": "Граната 'РГД-5' (А) Метал.Скоба",
     "price": 230,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -728,6 +760,7 @@
     "id": 38,
     "name": "RG-42 (S) граната",
     "price": 345,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -749,6 +782,7 @@
     "id": 39,
     "name": "Егерь Актив Г4 (горох)",
     "price": 220,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -771,6 +805,7 @@
     "name": "Шашка 'Призрак'",
     "price": 330,
     "filter": "дым",
+    "category": "Дым",
     "src": [
       "photo_2024-10-27_03-14-07 (2).jpg",
       "photo_2024-10-27_03-14-07.jpg"
@@ -786,6 +821,7 @@
     "id": 41,
     "name": "Граната 'РГД-5' (Горох) Метал.Скоба",
     "price": 240,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -807,6 +843,7 @@
     "id": 42,
     "name": "Граната 'F-1' (Горох) розовые",
     "price": 220,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -828,6 +865,7 @@
     "id": 43,
     "name": "Граната 'F-1' (Горох)",
     "price": 220,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -850,6 +888,7 @@
     "id": 45,
     "name": "Граната 'РГД-5' (Мел)",
     "price": 220,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Мел",
       "power": "six",
@@ -871,6 +910,7 @@
     "id": 46,
     "name": "Граната 'F-1' (Акустика) без скобы",
     "price": 140,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "four",
@@ -892,6 +932,7 @@
     "id": 47,
     "name": "RG-42 (А) граната",
     "price": 345,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -913,6 +954,7 @@
     "id": 48,
     "name": "Граната 'Хаттабка' Г4 Метал.скоба",
     "price": 180,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -935,6 +977,7 @@
     "id": 49,
     "name": "Граната 'F-1' (Акустика)",
     "price": 220,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -957,6 +1000,7 @@
     "id": 50,
     "name": "Граната 7.62 горох",
     "price": 105,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -979,6 +1023,7 @@
     "id": 51,
     "name": "Мина БК ЭМ 4 Горох (ЭВФ)",
     "price": 170,
+    "category": "МинаРастяжка",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1001,6 +1046,7 @@
     "id": 52,
     "name": "Граната РГД-5 М4",
     "price": 215,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Мел",
       "power": "four",
@@ -1022,6 +1068,7 @@
     "id": 53,
     "name": "Граната БК Ф1 Г4",
     "price": 220,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1043,6 +1090,7 @@
     "id": 54,
     "name": "Граната БК Ф1 М4",
     "price": 215,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Мел",
       "power": "four",
@@ -1064,6 +1112,7 @@
     "id": 55,
     "name": "Граната БК РГД-5 Г4 КАТЯ",
     "price": 230,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1085,6 +1134,7 @@
     "id": 56,
     "name": "Граната БК РГД-5 А4",
     "price": 210,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "four",
@@ -1106,6 +1156,7 @@
     "id": 57,
     "name": "Граната БК Ф1 А4",
     "price": 210,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "four",
@@ -1127,6 +1178,7 @@
     "id": 58,
     "name": "Граната БК РГД-5 Горох (без скобы)",
     "price": 190,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1148,6 +1200,7 @@
     "id": 59,
     "name": "Граната БК Ф1 Горох (без скобы)",
     "price": 190,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1169,6 +1222,7 @@
     "id": 60,
     "name": "Граната БК РГД-5 Горох ",
     "price": 220,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1190,6 +1244,7 @@
     "id": 61,
     "name": "Граната БУКА-4 Горох ",
     "price": 120,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1211,6 +1266,7 @@
     "id": 62,
     "name": "Граната М67 Г6",
     "price": 290,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1232,6 +1288,7 @@
     "id": 64,
     "name": "Подствольный выстрел Чекист Горох",
     "price": 180,
+    "category": "Выстрелы",
     "attribute": {
       "filter": "Горох",
       "mfr": "СтрайкАрт"
@@ -1251,6 +1308,7 @@
     "id": 65,
     "name": "Подствольный выстрел Москит Шары",
     "price": 250,
+    "category": "Выстрелы",
     "attribute": {
       "filter": "СтрайкбольныеШары",
       "mfr": "СтрайкАрт"
@@ -1270,6 +1328,7 @@
     "id": 66,
     "name": "Подствольный выстрел вог тюльпан",
     "price": 250,
+    "category": "Выстрелы",
     "attribute": {
       "filter": "Горох",
       "mfr": "СтрайкАрт"
@@ -1289,6 +1348,7 @@
     "id": 67,
     "name": "Граната СА Легионер Г6 (без скобы)",
     "price": 210,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -1310,6 +1370,7 @@
     "id": 68,
     "name": "Граната СА Легионер Г4 (без скобы)",
     "price": 200,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1331,6 +1392,7 @@
     "id": 69,
     "name": "Граната Пионер Г4",
     "price": 200,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1353,6 +1415,7 @@
     "id": 70,
     "name": "Граната Пионер Г6",
     "price": 210,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -1375,6 +1438,7 @@
     "id": 71,
     "name": "Граната СА РГД-5 Г6 (с мет. скобой)",
     "price": 320,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -1396,6 +1460,7 @@
     "id": 72,
     "name": "Граната СА РГД-5 Ш6 (с мет. скобой)",
     "price": 350,
+    "category": "Гранаты",
     "attribute": {
       "filter": "СтрайкбольныеШары",
       "power": "four",
@@ -1417,6 +1482,7 @@
     "id": 73,
     "name": "Граната GH (горох)",
     "price": 110,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1438,6 +1504,7 @@
     "id": 74,
     "name": "Егерь Актив Ш4 (шары)",
     "price": 250,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1459,6 +1526,7 @@
     "id": 75,
     "name": "Егерь Актив Г6 (горох)",
     "price": 230,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -1480,6 +1548,7 @@
     "id": 76,
     "name": "Граната GH РГД-5 (горох)",
     "price": 150,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1501,6 +1570,7 @@
     "id": 78,
     "name": "Граната GH Flash Светозвуковая (НЕ ДЛЯ СТРАЙКБОЛА)",
     "price": 250,
+    "category": "Гранаты",
     "attribute": {
       "filter": "СветоШумовые",
       "power": "six",
@@ -1522,6 +1592,7 @@
     "id": 79,
     "name": "Граната Сварга 6",
     "price": 140,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -1543,6 +1614,7 @@
     "id": 80,
     "name": "Граната Сварга 4",
     "price": 110,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1564,6 +1636,7 @@
     "id": 81,
     "name": "Граната RAG F-1 M",
     "price": 215,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Мел",
       "power": "six",
@@ -1585,6 +1658,7 @@
     "id": 82,
     "name": "Граната RAG F-1 МГ",
     "price": 390,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Массогабаритная",
       "power": "six",
@@ -1606,6 +1680,7 @@
     "id": 83,
     "name": "Граната RAG RGD-6 A",
     "price": 165,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -1627,6 +1702,7 @@
     "id": 84,
     "name": "Граната RAG RGD-6 M",
     "price": 215,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Мел",
       "power": "six",
@@ -1648,6 +1724,7 @@
     "id": 86,
     "name": "Граната RAG RGD-6 S",
     "price": 185,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -1669,6 +1746,7 @@
     "id": 85,
     "name": "Граната RAG RGD-6 МГ",
     "price": 390,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Массогабаритная",
       "power": "six",
@@ -1690,6 +1768,7 @@
     "id": 87,
     "name": "Гранаты RAG F-1 S",
     "price": 185,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -1711,6 +1790,7 @@
     "id": 88,
     "name": "Гранаты RAG F-1 А",
     "price": 165,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Массогабаритная",
       "power": "six",
@@ -1732,6 +1812,7 @@
     "id": 89,
     "name": "Гранаты RAG 'ЗаряД'",
     "price": 210,
+    "category": "Гранаты",
     "attribute": {
       "filter": "СветоШумовые",
       "power": "six",
@@ -1753,6 +1834,7 @@
     "id": 90,
     "name": "Мина растяжка RAG СМ-320",
     "price": 180,
+    "category": "МинаРастяжка",
     "attribute": {
       "filter": "СветоШумовые",
       "power": "six",
@@ -1774,6 +1856,7 @@
     "id": 92,
     "name": "Шашка дымовая RAG RG-42",
     "price": 350,
+    "category": "Дым",
     "attribute": {
       "filter": "дым",
       "clamp": true,
@@ -1794,6 +1877,7 @@
     "id": 93,
     "name": "Шашка дымовая RAG УДШ",
     "price": 230,
+    "category": "Дым",
     "attribute": {
       "filter": "дым",
       "clamp": false,
@@ -1814,6 +1898,7 @@
     "id": 94,
     "name": "Граната РГГ горох (Чиркач)",
     "price": 80,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "four",
@@ -1835,6 +1920,7 @@
     "id": 95,
     "name": "Гранат TAG-67 MT (массогабаритная)",
     "price": 770,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Массогабаритная",
       "power": "six",
@@ -1856,6 +1942,7 @@
     "id": 96,
     "name": "Граната TAG-67 PRACTICE М67 (акустика)",
     "price": 385,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -1877,6 +1964,7 @@
     "id": 97,
     "name": "Граната TAG-19-Ш ргд (шары)",
     "price": 440,
+    "category": "Гранаты",
     "attribute": {
       "filter": "СтрайкбольныеШары",
       "power": "six",
@@ -1898,6 +1986,7 @@
     "id": 98,
     "name": "Граната TAG R2BМ EVO3 (краска)",
     "price": 385,
+    "category": "Гранаты",
     "attribute": {
       "filter": "ПейнтбольныеШары",
       "power": "six",
@@ -1919,6 +2008,7 @@
     "id": 99,
     "name": "Гранаты TAG AFG-4 (горох)",
     "price": 275,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Горох",
       "power": "six",
@@ -1940,6 +2030,7 @@
     "id": 100,
     "name": "Граната TAG FBG-4 (акустика)",
     "price": 255,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -1961,6 +2052,7 @@
     "id": 101,
     "name": "Граната TAG-19-У ргд (акустика)",
     "price": 385,
+    "category": "Гранаты",
     "attribute": {
       "filter": "Акустика",
       "power": "six",
@@ -1982,6 +2074,7 @@
     "id": 102,
     "name": "Граната TAG-67 (шары)",
     "price": 385,
+    "category": "Гранаты",
     "attribute": {
       "filter": "СтрайкбольныеШары",
       "power": "six",

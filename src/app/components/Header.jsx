@@ -115,7 +115,7 @@ const Header = () => {
                 </label>
             </div>
 
-            <div class="main_header" onTouchStart={handleTouch} >
+            <div class="main_header" onClick={handleTouch} >
                 <input
                     // className={isSearching ? 'search active' : 'search'}
                     className="search"

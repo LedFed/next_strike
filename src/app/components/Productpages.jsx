@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { useCart } from '../context/CartProvider';
 import Accordions from './Accordions';
 import Popular from './Popular';
+import ScrollToTop from './ScrollToTop';
 // import Loading from '../dashboard/loading';
 
 export default function Productpages({ product }) {
@@ -88,6 +89,7 @@ export default function Productpages({ product }) {
     return (
 
         <>
+            <ScrollToTop />
             <div className="current_card " key={product.id}>
                 <div className="current_card_left">
                     {/* <img src={`../img/${product.src[0]}`}

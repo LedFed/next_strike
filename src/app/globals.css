@@ -191,7 +191,6 @@ body {
 }
 
 .header_search {
-  flex: 2 1;
   display: flex;
   width: 100%;
   align-items: center;
@@ -1669,6 +1668,7 @@ header.active .search {
   padding-left: 20px;
   display: block;
   width: 100%;
+  flex: auto;
 }
 
 header.active .logo {
@@ -1970,9 +1970,9 @@ header.active .wrap {
   }
   .search {
     background: transparent;
-    max-width: 0;
+    max-width: unset;
+    width: 0;
     border-radius: unset;
-    background-color: #f0f0f0;
     flex: none;
     padding: 0;
     border: none;

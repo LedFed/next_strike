@@ -414,7 +414,7 @@ body {
 // }
 
 .header_search {
-    flex: 2 1;
+    // flex: 2 1;
     display: flex;
     width: 100%;
     align-items: center;
@@ -1586,10 +1586,11 @@ footer {
 
     .search {
         background: transparent;
-        max-width: 0; //width
+        max-width: unset; //width
+        width: 0;
 
         border-radius: unset;
-        background-color: #f0f0f0;
+        // background-color: #f0f0f0;
         flex: none;
         padding: 0;
         border: none;

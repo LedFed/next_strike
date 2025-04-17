@@ -4,6 +4,7 @@ import Breadcrumbs from "../../app/components/Breadcrumbs";
 import CardItem from '../../app/components/CardItem';
 import "@/app/globals.css";
 import Productpages from '../../app/components/Productpages';
+import Head from 'next/head';
 import fs from 'fs';
 import path from 'path';
 
@@ -45,27 +46,34 @@ const Stage = ({ product }) => {
         { title: product && product?.name || 'товар', link: `/product/${product?.code || ''}` }
     ];
     return (
-        <div>
+        <>
+            <Head>
+                <title>{product.name}</title>
+                <meta name="description" content= {product.name} />
+            </Head>
+            <div>
 
-            <div className="container">
-                <Breadcrumbs items={breadcrumbsItems} />
-                <Productpages
-                    product={product}
-                // images={images}
-                />
-                <div className="card_items">
-                    {/* {
+                <div className="container">
+                    <Breadcrumbs items={breadcrumbsItems} />
+                    <Productpages
+                        product={product}
+                    // images={images}
+                    />
+                    <div className="card_items">
+                        {/* {
                         product.map(i => (
                             <Productpages
                                 product={i}
                             />
                         ))} */}
 
-                    {/* <CardItem product={product} /> */}
+                        {/* <CardItem product={product} /> */}
+                    </div>
                 </div>
+
             </div>
 
-        </div>
+        </>
     );
 };
 
