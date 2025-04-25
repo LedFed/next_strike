@@ -1,31 +1,21 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+"use client"; // Помечаем компонент как клиентский
 
-const MyComponent = () => {
-  const e = useRouter();
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+
+const ScrollToTop = () => {
+  const pathname = usePathname(); // Получаем текущий путь
 
   useEffect(() => {
-    if (!e.events) {
-      console.error('Router events are undefined');
-      return;
-    }
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+    // console.log("Изменение положения скролла"); // Лог для отладки
+  }, [pathname]); // Запускаем эффект при изменении пути
 
-    const t = () => {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-      });
-    };
-
-    e.events.on("routeChangeComplete", t);
-
-    return () => {
-      e.events.off("routeChangeComplete", t);
-    };
-  }, [e.events]);
-
-  return null; // Или ваш JSX
+  return null; // Этот компонент ничего не рендерит
 };
 
-export default MyComponent;
+export default ScrollToTop;

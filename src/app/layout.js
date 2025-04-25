@@ -1,11 +1,17 @@
-import { Inter } from "next/font/google";
+
 import "./globals.css";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+import ScrollToTop from "@/app/components/ScrollToTop";
 import { CartProvider } from "./context/CartProvider";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { YandexMetrika } from "@koiztech/next-yandex-metrika";
+
+import LayoutClient from './components/LayoutClient'
+// import YandexMetrika from "./components/YandexMetrika";
+
 
 // const inter = Inter({ subsets: ["latin"] }); className={inter.className}
 
@@ -15,24 +21,40 @@ import Footer from "./components/Footer";
 // };
 
 export default function RootLayout({ children }) {
+  const yandexMetrikaId = 101262687; 
 
   return (
     <html lang="ru">
       <meta charSet="utf-8" />
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>strikeops</title>
+      <meta name="description" content='Магазин страйкбольной пиротехники: Гранаты, дымы, мины-растяжки, армейская пиротехника' />
+
       <body >
+
         <div>
+          <ScrollToTop />
+          <YandexMetrika
+            id={yandexMetrikaId}
+            clickmap={true}
+            trackLinks={true}
+            accurateTrackBounce={true}
+            webvisor={false}
+            strategy="afterInteractive" />
+
 
           <CartProvider>
             <Header />
-            {children}
+            <LayoutClient>
+              {children}
+            </LayoutClient>
             <Footer />
 
           </CartProvider>
-        </div>
 
+        </div>
       </body>
-    </html>
+    </html >
   );
 }

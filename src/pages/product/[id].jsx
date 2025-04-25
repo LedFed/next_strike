@@ -16,7 +16,7 @@ export async function getStaticPaths() {
         const paths = data.map(product => ({
             params: { id: product.code.toString() },
         }));
-        console.log(paths);
+        // console.log(paths);
         return { paths, fallback: 'blocking' };
     } catch (error) {
         console.error('Ошибка при получении данных:', error);
@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
         const data = JSON.parse(jsonData);
 
         const product = data.find(i => i.code.toString() === params.id) || null;
-        console.log(product);
+        // console.log(product);
         return { props: { product } };
     } catch (error) {
         console.error('Ошибка при получении данных продукта:', error);
@@ -48,8 +48,8 @@ const Stage = ({ product }) => {
     return (
         <>
             <Head>
-                <title>{product.name}</title>
-                <meta name="description" content= {product.name} />
+                <title>{product?.name}</title>
+                <meta name="description" content= {product?.name} />
             </Head>
             <div>
 

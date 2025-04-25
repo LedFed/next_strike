@@ -1,5 +1,46 @@
 // card_item 
 
+@mixin Bold($size) {
+    font-family: "Niramit", sans-serif;
+    font-weight: 700;
+    font-size: $size;
+    letter-spacing: 0.02em;
+    color: #181818;
+}
+
+@mixin Medium($size) {
+    font-family: "Niramit", sans-serif;
+    font-weight: 500;
+    font-size: $size;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #000;
+}
+
+@mixin Regular($size) {
+    font-family: "Niramit", sans-serif;
+    font-weight: 500;
+    font-size: $size;
+    letter-spacing: 0.02em;
+    color: #000;
+}
+
+@mixin MRegular($size) {
+    // font-family: var(--font-family);
+    font-weight: 400;
+    font-size: $size;
+    line-height: 170%;
+    letter-spacing: 0.02em;
+    color: #3d3d3d;
+}
+
+@mixin Lite($size) {
+    font-family: "Niramit", sans-serif;
+    font-weight: 400;
+    font-size: $size;
+    letter-spacing: 0.02em;
+}
+
 .catalog {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -51,6 +92,7 @@
     // width: 300px;
     height: 281px;
     object-fit: cover;
+    width: -webkit-fill-available;
 }
 
 .card_title {

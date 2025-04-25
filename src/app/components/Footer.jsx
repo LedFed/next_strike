@@ -37,7 +37,7 @@ export default function Footer() {
 
                         <div className="footer_pages">
                             <div className="footer_info">
-                                <h6 className="footer_title">Информация</h6>
+                                <h5 className="footer_title">Информация</h5>
                                 <Link href="/delivery" className="footer_text">Как оформить заказ</Link>
                                 <Link href="/delivery" className="footer_text">Условия оплаты</Link>
                                 <Link href="/delivery" className="footer_text">Условия доставки</Link>
@@ -45,7 +45,7 @@ export default function Footer() {
                             </div>
 
                             <div className="footer_market">
-                                <h6 className="footer_title">Магазин</h6>
+                                <h5 className="footer_title">Магазин</h5>
                                 <Link href="/catalog" className="footer_text">Католог</Link>
                                 <Link href="/" className="footer_text">FAQ</Link>
                                 {/* <Link href="/delivery" className="footer_text">О магазине</Link> */}
@@ -53,7 +53,7 @@ export default function Footer() {
                             </div>
 
                             <div className="footer_buyers">
-                                <h6 className="footer_title">Покупателям</h6>
+                                <h5 className="footer_title">Покупателям</h5>
                                 <Link href="/delivery" className="footer_text">Оплата</Link>
                                 <Link href="/delivery" className="footer_text">Возврат</Link>
                                 <Link href="/delivery" className="footer_text">Доставка</Link>
@@ -62,7 +62,7 @@ export default function Footer() {
                         </div>
 
                         <div className="footer_contacts">
-                            <h6 className="footer_title">Контакты</h6>
+                            <h5 className="footer_title">Контакты</h5>
                             <p className="footer_text">Ежедневно с 12:00 до 20:00</p>
                             <p className="footer_text">г. Челябинск, Гагарина 5б/3</p>
                             <a className="number" href="tel:+ 7 9(535)-530-53">+ 7 9(535)-530-53</a>

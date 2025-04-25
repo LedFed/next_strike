@@ -19,7 +19,7 @@ export async function getStaticPaths() {
             params: { id: category },
         }));
 
-        console.log(paths);
+        // console.log(paths);
         return { paths, fallback: 'blocking' };
     } catch (error) {
         console.error('Ошибка при получении данных:', error);
@@ -33,11 +33,11 @@ export async function getStaticProps({ params }) {
         const jsonData = fs.readFileSync(filePath);
         const data = JSON.parse(jsonData);
 
-        console.log(data + 'вот тити');
+        // console.log(data + 'вот тити');
 
         const products = data.filter(product => product.category === params.id)
 
-        console.log(products);
+        // console.log(products);
         return { props: { products } };
     } catch (error) {
         console.error('Ошибка при получении данных продукта:', error);
@@ -69,6 +69,14 @@ const Stage = ({ products }) => {
         { title: 'Главная', link: '/' },
         { title: products && products[0]?.category || 'раздел', link: `/product/${products[0]?.category || ''}` }
     ];
+
+    const descriptionText = [
+        { title: 'Страйкбольный дым — это мощный инструмент, который может изменить ход игры. Использование дыма создает завесу, позволяющую скрыть перемещение игроков и дезориентировать противника.'},
+        { title: '1. Тактическое прикрытие: Дымовая завеса помогает скрыть действия вашей команды, что особенно полезно при атаке или отступлении.'},
+        { title: '2. Дезориентация противника: Густой дым затрудняет видимость, создавая неразбериху у противника и позволяя вашей команде действовать более уверенно.'},
+        { title: 'Страйкбольный дым — это не просто эффект, а стратегический элемент, который поможет вам добиться успеха в игре. Используйте дымовые гранаты с умом и создавайте завесу для достижения тактического преимущества!'},
+
+    ]
     return (
         <div>
 
@@ -94,6 +102,12 @@ const Stage = ({ products }) => {
                     )}
 
                 </div>
+
+                {descriptionText.map((e, index) => (
+                    <p key={index} className="pattern_text">
+                        {e.title}
+                    </p>
+                ))}
 
             </div>
 

@@ -30,7 +30,7 @@ export const CartProvider = ({ children }) => {
                 const res = await fetch('/bdlist.json')
                 const data = await res.json();
                 setProducts(data);
-                console.log('Полученные данные:', data);
+                // console.log('Полученные данные:', data);
             } catch (error) {
                 console.log(error);
             }

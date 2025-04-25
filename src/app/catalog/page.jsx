@@ -11,7 +11,7 @@ import Head from 'next/head';
 export default function Catalog() {
     const { products } = useCart();
     // const [product, setProduct] = useCart([]);
-    const [sortedProducts, setSortedProducts] = useState([]);
+    // const [sortedProducts, setSortedProducts] = useState([]);
     const [visibleCount, setVisibleCount] = useState(16);
     const [loader, setLoader] = useState(true);
     const [activeBtn, setActiveBtn] = useState(false);
@@ -49,7 +49,7 @@ export default function Catalog() {
             'six': false
         }
     });
-    const [arr, setMas] = useState([]);
+    // const [arr, setMas] = useState([]);
     const [listitem, setListitem] = useState([]);
 
     useEffect(() => {
@@ -119,7 +119,7 @@ export default function Catalog() {
             setListitem(filteredMas)
             console.log(JSON.stringify(filteredMas));
         } else {
-            setMas([]); // Если нет фильтров, очищаем массив
+            // setMas([]); // Если нет фильтров, очищаем массив
             setListitem(products)
         }
     }, [filters]);
@@ -204,7 +204,6 @@ export default function Catalog() {
                 <title>Каталог</title>
                 <meta name="description" content="Каталог" />
             </Head>
-
             <div className='container'>
                 {/* <Loading/> */}
                 <Breadcrumbs items={breadcrumbsItems} />

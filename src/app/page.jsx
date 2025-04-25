@@ -4,6 +4,7 @@ import Card from './components/Card';
 import Category from './components/Category';
 import Feedback from './components/Feedback';
 import Accordions from './components/Accordions';
+
 // import More from './components/More';
 // import Slider from 'react-slick';
 // import fs from 'fs';
@@ -44,7 +45,7 @@ export default async function Main() {
         {/* <Slider {...settings}> */}
         <div className="banner">
           <img src="/img/baner.png" alt="" />
-          <h1 className="main_title">Самые низкие цены</h1>
+          {/* <h1 className="main_title">Самые низкие цены</h1> */}
         </div>
 
 
