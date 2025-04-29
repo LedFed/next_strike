@@ -87,11 +87,9 @@ export default function Catalog() {
         return result;
     };
 
-
-
     const filteredResults = extractTrueValues(filters);
 
-    console.log(JSON.stringify(filteredResults) + 'Данные из фильтров');
+    // console.log(JSON.stringify(filteredResults) + 'Данные из фильтров');
 
     useEffect(() => {
         if (Object.keys(filteredResults).length !== 0) {
@@ -117,7 +115,7 @@ export default function Catalog() {
 
             // setMas(filteredMas);
             setListitem(filteredMas)
-            console.log(JSON.stringify(filteredMas));
+            // console.log(JSON.stringify(filteredMas));
         } else {
             // setMas([]); // Если нет фильтров, очищаем массив
             setListitem(products)
@@ -202,7 +200,7 @@ export default function Catalog() {
         <>
             <Head>
                 <title>Каталог</title>
-                <meta name="description" content="Каталог" />
+                <meta name="description" content="Каталог страйкбольной пиротехники: страйкбольных гранат, дымовых завес, Мин, растяжек, пульты" />
             </Head>
             <div className='container'>
                 {/* <Loading/> */}

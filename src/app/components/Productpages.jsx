@@ -1,15 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-// import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 // import Slider from 'react-slick';
 import { useCart } from '../context/CartProvider';
 import Accordions from './Accordions';
 import Popular from './Popular';
 import ScrollToTop from './ScrollToTop';
-// import Loading from '../dashboard/loading';
 
 export default function Productpages({ product }) {
-    const { toggleCartItem, cart, loadCartFromLocalStorage, formatNumber, products } = useCart();
+    const { toggleCartItem, cart, products } = useCart();
     const [activeIndex, setActiveIndex] = useState(0);
     const [currentText, setCurrentText] = useState('');
     const [currentImage, setCurrentImage] = useState('');
@@ -21,26 +19,9 @@ export default function Productpages({ product }) {
 
     useEffect(() => {
         setCurrentImage('');
-        // window.scrollTo(0, 0); // Прокручиваем страницу вверх
     }, [router.asPath]
-        // [router.asPath]
     );
 
-
-    // const productDescription = product ? product.description : 'Нет описания';
-
-    // const [imageSrc, setImageSrc] = useState('');
-
-    // useEffect(() => {
-    //     if (product.images.rows.length > 0) {
-    //         const imagePath = `../img/${product.images.rows[0].filename}`;
-    //         setImageSrc(imagePath);
-    //     } else {
-    //         setImageSrc('../img/photo_2024-10-27_03-14-02.jpg'); // Путь к изображению по умолчанию
-    //     }
-    // }, [product]);
-
-    // console.log(product + 'Мы ведьмак');
     const texts = [
         { id: 1, title: 'Описание', content: `${product?.description || 'Нет описания'} ` },
         // { id: 1, title: 'Описание', content: 'Нет описания' },
@@ -80,8 +61,6 @@ export default function Productpages({ product }) {
         toggleCartItem(product); // Вызываем функцию при добавлении товара
     };
 
-    // console.log(product);
-
     if (!product) {
         return <div> Загрузка... </div>
     }
@@ -89,6 +68,7 @@ export default function Productpages({ product }) {
     return (
 
         <>
+          
             <ScrollToTop />
             <div className="current_card " key={product.id}>
                 <div className="current_card_left">

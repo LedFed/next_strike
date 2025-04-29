@@ -4,23 +4,9 @@ import Card from './components/Card';
 import Category from './components/Category';
 import Feedback from './components/Feedback';
 import Accordions from './components/Accordions';
-
-// import More from './components/More';
-// import Slider from 'react-slick';
-// import fs from 'fs';
-// import path from 'path';
-// import ScrollToTop from './components/ScrollToTop';
-
-// async function getProducts() {
-//   const filePath = path.join(process.cwd(), 'src', 'pages', 'api', 'bdlist.json');
-//   const jsonData = fs.readFileSync(filePath);
-//   const products = JSON.parse(jsonData);
-//   return products;
-// }
+import Head from 'next/head';
 
 export default async function Main() {
-
-  // const products = await getProducts();
 
   const settings = {
     dots: true,
@@ -39,20 +25,25 @@ export default async function Main() {
 
   return (
     <>
-      {/* <ScrollToTop /> */}
+      <Head>
+        <title>strikeops</title>
+        <meta name="description" content='Магазин страйкбольной пиротехники' />
+      </Head>
+
+
       <div className="container">
 
         {/* <Slider {...settings}> */}
+
         <div className="banner">
-          <img src="/img/baner.png" alt="" />
-          {/* <h1 className="main_title">Самые низкие цены</h1> */}
+          {/* <img src="/img/baner.png" alt="" /> */}
+          <h1 className="main_title">Страйкбольные гранаты</h1>
         </div>
-
-
 
         {/* <div className="banner">
             <h1 className="main_title">Самые низкие цены</h1>
           </div> */}
+
         {/* </Slider> */}
 
         <h2 className="title">Категории товаров</h2>
@@ -61,14 +52,11 @@ export default async function Main() {
         <Card
         // products={products}
         />
-
-        {/* <More /> */}
         <Feedback />
 
         <h2 className="title center">FaQ</h2>
         <Accordions items={items} />
       </div>
-
 
     </>
   )

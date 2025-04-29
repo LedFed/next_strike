@@ -32,7 +32,7 @@ export default function Footer() {
                             </svg>
 
                             </div>
-                            <p className="footer_copyright_text">2024 © Интернет-Магазин strikeops</p>
+                            <p className="footer_copyright_text">2025 © Интернет-Магазин strikeops</p>
                         </div>
 
                         <div className="footer_pages">
@@ -64,10 +64,10 @@ export default function Footer() {
                         <div className="footer_contacts">
                             <h5 className="footer_title">Контакты</h5>
                             <p className="footer_text">Ежедневно с 12:00 до 20:00</p>
-                            <p className="footer_text">г. Челябинск, Гагарина 5б/3</p>
-                            <a className="number" href="tel:+ 7 9(535)-530-53">+ 7 9(535)-530-53</a>
+                            <p className="footer_text">г. Челябинск, Гагарина 5Б/3</p>
+                            <Link className="number" href="tel:+ 7 9(535)-530-53">+7(996)-232-34-75</Link>
 
-                            <a href="#" className="footer_link">Написать нам в Telegram</a>
+                            <Link href="https://t.me/strikeopss" className="footer_link">Написать нам в Telegram</Link>
                         </div>
                     </div>
                 </div>

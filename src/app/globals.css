@@ -341,8 +341,13 @@ span {
 
 .banner {
   margin-top: 24px;
+  background-image: url(../../public/img/baner.png);
+  background-repeat: no-repeat;
   height: 397px;
   background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+  max-width: 100%;
   border-radius: 10px;
   display: flex;
   height: 512px;
@@ -1956,6 +1961,17 @@ header {
   .header_container {
     flex-direction: column;
   }
+  .banner {
+    background-image: url(../../public/img/mobil_banner.webp);
+  }
+  .main_title {
+    font-size: 38px;
+    margin-top: 310px;
+    margin-left: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 90%;
+  }
   .navigation {
     position: absolute;
     width: 100%;
@@ -2160,10 +2176,10 @@ header {
     width: -webkit-fill-available;
   }
   .catalog_filter {
-    position: absolute;
+    position: fixed;
     transition: transform 0.3s linear;
     top: 137px;
-    transform: translateX(-100%);
+    transform: translateX(-110%);
     width: 100%;
   }
   .catalog_filter.active {

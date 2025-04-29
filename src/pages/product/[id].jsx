@@ -1,7 +1,7 @@
 'use client';
 
 import Breadcrumbs from "../../app/components/Breadcrumbs";
-import CardItem from '../../app/components/CardItem';
+// import CardItem from '../../app/components/CardItem';
 import "@/app/globals.css";
 import Productpages from '../../app/components/Productpages';
 import Head from 'next/head';
@@ -57,7 +57,6 @@ const Stage = ({ product }) => {
                     <Breadcrumbs items={breadcrumbsItems} />
                     <Productpages
                         product={product}
-                    // images={images}
                     />
                     <div className="card_items">
                         {/* {

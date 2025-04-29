@@ -146,7 +146,7 @@ const Header = () => {
                         <li className="header_links"><Link className="header_link" href="/delivery" onClick={handleInputChange}>
                             Доставка
                         </Link></li>
-                        <li className="header_links"> <Link className="number" href="tel: +7953553053">+ 7 9(535)-530-53</Link></li>
+                        <li className="header_links"> <Link className="number" href="tel: +7953553053">+7(996)-232-34-75</Link></li>
 
                     </ul>
                 </div>

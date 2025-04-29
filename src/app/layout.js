@@ -1,6 +1,5 @@
 
 import "./globals.css";
-
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 import ScrollToTop from "@/app/components/ScrollToTop";
@@ -8,12 +7,9 @@ import { CartProvider } from "./context/CartProvider";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { YandexMetrika } from "@koiztech/next-yandex-metrika";
-
+import GoogleAnalytics from './components/GoogleAnalytics';
 import LayoutClient from './components/LayoutClient'
-// import YandexMetrika from "./components/YandexMetrika";
 
-
-// const inter = Inter({ subsets: ["latin"] }); className={inter.className}
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -21,8 +17,8 @@ import LayoutClient from './components/LayoutClient'
 // };
 
 export default function RootLayout({ children }) {
-  const yandexMetrikaId = 101262687; 
-
+  // const yandexMetrikaId = 101262687;
+  // const googleAnalytics = 101262687;
   return (
     <html lang="ru">
       <meta charSet="utf-8" />
@@ -36,16 +32,17 @@ export default function RootLayout({ children }) {
         <div>
           <ScrollToTop />
           <YandexMetrika
-            id={yandexMetrikaId}
+            id={process.env.NEXT_PUBLIC_YANDEX_ID}
             clickmap={true}
             trackLinks={true}
             accurateTrackBounce={true}
             webvisor={false}
             strategy="afterInteractive" />
 
-
+          <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
           <CartProvider>
             <Header />
+
             <LayoutClient>
               {children}
             </LayoutClient>

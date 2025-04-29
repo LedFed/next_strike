@@ -30,7 +30,7 @@ export default function Feedback() {
 
     return (
         <div className="support_calls">
-            <h3 className="support_title">Нужна помощь в подборе оборудования?</h3>
+            <h3 className="support_title">Нужна помощь в подборе ?</h3>
             <p className="support_text">Запишитесь на консультацию. Наш специалист перезвонит вам.</p>
             <form onSubmit={handleSubmit} className="support">
                 <input

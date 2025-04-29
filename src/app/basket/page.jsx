@@ -5,6 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import { ToastContainer, toast } from 'react-toastify';
 import Link from 'next/link';
 import Modal from '../modal/Modal';
+import Head from 'next/head';
 
 export default function page() {
   const { cart, toggleCartItem, totalQuant, totalSum, increment, decrement } = useCart();
@@ -40,7 +41,7 @@ export default function page() {
 
       if (!response.ok) {
         throw new Error(`Ошибка: ${response.status}`);
-    
+
       }
       const data = await response.json();
       if (data.success) {
@@ -82,9 +83,13 @@ export default function page() {
     }
   };
 
-  console.log(cart);
+  // console.log(cart);
   return (
     <>
+      <Head>
+        <title>Коризна</title>
+        <meta name="description" content="Страница оформление заказов stirkeops" />
+      </Head>
       <div className="container">
         <Breadcrumbs items={breadcrumbsItems} />
         <Modal active={active} handleOrder={handleOrder} setActive={setActive} />
