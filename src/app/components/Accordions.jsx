@@ -5,9 +5,9 @@ const AccordionItem = ({ title, content, isOpen, onToggle }) => {
     return (
         <div className={isOpen ? 'accordion_content active' : 'accordion_content'}
             onClick={onToggle}>
-            <h4 className={isOpen ? 'accordion_title active' : 'accordion_title'}>
+            <h3 className={isOpen ? 'accordion_title active' : 'accordion_title'}>
                 {title}
-            </h4>
+            </h3>
             <p className="accordion_descript">{content}</p>
             <hr />
         </div>
