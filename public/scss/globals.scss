@@ -469,6 +469,14 @@ body {
     // margin-left: 40px;
 }
 
+.warning_text {
+    align-items: center;
+    text-align: center;
+    padding-bottom: 10px;
+    color: red;
+    font-weight: 600;
+}
+
 .basket_count {
     position: absolute;
     right: 12px;
@@ -857,6 +865,7 @@ span {
 }
 
 .accordion_content.active .accordion_descript {
+    line-height: 1.5;
     letter-spacing: 1.5px;
 }
 
@@ -1560,7 +1569,7 @@ footer {
 
     .main_title {
         font-size: 38px;
-    
+
         margin-top: 310px;
         margin-left: 16px;
         word-wrap: break-word;
@@ -1895,7 +1904,14 @@ footer {
         &.active {
             transform: translateX(0%);
             width: calc(100% - 16px);
+            height: 100%;
+            overflow-x: hidden;
         }
+    }
+
+    .accordion_title {
+        font-size: 17px;
+        padding-right: 40px;
     }
 }
 

@@ -120,7 +120,7 @@ export default function page() {
                 </div>
               ))
             ) : (
-              <p> Ничего не нашли </p>
+              <p> Добавьте товары в <Link href={'/catalog'}>корзину</Link></p>
             )}
 
           </div>
@@ -132,9 +132,22 @@ export default function page() {
               <div className="result">Итого</div>
               <div className="all_price">{totalSum}</div>
             </div>
-            <div className="btn" onTouchStart={() => setActive(true)
+            <p className='warning_text'>{totalSum < 1000 ? 'Минимальная сумма заказа 1 000 рублей.' : ''}</p>
+            <div className="btn" 
+            // onTouchStart={() => setActive(true)
+              // onClick={() => setActive(true)} disabled={totalSum < 1000}
+
+              onClick={() => {
+                if (totalSum < 1000) {
+                    setActive(false);
+                } else {
+                    setActive(true);
+                    // Здесь можно добавить логику для отправки формы, если это необходимо
+                }
+            }} 
               //  onClick={handleOrder}
-            }>Заказать</div>
+            
+            >Заказать</div>
             <div className="basket_info_polity"><span>Соглашаюсь с правилами пользования торговой площадкой и <Link href='/delivery'>возврата</Link> </span>
             </div>
           </div>
