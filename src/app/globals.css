@@ -585,7 +585,7 @@ span {
 }
 
 .accordion_content.active .accordion_descript {
-  letter-spacing: 1.5px;
+  line-height: 1.5;
 }
 
 .accordion_main {
@@ -1314,6 +1314,9 @@ footer {
   align-self: center;
   margin-top: 20px;
   margin: 0 auto;
+}
+.basket_info_block .btn .disabled {
+  background: #e5e5e5;
 }
 
 .basket_info_title {

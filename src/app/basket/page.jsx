@@ -120,21 +120,24 @@ export default function page() {
                 </div>
               ))
             ) : (
-              <p> Ничего не нашли </p>
+              <p> Добавьте товары в <Link href={'/catalog'}>корзину</Link></p>
             )}
 
           </div>
 
           <div className="basket_info_block">
-            <h4 className="basket_info_title">Оплата после примерки</h4>
+            <h4 className="basket_info_title">Оплата после оформления</h4>
             <p className="basket_info_text">Товары, {totalQuant} шт.</p>
             <div className="basket_info_total">
               <div className="result">Итого</div>
               <div className="all_price">{totalSum}</div>
             </div>
-            <div className="btn" onTouchStart={() => setActive(true)
-              //  onClick={handleOrder}
-            }>Заказать</div>
+            
+            <div className={totalSum > 1000 ? 'btn' : 'btn disabled'}
+            //  onTouchStart={() => setActive(true)
+               onClick={handleOrder} disabled={totalSum < 1000}
+            >Заказать</div>
+            <p>{totalSum < 1000 ? 'Сумма заказа меньше 1000' : ''}</p>
             <div className="basket_info_polity"><span>Соглашаюсь с правилами пользования торговой площадкой и <Link href='/delivery'>возврата</Link> </span>
             </div>
           </div>

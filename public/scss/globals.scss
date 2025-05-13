@@ -857,7 +857,8 @@ span {
 }
 
 .accordion_content.active .accordion_descript {
-    letter-spacing: 1.5px;
+    // letter-spacing: 1.5px;
+    line-height: 1.5;
 }
 
 .accordion_main {
