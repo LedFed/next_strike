@@ -39,9 +39,9 @@ export default function Footer() {
                             <div className="footer_info">
                                 <h5 className="footer_title">Информация</h5>
                                 <Link href="/delivery" className="footer_text">Как оформить заказ</Link>
-                                <Link href="/delivery" className="footer_text">Условия оплаты</Link>
+                                <Link href="/payments" className="footer_text">Условия оплаты</Link>
                                 <Link href="/delivery" className="footer_text">Условия доставки</Link>
-                                <Link href="/delivery" className="footer_text">Гарантия на товар</Link>
+                                <Link href="/guaranty" className="footer_text">Гарантия на товар</Link>
                             </div>
 
                             <div className="footer_market">
@@ -54,8 +54,8 @@ export default function Footer() {
 
                             <div className="footer_buyers">
                                 <h5 className="footer_title">Покупателям</h5>
-                                <Link href="/delivery" className="footer_text">Оплата</Link>
-                                <Link href="/delivery" className="footer_text">Возврат</Link>
+                                <Link href="/payments" className="footer_text">Оплата</Link>
+                                <Link href="/guaranty" className="footer_text">Возврат</Link>
                                 <Link href="/delivery" className="footer_text">Доставка</Link>
                                 <Link href="/delivery" className="footer_text">Контакты</Link>
                             </div>
