@@ -133,9 +133,17 @@ export default function page() {
               <div className="all_price">{totalSum}</div>
             </div>
             <p className='warning_text'>{totalSum < 1000 ? 'Минимальная сумма заказа 1 000 рублей.' : ''}</p>
-            <div className={totalSum > 1000 ? 'btn' : 'btn disabled'}
+            <div className={totalSum >= 999 ? 'btn' : 'btn disabled'}
             //  onTouchStart={() => setActive(true)
-               onClick={handleOrder} disabled={totalSum < 1000}
+               onClick={() => {
+                if (totalSum < 999) {
+                    setActive(false);
+                } else {
+                    setActive(true);
+                    // Здесь можно добавить логику для отправки формы, если это необходимо
+                }
+            }} 
+              //  onClick={handleOrder} disabled={totalSum < 1000}
             >Заказать</div>
             
             <div className="basket_info_polity"><span>Соглашаюсь с правилами пользования торговой площадкой и <Link href='/guaranty'>возврата</Link> </span>
