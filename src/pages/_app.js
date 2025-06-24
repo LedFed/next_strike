@@ -33,8 +33,6 @@ export default function MyApp({ Component, pageProps }) {
         <>
             {/* <ScrollToTop > */}
             {/* <LayoutClient/> */}
-
-
             <Script
                 src="https://mc.yandex.ru/metrika/tag.js"
                 async
@@ -45,7 +43,6 @@ export default function MyApp({ Component, pageProps }) {
                     <img src="https://mc.yandex.ru/watch/YOUR_COUNTER_ID" style={{ position: 'absolute', left: '-9999px' }} alt="" />
                 </div>
             </noscript>
-
 
             {/* <YandexMetrika
                 id={process.env.NEXT_PUBLIC_YANDEX_ID}
