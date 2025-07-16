@@ -126,29 +126,27 @@ export default function page() {
           </div>
 
           <div className="basket_info_block">
-            <h4 className="basket_info_title">Оплата после примерки</h4>
+            <h4 className="basket_info_title">Оплата после оформления</h4>
             <p className="basket_info_text">Товары, {totalQuant} шт.</p>
             <div className="basket_info_total">
               <div className="result">Итого</div>
               <div className="all_price">{totalSum}</div>
             </div>
             <p className='warning_text'>{totalSum < 1000 ? 'Минимальная сумма заказа 1 000 рублей.' : ''}</p>
-            <div className="btn" 
-            // onTouchStart={() => setActive(true)
-              // onClick={() => setActive(true)} disabled={totalSum < 1000}
-
-              onClick={() => {
-                if (totalSum < 1000) {
+            <div className={totalSum >= 999 ? 'btn' : 'btn disabled'}
+            //  onTouchStart={() => setActive(true)
+               onClick={() => {
+                if (totalSum < 999) {
                     setActive(false);
                 } else {
                     setActive(true);
                     // Здесь можно добавить логику для отправки формы, если это необходимо
                 }
             }} 
-              //  onClick={handleOrder}
-            
+              //  onClick={handleOrder} disabled={totalSum < 1000}
             >Заказать</div>
-            <div className="basket_info_polity"><span>Соглашаюсь с правилами пользования торговой площадкой и <Link href='/delivery'>возврата</Link> </span>
+            
+            <div className="basket_info_polity"><span>Соглашаюсь с правилами пользования торговой площадкой и <Link href='/guaranty'>возврата</Link> </span>
             </div>
           </div>
 

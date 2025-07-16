@@ -41,7 +41,7 @@ export default function Card() {
     // }, []);
 
     const handleShowMore = () => {
-        setVisibleCount(prevCount => prevCount + 4);
+        setVisibleCount(prevCount => prevCount + 12);
     };
 
     useEffect(() => {

@@ -6,7 +6,7 @@ import ScrollToTop from "@/app/components/ScrollToTop";
 import { CartProvider } from "./context/CartProvider";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { YandexMetrika } from "@koiztech/next-yandex-metrika";
+// import { YandexMetrika } from "@koiztech/next-yandex-metrika";
 import GoogleAnalytics from './components/GoogleAnalytics';
 import LayoutClient from './components/LayoutClient'
 
@@ -31,19 +31,19 @@ export default function RootLayout({ children }) {
 
         <div>
           <ScrollToTop />
-          <YandexMetrika
+          {/* <YandexMetrika
             id={process.env.NEXT_PUBLIC_YANDEX_ID}
             clickmap={true}
             trackLinks={true}
             accurateTrackBounce={true}
-            webvisor={false}
-            strategy="afterInteractive" />
+            webvisor={true}
+            strategy="afterInteractive" /> */}
 
           <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
           <CartProvider>
             <Header />
 
-            <LayoutClient>
+            <LayoutClient > 
               {children}
             </LayoutClient>
             <Footer />
