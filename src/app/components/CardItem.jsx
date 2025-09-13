@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function CardItem({ product }) {
     const { toggleCartItem, cart } = useCart();
-    const filename = product && product.src && product.src.length > 1
+    const filename = product && product.src && product.src.length >= 1
         ? product.src[0]
         : 'defaultFilename.jpg';
 

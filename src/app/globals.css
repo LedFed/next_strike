@@ -1514,6 +1514,13 @@ footer {
   background-size: cover;
 }
 
+.current_unit {
+  font-family: "Niramit", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
 .slider-container {
   width: 100%;
 }

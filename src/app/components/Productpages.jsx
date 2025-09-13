@@ -68,7 +68,7 @@ export default function Productpages({ product }) {
     return (
 
         <>
-          
+
             <ScrollToTop />
             <div className="current_card " key={product.id}>
                 <div className="current_card_left">
@@ -100,6 +100,8 @@ export default function Productpages({ product }) {
                     <p className="current_price">{product.price}</p>
                     <div className="current_clue">Цена действительна только для интернет-магазина и может отличаться от цен в
                         розничных магазинах</div>
+
+                    <div className={product?.unit ? "current_unit" : "current_unit current_chapter_mobile"}>Цена указана за 1шт</div>
 
                     <div className={cart.some(item => item.id === product.id) ? `btn active` : 'btn'} onClick={handleAddToCart}>
                         {cart.some(item => item.id === product.id) ? 'Удалить из корзины' : "Добавить в корзину"}</div>

@@ -10,6 +10,7 @@ export default function Category() {
         { title: 'Обмундирования', active: false, links: './icons/free-icon-paintball-1099542.svg', chapter:"Раздел страйкбольных гранат" },
         { title: 'Пульки', active: false, links: './icons/free-icon-paintball-588794_1.svg', chapter:"Раздел страйкбольных гранат" },
         { title: 'Автоматы/Пистолеты', active: false, links: './icons/icons8-оружие-для-пейнтбола-50.svg', chapter:"Раздел страйкбольных гранат" },
+        { title: 'Петарды', active: true, links: './icons/squib.svg', chapter:"Раздел петард" },
     ]
     return (
         <div className="category_items">

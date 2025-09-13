@@ -147,6 +147,10 @@
     }
 }
 
+.current_unit {
+    @include Lite(11px);
+}
+
 .slider-container {
     width: 100%;
 }
