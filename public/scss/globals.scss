@@ -85,6 +85,10 @@ body {
     user-select: none;
 }
 
+.none {
+    display: none;
+}
+
 // header {
 //     // position: relative;
 //     // height: 70px;
@@ -658,10 +662,18 @@ span {
 // }
 
 .main_title {
-    margin-top: 100px;
-    margin-left: 52px;
-    font-weight: 700;
-    font-size: 58px;
+
+    font-size: 32px;
+    line-height: 136%;
+    font-weight: 600;
+    position: absolute;
+    top: 65px;
+    left: 40px;
+    width: 60%;
+    // margin-top: 100px;
+    // margin-left: 52px;
+    // font-weight: 700;
+    // font-size: 58px;
     letter-spacing: 0.02em;
     color: #fff;
     z-index: 1;
@@ -918,6 +930,41 @@ span {
     // border-bottom: 1px solid #5E5E5E;
 }
 
+//BLOGS
+.articles_title {
+    @include Bold(28px);
+}
+
+.articles_text {
+    @include Medium(18px);
+    line-height: 150%;
+    text-align: left;
+    margin: 16px 0;
+
+    // &:last-child {
+    //     margin-bottom: 70px;
+    //     //Исправить при следущем update
+    // }
+}
+
+.article_img_midle {
+    text-align: center;
+    margin: 24px 0;
+}
+
+.articles_number {
+    margin-left: 20px;
+}
+
+.articles_disc {
+    list-style-type: disc;
+    margin-left: 16px;
+}
+
+.article_picture {
+    width: 100%;
+}
+
 footer {
     display: block;
     background-color: #000;
@@ -926,6 +973,7 @@ footer {
     padding-top: 85px;
     padding-bottom: 65px;
     color: #fff;
+    margin-top: 80px;
 }
 
 .footer_main {
@@ -1383,6 +1431,67 @@ footer {
     }
 }
 
+/* styles/embla.css */
+.embla {
+    overflow: hidden;
+    //   width: 100%;
+    max-width: 791px;
+    height: 390px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 94px;
+
+    .btn {
+        position: absolute;
+        left: 50px;
+        bottom: 16px;
+        z-index: 1;
+    }
+}
+
+.embla__viewport {
+    overflow: hidden;
+    width: 100%;
+    height: inherit;
+}
+
+.embla__container {
+    display: flex;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    height: inherit;
+}
+
+.embla__slide {
+    position: relative;
+    min-width: 100%;
+    flex: 0 0 100%;
+    height: inherit;
+
+    &::after {
+        content: '';
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+    }
+}
+
+.embla__slide img {
+    display: block;
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+
+.embla__button {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
 @import "card";
 @import "basket";
 @import "current_card";
@@ -1568,13 +1677,16 @@ footer {
     }
 
     .main_title {
-        font-size: 38px;
-
-        margin-top: 310px;
-        margin-left: 16px;
+        font-size: 28px;
+        line-height: 136%;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        width: 90%;
+        // margin-top: 310px;
+        // margin-left: 16px;
         word-wrap: break-word;
         overflow-wrap: break-word;
-        max-width: 90%;
+        max-width: 60%;
     }
 
     // .header_links{
@@ -1912,6 +2024,16 @@ footer {
     .accordion_title {
         font-size: 17px;
         padding-right: 40px;
+    }
+
+    //BLOGS
+    .articles_title {
+        @include Bold(20px);
+    }
+
+    .articles_text {
+        @include Medium(14px);
+        text-align: left;
     }
 }
 

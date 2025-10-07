@@ -147,8 +147,12 @@
     }
 }
 
+
+
 .current_unit {
     @include Lite(11px);
+    margin-top: 16px;
+    color: red;
 }
 
 .slider-container {

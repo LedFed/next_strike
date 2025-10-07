@@ -5,6 +5,12 @@ import Category from './components/Category';
 import Feedback from './components/Feedback';
 import Accordions from './components/Accordions';
 import Head from 'next/head';
+import EmblaCarousel from './components/EmblaCarousel';
+
+export const metadata = {
+  title: 'strikeops',
+  description: 'Магазин страйкбольной пиротехники'
+};
 
 export default async function Main() {
 
@@ -23,22 +29,29 @@ export default async function Main() {
     { title: 'Какие сроки доставки?', content: 'Стоимость доставки и ее время зависит от вашего местоположение и габаритов поссылки Обычно занимает от 3 до 7 рабочих дней. Точные сроки доставки можно уточнить на этапе оформления заказа или связавшись с нашей службой поддержки в WhatsApp или Telegram.' },
   ];
 
+  const slides = [
+    { title: 'В нашем магазине теперь можно заказать петарды', img: '/img/baner_petard.png',  links:'/category/Петарды'  },
+    { title: 'Страйкбольная граната: что это такое ?', img: '/img/baner.png', links:'/articles/granats' }
+  ]
+
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>strikeops</title>
         <meta name="description" content='Магазин страйкбольной пиротехники' />
-      </Head>
-
+      </Head> */}
 
       <div className="container">
 
         {/* <Slider {...settings}> */}
+        {/* <div style={{ maxWidth: 900, margin: '0 auto' }}> */}
+        <EmblaCarousel slides={slides} />
+        {/* </div> */}
 
-        <div className="banner">
-          {/* <img src="/img/baner.png" alt="" /> */}
-          <h1 className="main_title">Страйкбольные гранаты</h1>
-        </div>
+        {/* <div className="banner"> */}
+        {/* <img src="/img/baner.png" alt="" /> */}
+        {/* <h1 className="main_title">Страйкбольные гранаты</h1>
+        </div> */}
 
         {/* <div className="banner">
             <h1 className="main_title">Самые низкие цены</h1>

@@ -47,6 +47,10 @@ body {
           user-select: none;
 }
 
+.none {
+  display: none;
+}
+
 .loading {
   display: flex;
   justify-content: center;
@@ -379,10 +383,13 @@ span {
 }
 
 .main_title {
-  margin-top: 100px;
-  margin-left: 52px;
-  font-weight: 700;
-  font-size: 58px;
+  font-size: 32px;
+  line-height: 136%;
+  font-weight: 600;
+  position: absolute;
+  top: 65px;
+  left: 40px;
+  width: 60%;
   letter-spacing: 0.02em;
   color: #fff;
   z-index: 1;
@@ -636,12 +643,51 @@ span {
   transition: height, opacity 0.2s linear;
 }
 
+.articles_title {
+  font-family: "Niramit", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  color: #181818;
+}
+
+.articles_text {
+  font-family: "Niramit", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #000;
+  line-height: 150%;
+  text-align: left;
+  margin: 16px 0;
+}
+
+.article_img_midle {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.articles_number {
+  margin-left: 20px;
+}
+
+.articles_disc {
+  list-style-type: disc;
+  margin-left: 16px;
+}
+
+.article_picture {
+  width: 100%;
+}
+
 footer {
   display: block;
   background-color: #000;
   padding-top: 85px;
   padding-bottom: 65px;
   color: #fff;
+  margin-top: 80px;
 }
 
 .footer_main {
@@ -1095,6 +1141,67 @@ footer {
   transition: var(--transition-time);
 }
 
+/* styles/embla.css */
+.embla {
+  overflow: hidden;
+  max-width: 791px;
+  height: 390px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 94px;
+}
+.embla .btn {
+  position: absolute;
+  left: 50px;
+  bottom: 16px;
+  z-index: 1;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+  height: inherit;
+}
+
+.embla__container {
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  height: inherit;
+}
+
+.embla__slide {
+  position: relative;
+  min-width: 100%;
+  flex: 0 0 100%;
+  height: inherit;
+}
+.embla__slide::after {
+  content: "";
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+}
+
+.embla__slide img {
+  display: block;
+  width: 100%;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.embla__button {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
 .catalog {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -1519,6 +1626,8 @@ footer {
   font-weight: 400;
   font-size: 11px;
   letter-spacing: 0.02em;
+  margin-top: 16px;
+  color: red;
 }
 
 .slider-container {
@@ -1983,12 +2092,14 @@ header {
     background-image: url(../../public/img/mobil_banner.webp);
   }
   .main_title {
-    font-size: 38px;
-    margin-top: 310px;
-    margin-left: 16px;
+    font-size: 28px;
+    line-height: 136%;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    width: 90%;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    max-width: 90%;
+    max-width: 60%;
   }
   .navigation {
     position: absolute;
@@ -2209,6 +2320,22 @@ header {
   .accordion_title {
     font-size: 17px;
     padding-right: 40px;
+  }
+  .articles_title {
+    font-family: "Niramit", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #181818;
+  }
+  .articles_text {
+    font-family: "Niramit", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #000;
+    text-align: left;
   }
 }
 @media (max-width: 565px) {
