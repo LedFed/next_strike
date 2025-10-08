@@ -4,7 +4,7 @@ import Card from './components/Card';
 import Category from './components/Category';
 import Feedback from './components/Feedback';
 import Accordions from './components/Accordions';
-import Head from 'next/head';
+// import Head from 'next/head';
 import EmblaCarousel from './components/EmblaCarousel';
 
 export const metadata = {
@@ -30,8 +30,8 @@ export default async function Main() {
   ];
 
   const slides = [
-    { title: 'В нашем магазине теперь можно заказать петарды', img: '/img/baner_petard.png',  links:'/category/Петарды'  },
-    { title: 'Страйкбольная граната: что это такое ?', img: '/img/baner.png', links:'/articles/granats' }
+    { title: 'В нашем магазине теперь можно заказать петарды', img: '../img/baner_petard.png',  links:'/category/Петарды'  },
+    { title: 'Страйкбольная граната: что это такое ?', img: '../img/baner.png', links:'/articles/granats' }
   ]
 
   return (
