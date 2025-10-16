@@ -5,8 +5,12 @@ import { useEffect, useState } from 'react';
 import CardItem from '../components/CardItem';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Loading from '../dashboard/loading';
-import Head from 'next/head';
 
+// export const metadata = {
+//   title: 'Каталог | страйкбольного магазина strikeops',
+//   description: 'Магазин страйкбольных гранат strikeops: страйкбольные гранаты, дымы, мины-растяжки, армейская пиротехника, петарды',
+//   // icons: '/favicon.ico'
+// };
 
 export default function Catalog() {
     const { products } = useCart();
@@ -147,28 +151,6 @@ export default function Catalog() {
         setActiveBtn(!activeBtn);
     }
 
-    // const getProduct = async () => {
-    //     try {
-    //         const response = await fetch('/api/products');
-    //         const data = await response.json();
-    //         return data; // Верните данные для использования в useEffect
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     // const fetchProducts = async () => {
-    //     //     const products = await getProduct();
-    //     //     setSortedProducts(products);
-    //     //     setLoader(false);
-    //     // };
-    //     setLoader(false);
-    //     setSortedProducts(products);
-    //     // setProduct(products)
-    //     // fetchProducts();
-    // }, [products]);
-
     const handleShowMore = () => {
         setVisibleCount(prevCount => prevCount + 12); // Увеличиваем количество видимых элементов на 4
     };
@@ -195,13 +177,8 @@ export default function Catalog() {
     //     return <div>Загрузка...</div>
     // }
 
-
     return (
         <>
-            <Head>
-                <title>Каталог</title>
-                <meta name="description" content="Каталог страйкбольной пиротехники: страйкбольных гранат, дымовых завес, Мин, растяжек, пульты" />
-            </Head>
             <div className='container'>
                 {/* <Loading/> */}
                 <Breadcrumbs items={breadcrumbsItems} />

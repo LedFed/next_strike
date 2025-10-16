@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useCart } from '../context/CartProvider';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link';
 import Modal from '../modal/Modal';
 import Head from 'next/head';

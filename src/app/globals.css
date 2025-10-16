@@ -1,6 +1,4 @@
 @charset "UTF-8";
-@import 'react-toastify/dist/ReactToastify.css';
-@import url("https://fonts.googleapis.com/css2?family=Niramit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 html,
 body {
   scroll-behavior: smooth;
@@ -353,7 +351,6 @@ span {
 
 .banner {
   margin-top: 24px;
-  background-image: url(../../public/img/baner.png);
   background-repeat: no-repeat;
   height: 397px;
   background-position: center center;
@@ -2087,9 +2084,6 @@ header {
   }
   .header_container {
     flex-direction: column;
-  }
-  .banner {
-    background-image: url(../../public/img/mobil_banner.webp);
   }
   .main_title {
     font-size: 28px;

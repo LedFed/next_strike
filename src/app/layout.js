@@ -9,23 +9,27 @@ import Footer from "./components/Footer";
 // import { YandexMetrika } from "@koiztech/next-yandex-metrika";
 import GoogleAnalytics from './components/GoogleAnalytics';
 import LayoutClient from './components/LayoutClient'
+import { Niramit } from 'next/font/google';
+const niramit = Niramit({
+  subsets: ['latin'],
+  weight: ['200','300','400','500','600','700'],
+  style: ['normal','italic'],
+  display: 'swap',
+  variable: '--font-niramit' // необязательно, если хотите CSS-переменную
+});
 
 
 export const metadata = {
-  title: 'strikeops',
-  description: 'Магазин страйкбольной пиротехники: Гранаты, дымы, мины-растяжки, армейская пиротехника'
+  title: 'Каталог | страйкбольного магазина strikeops',
+  description: 'Магазин страйкбольных гранат strikeops: страйкбольные гранаты, дымы, мина-растяжки, армейская пиротехника, петарды',
+  // icons: '/favicon.ico'
 };
 
 export default function RootLayout({ children }) {
   // const yandexMetrikaId = 101262687;
   // const googleAnalytics = 101262687;
   return (
-    <html lang="ru">
-      <meta charSet="utf-8" />
-      <link rel="icon" href="/favicon.ico" sizes="any" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      {/* <title>strikeops</title>
-      <meta name="description" content='Магазин страйкбольной пиротехники: Гранаты, дымы, мины-растяжки, армейская пиротехника' /> */}
+    <html lang="ru" className={niramit.className}>
 
       <body >
 

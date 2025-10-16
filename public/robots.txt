@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://strikeops.ru/
+Host: strikeops.ru
 
 # Sitemap
-Sitemap: https://strikeops/sitemap.xml
+Sitemap: https://strikeops.ru/sitemap.xml

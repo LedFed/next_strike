@@ -4,12 +4,11 @@ import Card from './components/Card';
 import Category from './components/Category';
 import Feedback from './components/Feedback';
 import Accordions from './components/Accordions';
-// import Head from 'next/head';
 import EmblaCarousel from './components/EmblaCarousel';
 
 export const metadata = {
-  title: 'strikeops',
-  description: 'Магазин страйкбольной пиротехники'
+  title: ' Страйкбольный интернет магазин strikeops - гранаты, мины, дымы для страйкбола и пейнтбола',
+  description: 'Магазин страйкбольных гранат Купить гранаты, мины, дымы для страйкбола в одном месте по низким ценам. Быстрая доставка по всей России.'
 };
 
 export default async function Main() {
@@ -30,34 +29,16 @@ export default async function Main() {
   ];
 
   const slides = [
-    { title: 'В нашем магазине теперь можно заказать петарды', img: '../img/baner_petard.png',  links:'/category/Петарды'  },
-    { title: 'Страйкбольная граната: что это такое ?', img: '../img/baner.png', links:'/articles/granats' }
+    { title: 'В нашем магазине теперь можно заказать петарды', img: '/img/baner_petard.webp',  links:'/category/Петарды'  },
+    { title: 'Страйкбольная граната: что это такое ?', img: '/img/baner.webp', links:'/articles/granats' }
   ]
 
   return (
     <>
-      {/* <Head>
-        <title>strikeops</title>
-        <meta name="description" content='Магазин страйкбольной пиротехники' />
-      </Head> */}
 
       <div className="container">
 
-        {/* <Slider {...settings}> */}
-        {/* <div style={{ maxWidth: 900, margin: '0 auto' }}> */}
         <EmblaCarousel slides={slides} />
-        {/* </div> */}
-
-        {/* <div className="banner"> */}
-        {/* <img src="/img/baner.png" alt="" /> */}
-        {/* <h1 className="main_title">Страйкбольные гранаты</h1>
-        </div> */}
-
-        {/* <div className="banner">
-            <h1 className="main_title">Самые низкие цены</h1>
-          </div> */}
-
-        {/* </Slider> */}
 
         <h2 className="title">Категории товаров</h2>
         <Category />
