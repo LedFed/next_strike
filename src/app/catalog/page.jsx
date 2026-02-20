@@ -179,7 +179,7 @@ export default function Catalog() {
 
     return (
         <>
-            <div className='container'>
+            <div className='container_small'>
                 {/* <Loading/> */}
                 <Breadcrumbs items={breadcrumbsItems} />
                 <div className="catalog">

@@ -56,12 +56,17 @@
     align-items: center;
     overflow: hidden;
     row-gap: 20px;
+    width: 100%;
 }
 
 .main_img {
-    width: 525px;
-    height: 598px;
-    object-fit: cover;
+    // width: 525px;
+    // height: 598px;
+    width: 100%;
+    max-width: 525px;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .current_carusel {
@@ -110,6 +115,7 @@
 
 .current_articul {
     @include Regular(11px);
+    white-space: nowrap;
 }
 
 .sale {

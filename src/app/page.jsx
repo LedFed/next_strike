@@ -29,8 +29,9 @@ export default async function Main() {
   ];
 
   const slides = [
-    { title: 'В нашем магазине теперь можно заказать петарды', img: '/img/baner_petard.webp',  links:'/category/Петарды'  },
-    { title: 'Страйкбольная граната: что это такое ?', img: '/img/baner.webp', links:'/articles/granats' }
+     { title: '', img: '/img/photo_2026-02-20_06-41-13.webp',  links:'/category/Пневматика'  },
+    // { title: 'В нашем магазине теперь можно заказать петарды', img: '/img/baner_petard.webp',  links:'/category/Петарды'  },
+    { title: '', img: '/img/photo_2026-02-20_18-41-07.webp', links:'/articles/granats' }
   ]
 
   return (

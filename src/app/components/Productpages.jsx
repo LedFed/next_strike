@@ -5,6 +5,7 @@ import { useCart } from '../context/CartProvider';
 import Accordions from './Accordions';
 import Popular from './Popular';
 import ScrollToTop from './ScrollToTop';
+import Link from 'next/link';
 
 export default function Productpages({ product }) {
     const { toggleCartItem, cart, products } = useCart();
@@ -132,9 +133,9 @@ export default function Productpages({ product }) {
                     <div className="current_contacts">
                         <p className="current_info">Мы будем рады ответить на все Ваши вопросы в любом удобном мессенджере:</p>
                         <div className="current_links">
-                            <a href="" className="current_link">Telegram</a>
+                            <Link href="https://t.me/strikeopss" className="current_link">Telegram</Link>
                             <a href="" className="current_link">Whatsapp </a>
-                            <a href="" className="current_link">+7 (909) 024-56-94</a>
+                            <Link className="number" href="tel:+ 7 9(535)-530-53">+7(996)-232-34-75</Link>
                         </div>
                     </div>
                 </div>

@@ -395,9 +395,9 @@ body {
 
 .container {
     margin: 0 auto;
-    min-height: 100vh;
+    // min-height: 100vh;
     // max-width: 94%;
-    max-width: 1300px;
+    max-width: 1000px;
 }
 
 .header_items {
@@ -974,6 +974,10 @@ footer {
     padding-bottom: 65px;
     color: #fff;
     margin-top: 80px;
+
+    .container {
+        max-width: 1000px;
+    }
 }
 
 .footer_main {
@@ -988,8 +992,6 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
-
 
 .footer_copyright_text {
     @include Regular(14px);
@@ -1437,6 +1439,7 @@ footer {
     //   width: 100%;
     max-width: 791px;
     height: 390px;
+    height: 510px;
     position: relative;
     margin: 0 auto;
     margin-top: 94px;
@@ -1469,12 +1472,12 @@ footer {
     flex: 0 0 100%;
     height: inherit;
 
-    &::after {
-        content: '';
-        inset: 0;
-        background: rgba(0, 0, 0, 0.4);
-        position: absolute;
-    }
+    // &::after {
+    //     content: '';
+    //     inset: 0;
+    //     background: rgba(0, 0, 0, 0.4);
+    //     position: absolute;
+    // }
 }
 
 .embla__slide img {
@@ -1482,6 +1485,9 @@ footer {
     width: 100%;
     height: inherit;
     object-fit: cover;
+
+    object-fit:contain;
+    height: auto;
 }
 
 .embla__button {
@@ -1518,6 +1524,10 @@ footer {
 
     .footer_pages {
         justify-content: space-evenly;
+    }
+
+    .container_small {
+        max-width: 92%;
     }
 }
 
@@ -1605,6 +1615,12 @@ footer {
     .container {
         max-width: 100%;
         margin: 0 12px;
+    }
+
+    footer {
+        .container {
+            max-width: 1000px;
+        }
     }
 
     header {
