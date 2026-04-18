@@ -2099,6 +2099,9 @@ header {
   .header_container {
     flex-direction: column;
   }
+  .embla {
+    height: 100%;
+  }
   .main_title {
     font-size: 28px;
     line-height: 136%;
