@@ -11,6 +11,7 @@ export default function Category() {
         { title: 'Пульки', active: false, links: './icons/free-icon-paintball-588794_1.svg', chapter: "Раздел страйкбольных гранат" },
         { title: 'Автоматы/Пистолеты', active: false, links: './icons/icons8-оружие-для-пейнтбола-50.svg', chapter: "Раздел страйкбольных гранат" },
         { title: 'Пневматика', active: true, links: './icons/free-icon-gun-1022348.svg', chapter: "Раздел Пневматические пистолеты" },
+        { title: 'Сигнальное', active: true, links: './icons/free-icon-gun-3841991.svg', chapter: "Большой выбор сигнального оружия и пистолетов в интернет-магазине StrikeOps" },
         { title: 'Петарды', active: true, links: './icons/squib.svg', chapter: "Раздел петард" },
     ]
     return (
